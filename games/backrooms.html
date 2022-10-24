@@ -71,7 +71,24 @@ color: white;
      border-radius: 15px;
     }
 </style>
-   <iframe style="overflow: hidden; width: 100%; height: 600px;" src="https://kdata1.com/2022/05/backroom16/?key=y8&value=default"></iframe>
+   <iframe id="game" style="overflow: hidden; width: 100%; height: 600px;" src="https://kdata1.com/2022/05/backroom16/?key=y8&value=default"></iframe>
 <h2 onclick="window.location = 'https://sz-games.github.io'" style="cursor: pointer; text-align: center;">Back</h2>
   </body>
+    
+    
+
+  <script>
+
+let hh = window.innerHeight - 100;
+
+
+document.getElementById('game').height = hh;
+window.onresize = function(event) {
+  let hh = window.innerHeight - 100;
+
+
+document.getElementById('game').height = hh;
+}
+  </script>
+    
 </html>
