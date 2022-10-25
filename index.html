@@ -70,13 +70,96 @@ color: white;
         height: 150px;
      border-radius: 15px;
     }
+
+
+    $bg: rgba(0, 0, 0, 0.2);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 85vw;
+  margin: 1rem auto;
+}
+
+
+.bg,
+.overlay {
+  text-align: center;
+}
+
+img,
+.overlay {
+  transition: .3s all;
+  border-radius: 3px;
+}
+
+.bg {
+  float: left;
+  max-width: 31%;
+  position: relative;
+  margin: .5%;
+  img {
+    width: 100%;
+    margin-bottom: -4px;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $bg;
+    color: #fff;
+    opacity: 0;
+    h2 {
+      padding-top: 20%;
+      font-family: 'Droid Serif', serif;
+    }
+    p {
+      font-family: 'Julius Sans One', sans-serif;
+    }
+  }
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+    img {
+      -webkit-filter: blur(2px);
+      filter: blur(2px);
+    }
+  }
+}
+
+@media screen and (max-width: 1148px) {
+  .bg {
+    max-width: 48%;
+    margin: 1%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg {
+    float: none;
+    max-width: 80%;
+    margin: 1% auto;
+  }
+}
+
+
 </style>
     <div class="header">
         <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
         <h1>Sz Games</h1>
       </div>
-
       <br></br>
+
+
 <div style="float: left; ">
     <a href="https://sz-games.github.io/home/webb/">
         <!--p class="game" style="left: 105px;" >Infinite Tower</p>
@@ -152,20 +235,6 @@ color: white;
   <!--Space-->
   </div>
 
-<div style=" float: left;">
-  <a href="https://sz-games.github.io/games/moter">
-    <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/moter.png?raw=true" alt="game">
-    
-</div>
-      
-  </a>
- 
-  
-</div>
-
-<div style="color: transparent; width: 10px; height: 10px; float: left;">
-  <!--Space-->
-  </div>
 
 <div style=" float: left;">
   <a href="https://sz-games.github.io/games/backrooms">
@@ -178,20 +247,7 @@ color: white;
   
 </div>
 
-<div style="color: transparent; width: 10px; height: 10px; float: left;">
-  <!--Space-->
-  </div>
 
-<div style=" float: left;">
-  <a href="https://sz-games.github.io/games/air">
-    <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/fight.png?raw=true" alt="game">
-    
-</div>
-      
-  </a>
- 
-  
-</div>
 
 <div style="color: transparent; width: 10px; height: 10px; float: left;">
   <!--Space-->
@@ -206,6 +262,47 @@ color: white;
   </a>
  
   
+</div>
+
+<div style="color: transparent; width: 10px; height: 10px; float: left;">
+  <!--Space-->
+  </div>
+
+<div style=" float: left;">
+  <a href="https://sz-games.github.io/games/zombie">
+    <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/zombie.png?raw=true" alt="game">
+
+      
+  </a>
+ 
+  
+</div>
+
+<div style="color: transparent; width: 10px; height: 10px; float: left;">
+  <!--Space-->
+  </div>
+
+<div style=" float: left;">
+  <a href="https://sz-games.github.io/games/stackk">
+    <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/stack.png?raw=true" alt="game">
+
+      
+  </a>
+</div>
+
+  <div style="color: transparent; width: 10px; height: 10px; float: left;">
+    <!--Space-->
+    </div>
+  
+  <div style=" float: left;">
+    <a href="https://sz-games.github.io/games/Bin/Game_file/call/hydra">
+      <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/hydra.png?raw=true" alt="game">
+  
+        
+    </a>
+   
+
+
 </div>
 
 
