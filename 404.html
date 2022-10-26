@@ -30,22 +30,46 @@ body {
 </head>
 <body>
 <style>
-    .game {
-        position: absolute;
-color: white;
-
-  transform: scale(1.8);
-  z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
-    }
+   
+  
+  h {
+animation: anim 5s ;
+  }
+  
+  p {
+  animation: anim 5s ;
+  }
+  
+  h1 {
+  animation: anim 5s ;
+  }
+  
+  img {
+  animation: animm 5s ;
+  }
+  
+   h2 {
+  animation: animm 5s ;
+  }
+  
+  @keyframes anim {
+  0% {transform : scale(0.1); transition: 0.5s;}
+  10% {transform : scale(1.0); transition: 0.5s;}
+  }
+  
+   @keyframes animm {
+  0% {transform : scale(0.1); transition: 0.5s;}
+  20% {transform : scale(1.0); transition: 0.5s;}
+  }
+    
   
 </style>
     <div class="header">
         <img src="https://github.com/sz-games/home/blob/main/Gg.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
         <h1>Sz Games</h1>
-        <h>Page Not Found!</h>
+        <p>Page Not Found!</p>
         <h2 style="cursor: pointer; text-decoration: none;" onclick="window.location = 'https://sz-games.github.io'">Go Home</h2>
-        <h>Enjoy Your Stay!</h>
+        <p>Enjoy Your Stay!</p>
       </div>
 
 
