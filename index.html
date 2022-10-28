@@ -105,6 +105,11 @@ img,
   border-radius: 3px;
 }
 
+.day {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+}
 
 </style>
     <div class="header">
@@ -112,6 +117,26 @@ img,
         <h1>Sz Games</h1>
       </div>
       <br></br>
+      <h1 id="ec" class="day" >----------</h1>
+      <br></br>
+
+<script>
+var dayy = document.getElementById('ec');
+
+  var today = new Date()
+var curHr = today.getHours()
+
+if (curHr < 12) {
+  console.log(curHr + '--' + today);
+document.getElementById('ec').innerHTML = 'Good Morning!'
+} else if (curHr < 18) {
+  console.log(curHr + '--' + today);
+  document.getElementById('ec').innerHTML = 'Good Afternoon!'
+} else {
+console.log(curHr + '--' + today);
+  document.getElementById('ec').innerHTML = 'Good Evening!'
+}
+</script>
 
 
 <div style="float: left; ">
