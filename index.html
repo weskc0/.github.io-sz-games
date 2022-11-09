@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+  
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
 <script>
