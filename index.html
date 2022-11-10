@@ -12,7 +12,7 @@
 </script>
 
 <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
+    <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
     <title>Sz Games</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,7 @@ body {
 }
 
 img {
+  
   margin: 10px;
 position: relative;
 z-index: 1;
@@ -243,6 +244,15 @@ z-index: 1;
   }
 }
 
+.hello img {
+            width: 100%;
+            transition: 0.5s all ease-in-out;
+        }
+     
+        .hello:hover img {
+          transform-origin: top;
+            transform: scale(1.1);
+        }
 
 </style>
     <div class="header">
@@ -254,6 +264,8 @@ z-index: 1;
       <h1 id="ec" class="day" >----------</h1>
       <br></br>
 
+
+      
 <script>
 var dayy = document.getElementById('ec');
 
@@ -271,6 +283,21 @@ console.log(curHr + '--' + today);
   document.getElementById('ec').innerHTML = 'Good Evening!'
 }
 </script>
+
+<div class="hello" style=" margin-right: auto; margin-left: auto; width: 425px;
+ ">
+  <a href="https://sites.google.com/view/fnf-unblockedhehe/home">
+      <!--p class="game" style="left: 105px;" >Infinite Tower</p>
+      <div class="fade" ></div-->
+   <img style="border-radius: 15px; width: 400px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/fn.png?raw=true" alt="game">
+  </a>
+ 
+  
+</div>
+
+
+
+<div>
 
 <div style="float: left; ">
   <a href="https://forms.gle/6R1E28R33RvK7y486">
@@ -638,6 +665,26 @@ console.log(curHr + '--' + today);
 
 </div>
 
+
+<div style=" float: left;">
+  <a href="https://sz-games.github.io/games/paperio">
+    <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/paperio.png?raw=true" alt="game">
+
+      
+  </a>
+
+</div>
+
+
+<div style=" float: left;">
+  <a href="https://sz-games.github.io/games/papas-B">
+    <img style="border-radius: 15px; width: 300px; height: 275px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/papab.png?raw=true" alt="game">
+
+      
+  </a>
+
+</div>
+</div>
 <section class="sticky">
   <div class="bubbles">
       <div class="bubble"></div>
@@ -653,10 +700,13 @@ console.log(curHr + '--' + today);
     
   </div>
 </section>
-  <script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
-  </script>
+
 </body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+    </script>
+
 </html>
