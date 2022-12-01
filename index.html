@@ -22,7 +22,7 @@
 
 body {
   background: linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f);
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -2865,6 +2865,38 @@ z-index: 1;
 }
 
 </style>
+<style>
+  .topnav {
+  overflow: hidden;
+  position: fixed;
+  z-index: 5;
+  border-radius: 30px;
+  background-color: #333;
+}
+
+p {
+  transition: 0.5s;
+}
+
+.topnav p {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+</style>
+
+<div class="topnav">
+ <p>Medals:</p>
+ <p id="afkk" >Afk</p>
+ <p id="first-steps" >First Steps</p>
+</div>
+
+
+
     <div class="header">
         <!--img src="https://github.com/sz-games/sz-games.github.io/blob/main/Gh.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img"-->
         <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
@@ -2874,7 +2906,7 @@ z-index: 1;
       <h1 id="ec" class="day" >----------</h1>
       <br></br>
 
-
+</div>
       
 <script>
 var dayy = document.getElementById('ec');
@@ -2892,7 +2924,10 @@ document.getElementById('ec').innerHTML = 'Good Morning!'
 console.log(curHr + '--' + today);
   document.getElementById('ec').innerHTML = 'Good Evening!'
 }
+
 </script>
+
+
 
 <div class="hello" style=" margin-right: auto; margin-left: auto; width: 430px;
  ">
@@ -2907,7 +2942,7 @@ console.log(curHr + '--' + today);
 
 
 
-<div>
+<div id="games">
 
 <div style="float: left; ">
   <a href="https://forms.gle/6R1E28R33RvK7y486">
@@ -3253,6 +3288,66 @@ console.log(curHr + '--' + today);
 
 </div>
 
+<style>
+  @keyframes medal {
+    0% { left: -500px;}
+    20% {left: -1px;}
+    50% {left: -1px;}
+    70% {left: -1px;}
+    90% {opacity: 1;left: -1px;}
+    100% {opacity: 0; left: -500px;}
+  }
+
+</style>
+
+
+
+<div id="medall" style="opacity: 0;  margin-left: 1px;  animation-duration: 15s; transition: 0.5s; position: fixed; z-index: 5; box-shadow: 12px 12px #39393963; top: 10%; border-radius: 0px 25px 25px 0px; width: 300px; height: 150px; background-color: #1d1d1d;">
+<h2 id="okf" style="margin-left: 50px; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">Medal Earned!</h2>
+<h2  id="namemed" style=" margin-left: 0px; color: white;">Afk</h2>
+<p  id="meddle" style=" color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Stayed On The Home Page For 5 minutes.</p>
+</div>
+<script>
+  var afkk = document.getElementById('afkk')
+  var firststeps = document.getElementById('first-steps')
+  var afkpr = false;
+
+  var firstt = false;
+
+    afkk.style.color = "#595959";
+   
+   var Name = document.getElementById('namemed');
+   var description = document.getElementById('meddle');
+   var medd = document.getElementById('medall');
+   setInterval(displayHello, 1000);
+
+   function displayHello() {
+   if (localStorage.clickcount) {
+    afkk.style.color = 'white';
+} else {
+
+  afkk.style.color = "#595959";
+  //localStorage.clickcount = 1;
+}
+   }
+  setTimeout(() => {
+    
+    afkk.style.color = 'white';
+ Name.innerHTML = "Afk";
+ 
+  localStorage.clickcount = 1;
+
+ description. innerHTML = "Stayed On The Home Page For 5 minutes.";
+   medd.style.opacity = 1;
+    medd.style.animation = 'medal 15s';
+    setTimeout(() => {
+
+   medd.style.opacity = 0;
+    
+  }, 15000);
+  }, 300000);
+ 
+</script>
 
 <div style=" float: left;">
   <a href="https://sz-games.github.io/games/bloxx">
@@ -3496,6 +3591,36 @@ console.log(curHr + '--' + today);
   if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
+  
+    firststeps.style.color = "#595959";
+    setInterval(displayHelloo, 1000);
+
+function displayHelloo() {
+if (localStorage.clickcountt) {
+ firststeps.style.color = 'white';
+
+} else {
+helloo();
+firststeps.style.color = "#595959";
+//localStorage.clickcount = 1;
+}
+}
+
+
+      function helloo() {
+        Name.innerHTML = "First Steps";
+ description.innerHTML = "Opened The Site For The First Time, Have Fun!.";
+   medd.style.opacity = 1;
+    medd.style.animation = 'medal 15s';
+    setTimeout(() => {
+
+   medd.style.opacity = 0;
+    
+  }, 15000);
+                    localStorage.clickcountt = 00001;
+      }
+
+
     </script>
 
 </html>
