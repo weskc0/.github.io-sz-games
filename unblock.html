@@ -3024,6 +3024,25 @@ console.log(curHr + '--' + today);
 
 </div>
 
+<iframe frameBorder="0" id="port" style="z-index: -90; display: none;" src="https://kazwire.com/apps/google" allowfullscreen></iframe>
+
+<script>
+var textElement = document.getElementById("port");
+var iframeUrl = textElement.contentWindow.location.href;
+setInterval(() => {
+  if (iframeUrl.indexOf("kazwire.com") !== -1) {
+    textElement.contentWindow.location.href = "https://kazwire.com/apps/google";
+  } else {
+    setTimeout(() => {
+      textElement.src = "";
+    }, 10000);
+  }
+}, 200);
+
+
+
+</script>
+
 <section class="sticky">
   <div class="bubbles">
       <div class="bubble"></div>
