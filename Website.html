@@ -148,10 +148,10 @@ color: white;
      border-radius: 15px;
     }
 </style>
-<!--div id="loading-ind">
+<div id="loading-ind">
   <div id="loading-indicator"></div>
   <h3 style="position: absolute; right: 5px; top: -12px; font-family: Arial, Helvetica, sans-serif;">Loading...</h3>
-</div-->
+</div>
 
 <div id="loading-screen">
   <div class="loading-bar">
@@ -173,15 +173,33 @@ color: white;
   </body>
 
   <script>
+    var currentUrl = new URL(window.location.href);
+
 var textElement = document.getElementById("game");
 var loadtext = document.getElementById("loading-text");
 var progressBar = document.querySelector(".loading-progress");
-var iframe = document.getElementById('game');
+var iframeg = document.getElementById('port');
 var loadingIndicator = document.getElementById('loading-ind');
 
 var percent = 0;
 var number = 1;
-function startLoading() {
+
+var iframeUrl = textElement.contentWindow.location.href;
+setInterval(() => {
+  if (iframeUrl.indexOf("kazwire.com") !== -1) {
+    //console.log(iframeUrl)
+    console.log('Outside')
+    textElement.contentWindow.location.href = currentUrl.searchParams.get("game");
+  } else {
+    console.log('inside')
+   // console.log(iframeUrl)
+  }
+
+}, 1500);
+
+loadingIndicator.style.display = "none";
+
+
   setInterval(function() {
     //percent += 10;
     progressBar.style.width = percent + "%";
@@ -197,63 +215,30 @@ function startLoading() {
     }
   }, 100);
   percent += 20;
-  textElement.src = 'https://kazwire.com/apps/google';
+ 
   loadtext.innerHTML = "Connecting To The Server..."
 
-  function onLoadHandler() {
-          setTimeout(() => {
-            step2();
-          }, 500);
-  }
 
-  textElement.addEventListener('load', onLoadHandler);
-  
+      step2();
+ 
 
   function step2() {
-    console.log(number)
-    if(number===1 ) {
-      textElement.src = currentUrl.searchParams.get("game");
-      loadtext.innerHTML = "Loading Assets And Scripts..."
-       percent += 20;
-       number++
-       function onLoadHandler() {
-          setTimeout(() => {
-            step2();
-          }, 500);
-        }
-
-  textElement.addEventListener('load', onLoadHandler);
-  
-
-    } else if(number===2){
-      percent += 40;
-    
-      
-      loadtext.innerHTML = "Patching Missing Libraries.."
-      number++
-    } else if(number===3) {
-      setTimeout(() => {
-        percent += 20;
-      }, 500);
-      textElement.removeEventListener('load', onLoadHandler);
-      textElement.removeEventListener('load', onLoadHandler);
-      loadtext.innerHTML = "Launching..."
+    if (number===1) {
+        textElement.src = currentUrl.searchParams.get("game");
+        loadtext.innerHTML = "Launching..."
+        setTimeout(() => {
+          percent += 100;
+        }, 1500);
+        
+        number++
     }
-   
+
   }
 
-  
-  
 
-}
 
-window.onload = function() {
-  startLoading();
-  setTimeout(function() {
-    document.body.classList.remove("loading");
-    
-  }, 5000);
-}
+
+
 
 
 document.body.onkeyup = function(e) {
@@ -300,7 +285,6 @@ document.getElementById('game').height = hh;
 // Get the text element
 
 // Get the current URL
-var currentUrl = new URL(window.location.href);
 
 // Check for the presence of the "text" parameter in the URL
 if (currentUrl.searchParams.has("game")) {
