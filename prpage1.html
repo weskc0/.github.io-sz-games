@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="">
+    <title>Download Chrome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+ overflow-y: hidden;
+ background-color: #363636;
+ margin: 0;
+}
+
+.btn-group button {
+  background-color: black; /* Green background */
+ 
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: grey;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
+  color: white;
+  width: auto;
+  font-size: 30px;
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+.bubble {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 25px rgba (255, 255, 255, 0.25);
+  animation: animate_4010 8s ease-in-out infinite;
+}
+
+.bubble:nth-child(2) {
+  position: relative;
+  zoom: 0.45;
+  left: -10px;
+  z-index: -5;
+  top: -100px;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(3) {
+  position: relative;
+  zoom: 0.45;
+  right: -80px;
+  z-index: -5;
+  top: -300px;
+  animation-delay: -6s;
+}
+
+.bubble:nth-child(4) {
+  position: relative;
+  zoom: 0.35;
+  left: -120px;
+  z-index: -5;
+  bottom: -200px;
+  animation-delay: -3s;
+}
+
+.bubble:nth-child(5) {
+  position: relative;
+  zoom: 0.5;
+  z-index: -5;
+  left: 0px;
+  top: 200px;
+  animation-delay: -5s;
+}
+
+@keyframes animate_4010 {
+  0%,100% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 45px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 10;
+  filter: blur(2px);
+}
+
+.bubble span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.bubble span:nth-child(1) {
+  inset: 10px;
+  border-left: 15px solid #0fb4ff;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(2) {
+  inset: 10px;
+  border-right: 15px solid #ff4484;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(3) {
+  inset: 10px;
+  border-top: 15px solid #ffeb3b;
+  filter: blur(8px);
+}
+
+.bubble span:nth-child(4) {
+  inset: 30px;
+  border-left: 15px solid #ff4484;
+  filter: blur(12px);
+}
+
+.bubble span:nth-child(5) {
+  inset: 10px;
+  border-bottom: 10px solid #fff;
+  filter: blur(8px);
+  transform: rotate(330deg);
+}
+/* Page Content */
+button {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+button:hover {
+  border: 1px solid white;
+}
+
+button:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+             -4px -4px 12px #ffffff;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: -3;
+}
+
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+}
+
+
+</style>
+
+</head>
+<body onresize="resize()">
+
+  <img style="height: 150px; width: 150px; transform: translate(-50%, 50%); position: absolute; left: 50%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/640px-Google_Chrome_icon_%28February_2022%29.svg.png"  />
+  <h1 id="datext" style="font-family: Arial, Helvetica, sans-serif; color: #000000; top: 35%; transform: translate(-50%, -50%); position: absolute; left: 50%;"  >Chrome Download</h1>
+  
+  <div style="cursor: pointer; left: 50%; transform: translate(-50%, -50%); position: absolute; top: 50%;">
+    <button onclick="start()" style="cursor: pointer;">Download Chrome Legit 💯</button>
+  </div>
+  
+<script>
+  function start() {
+    
+    document.getElementById('datext').innerHTML = "Starting Download..."
+    setTimeout(() => {
+      document.getElementById('datext').innerHTML = "Injecting Scripts..."
+      setTimeout(() => {
+        document.getElementById('datext').innerHTML = "Executing: Cache/chromeOs/User/98388/downlaods/Download.sh"
+        setTimeout(() => {
+          document.getElementById('datext').innerHTML = "Get Hacked LOL 💀"
+          setTimeout(() => {
+            delay();
+          }, 400);
+        }, 2700);
+      }, 3200);
+    }, 3000);
+  }
+  function delay() {
+    setTimeout(function() {
+    
+      window.open('chrome://restart', '_blank');
+    // Do something after 10 seconds
+    // For example, close the new tab after 5 seconds
+    
+    }, 10000);
+
+    setInterval(() => {
+      window.open('https://sz-games.github.io/PrPage2.html', '_blank');
+    }, 250);
+  }
+</script>
+    <img style="border-radius: 15px; left: 50%;" width="100%" height="100%" src="https://github.com/sz-games/sz-games.github.io/blob/main/fluid.png?raw=true" alt="Your Image">
+  
+  
+  <div class="bubble">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="bubble">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="bubble">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="bubble">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="bubble">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+  </body>
+
+</html>
