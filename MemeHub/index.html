@@ -234,7 +234,7 @@ function on() {
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/86.mp4",
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/87.mp4",
     ];
-  off()
+    off()
     let currentIndex = parseInt(localStorage.getItem("currentIndex")) || 0;
     let currentVideo;
     var currentvideoc = currentIndex;
@@ -258,7 +258,10 @@ function on() {
       const videoElement = document.createElement("video");
       videoElement.setAttribute("controls", true);
       videoElement.setAttribute("autoplay", true);
-      videoElement.controlsList.add("nodownload");
+      if ('controlsList' in videoElement) {
+        videoElement.controlsList.add('nodownload');
+      }
+
 
       videoElement.setAttribute("src", videos[index]);
       videoContainer.innerHTML = "";
