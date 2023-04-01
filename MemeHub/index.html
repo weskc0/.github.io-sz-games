@@ -38,7 +38,7 @@ body {
     }
     
     video {
-      max-width: 100%;
+      max-width: 80%;
       max-height: 80vh;
       border-radius: 15px;
     }
@@ -56,17 +56,18 @@ body {
       display: none;
       position: fixed;
       top: 90%;
-      left: 50%;
-      width: 50%;
+      left: 85%;
+      width: 20%;
+      height: 10%;
       transform: translate(-50%, -50%);
       padding: 10px;
       border: none;
-      color: azure;
+      color: rgb(218, 218, 218);
       font-family: Arial, Helvetica, sans-serif;
       background-color: rgb(48, 48, 48);
       border-radius: 15px;
       z-index: 999;
-      box-shadow: 2px 2px 4px #b9b9b9;
+      box-shadow: 2px 2px 4px #32d10e;
       
     }
 
@@ -74,6 +75,31 @@ body {
       display: block;
       animation: fade-in 5s ease-out;
     }
+
+    #alertt {
+      display: none;
+      position: fixed;
+      top: 90%;
+      left: 85%;
+      width: 20%;
+      height: 10%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      border: none;
+      color: rgb(218, 218, 218);
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(48, 48, 48);
+      border-radius: 15px;
+      z-index: 999;
+      box-shadow: 2px 2px 4px #d01e1e;
+      
+    }
+
+    #alertt.show {
+      display: block;
+      animation: fade-in 5s ease-out;
+    }
+
 
     @keyframes fade-in {
       0% { opacity: 0; }
@@ -91,7 +117,16 @@ body {
 </div>
 <h4 id="vidc" style="top: 0; left: 50%; transform: translate(-50%, -50%); font-family: Arial, Helvetica, sans-serif; position: absolute; color: rgb(222, 222, 222);">Current Video 0/0</h4>
 <div id="alert">
-  <h2>There are no more videos to watch. Check Again Later!</h2>
+  <span class="material-icons" style="position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%);">
+    info
+    </span>
+  <h2 style="font-family: Arial, Helvetica, sans-serif; font-size: medium;">There are no more videos to watch. Check Again Later!</h2>
+</div>
+<div id="alertt">
+  <span class="material-icons" style="position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%);">
+    error
+    </span>
+  <h2 id="errortext" style="font-family: Arial, Helvetica, sans-serif; font-size: large;">There are no more videos to watch. Check Again Later!</h2>
 </div>
   <div id="video-container"></div>
   <span id="on" onclick="on()" class="material-icons" style="font-size: 30px;  position: absolute;  color: #b9b9b9; cursor: pointer; left: 1%; top: 10%; transition: 0.5s; color: #b9b9b9; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;" >
@@ -100,17 +135,19 @@ body {
     <span id="off" onclick="off()" class="material-icons" style=" font-size: 30px;  position: absolute;  color: #b9b9b9; cursor: pointer; left: 1%; top: 10%; transition: 0.5s; color: #b9b9b9; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;" >
       visibility_off
       </span>
+<div id="controller" style=" top: 40%; right: 2%; border-radius: 20px; width: 60px; position: absolute; height: 20%; background-color: #626262bd;">
+    <div id="up" onclick="up()" style="top: 10%; right: 25%; transition: 0.5s; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;">
+      <span class="material-icons" style=" font-size: 30px;  position: absolute; color: #b9b9b9;  cursor: pointer;">
+        expand_less
+        </span>
+    </div>
+    <div id="down" onclick="down()" style="top: 70%; transition: 0.5s; right: 25%; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;">
+      <span class="material-icons" style=" font-size: 30px;  position: absolute;  color: #b9b9b9; cursor: pointer;">
+        expand_more
+        </span>
+    </div>
+</div>
 
-  <div id="up" onclick="up()" style="top: 40%; right: 30%; transition: 0.5s; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;">
-    <span class="material-icons" style=" font-size: 30px;  position: absolute; color: #b9b9b9;  cursor: pointer;">
-      expand_less
-      </span>
-  </div>
-  <div id="down" onclick="down()" style="top: 50%; transition: 0.5s; right: 30%; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;">
-    <span class="material-icons" style=" font-size: 30px;  position: absolute;  color: #b9b9b9; cursor: pointer;">
-      expand_more
-      </span>
-  </div>
   <script>
 
 setInterval(() => {
@@ -130,11 +167,12 @@ function off() {
   document.getElementById('off').style.display = "none"
   document.getElementById('up').style.display = "none"
     document.getElementById('down').style.display = "none"
+    document.getElementById('controller').style.display = "none"
 }
 function on() {
   document.getElementById('off').style.display = "block"
   document.getElementById('on').style.display = "none"
-
+  document.getElementById('controller').style.display = "block"
     document.getElementById('up').style.display = "block"
     document.getElementById('down').style.display = "block"
 }
@@ -233,6 +271,20 @@ function on() {
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/85.mp4",
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/86.mp4",
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/87.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/88.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/89.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/90.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/91.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/92.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/93.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/94.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/95.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/96.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/97.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/98.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/99.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/100.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/101.mp4",
     ];
     off()
     let currentIndex = parseInt(localStorage.getItem("currentIndex")) || 0;
@@ -277,6 +329,7 @@ function on() {
 
       
     }
+      
 
     window.addEventListener("load", function() {
       playVideo(currentIndex);
@@ -314,10 +367,13 @@ function on() {
 
       if (event.deltaY < 0) {
         // Swiping up
-        currentvideoc--
-        updatec()
-        playVideo(currentIndex - 1);
-        
+        if (currentIndex === 0) {
+      
+        } else {
+          currentvideoc--
+          updatec()
+          playVideo(currentIndex - 1);
+        }
       } else if (event.deltaY > 0) {
         // Swiping down
         if (currentIndex >= videos.length - 1) {
@@ -331,7 +387,37 @@ function on() {
           playVideo(currentIndex + 1);
         }
       }
+
+ 
+
     });
+
+
+   
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowUp') {
+          console.log('up')
+          if (currentIndex === 0) {
+      
+          } else {
+            currentvideoc--
+            updatec()
+            playVideo(currentIndex - 1);
+          }
+        } else if (event.key === 'ArrowDown') {
+          if (currentIndex >= videos.length - 1) {
+          alertElement.classList.add("show");
+          setTimeout(() => {
+            alertElement.classList.remove("show");
+          }, 5000);
+          } else {
+            currentvideoc++
+            updatec()
+            playVideo(currentIndex + 1);
+          }
+        }
+      });
+
   </script>
 
 
