@@ -166,6 +166,7 @@ function off() {
   document.getElementById('on').style.display = "block"
   document.getElementById('off').style.display = "none"
   document.getElementById('up').style.display = "none"
+
     document.getElementById('down').style.display = "none"
     document.getElementById('controller').style.display = "none"
 }
@@ -285,6 +286,47 @@ function on() {
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/99.mp4",
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/100.mp4",
       "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/101.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/102.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/103.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/104.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/105.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/106.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/107.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/108.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/109.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/110.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/111.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/112.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/113.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/114.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/114.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/115.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/116.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/117.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/118.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/119.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/120.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/121.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/122.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/123.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/124.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/125.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/126.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/127.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/128.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/129.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/130.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/131.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/132.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/133.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/134.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/135.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/136.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/137.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/138.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/139.mp4",
+      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/140.mp4",
+      
     ];
     off()
     let currentIndex = parseInt(localStorage.getItem("currentIndex")) || 0;
@@ -292,8 +334,12 @@ function on() {
     var currentvideoc = currentIndex;
     
     function updatec() {
+    
       vidcount.innerHTML = "Current Video " + currentvideoc;
+    
+
     }
+   
 
     const videoContainer = document.getElementById("video-container");
     function playRandomVideo() {
@@ -335,6 +381,8 @@ function on() {
       playVideo(currentIndex);
 
     });
+
+
 
     function up() {
    
@@ -417,6 +465,11 @@ function on() {
           }
         }
       });
+
+     
+      
+      
+
 
   </script>
 
