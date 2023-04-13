@@ -110,18 +110,25 @@ body {
     }
     
   </style>
+<h1  style="font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: white; cursor: pointer; position: absolute; z-index: 5; font-size: large; left: 10px; bottom: 0;"><a style="text-decoration: none; color: #ffffff;" href="https://forms.gle/6xjnojppxtExS2Mm7">Report A Video</a></h1>
+
+<h1 id="TakenDownVidText" style="font-family: Arial, Helvetica, sans-serif; color: white; cursor: pointer; position: absolute; z-index: 5; transform: translate(-50%, -50%); left: 50%; top: 30%;">Video Has Been Taken Down</h1>
+
 
 <div style="top: 0; position: fixed; height: 52px; border-radius: 10px; width: 100%; background-color: #1c1c1c;">
 <img  src="https://github.com/Mr-funkinguy/Memehub/blob/main/Memelogo.png?raw=true" style="" height="50px" width="50px"/>
 <h1 style="font-family: Arial, Helvetica, sans-serif; color: rgb(211, 211, 211); position: absolute; top: -10px; right: 10px;">MemeHub</h1>
 </div>
 <h4 id="vidc" style="top: 0; left: 50%; transform: translate(-50%, -50%); font-family: Arial, Helvetica, sans-serif; position: absolute; color: rgb(222, 222, 222);">Current Video 0/0</h4>
+
+
 <div id="alert">
   <span class="material-icons" style="position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%);">
     info
     </span>
   <h2 style="font-family: Arial, Helvetica, sans-serif; font-size: medium;">There are no more videos to watch. Check Again Later!</h2>
 </div>
+
 <div id="alertt">
   <span class="material-icons" style="position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%);">
     error
@@ -334,7 +341,7 @@ function on() {
     var currentvideoc = currentIndex;
     
     function updatec() {
-    
+ 
       vidcount.innerHTML = "Current Video " + currentvideoc;
     
 
@@ -347,7 +354,7 @@ function on() {
   playVideo(randomIndex);
 }
 
-
+var DownTextTXT = document.getElementById("TakenDownVidText")
     function playVideo(index) {
       if (index < 0 || index >= videos.length) {
         return;
@@ -360,8 +367,16 @@ function on() {
         videoElement.controlsList.add('nodownload');
       }
 
+      if(index===0) {
+        DownTextTXT.style.display = "block"
+        videoElement.src = "";
 
-      videoElement.setAttribute("src", videos[index]);
+
+      } else {
+        videoElement.setAttribute("src", videos[index]);
+        DownTextTXT.style.display = "none"
+      }
+
       videoContainer.innerHTML = "";
       videoContainer.appendChild(videoElement);
 
@@ -386,10 +401,15 @@ function on() {
 
     function up() {
    
-        // Swiping up
-        currentvideoc--
-        updatec()
-        playVideo(currentIndex - 1);
+        // Swiping up 
+        if (currentIndex === 0) {
+      
+          } else {
+            currentvideoc--
+            updatec()
+            playVideo(currentIndex - 1);
+          }
+      
    
     }
 
