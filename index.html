@@ -2883,6 +2883,7 @@ z-index: 1;
   overflow: hidden;
   position: fixed;
   z-index: 5;
+  display: none;
   border-radius: 30px;
   background-color: #333;
 }
@@ -2900,12 +2901,37 @@ p {
   text-decoration: none;
   font-size: 17px;
 }
+.ImageForGame {
+  border-radius: 15px;
+   width: 200px; 
+  height: 200px;
+  transition: 0.8;
+}
+.ImageForGame:hover{
+  transform: scale(1.1);
+}
+
+
 </style>
 
-<div class="topnav">
+<div style=" display: none;" class="topnav">
  <p>Medals:</p>
  <p id="afkk" >Afk</p>
  <p id="first-steps" >First Steps</p>
+</div>
+<div style=" animation: border-color 2s ease infinite;  border-radius: 0px 0px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 100%; height: 50px; background-color: #1d1d1d;">
+  <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
+  <a href="./index.html">
+    <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 225px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Home</h1>
+    </a>
+  <a href="./unblock.html">
+  <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 160px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Apps</h1>
+  </a>
+  <a href="./FNFCollectionWeb.html">
+  <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 25px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">FNF Collection</h1>
+  </a>
+  <a href="https://sz-games.github.io">  <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px;" /> </a>
+
 </div>
 
 
@@ -2951,62 +2977,126 @@ console.log(curHr + '--' + today);
  
   
 </div-->
+<style>
+  .inputbox {
+  position: relative;
+  width: 196px;
+  z-index: 6;
+  left: 50%;
+  transform: translate(-50%, -0%);
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #ffffff;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+  color: #ffffff;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0,75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #3d3d3d;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+  height: 44px;
+}
+</style>
 
 
-<h4 style="text-align: center; color: #f2f2f2; font-family: Arial, Helvetica, sans-serif; z-index: 60;">Our Games May Be Hosted Our Other Domain: Mr-Funkinguy.github.io</h4>
+<div class="inputbox">
+  <input onkeyup="Search()"  id="SearchBox" required="required" type="text">
+  <span>Search</span>
+  <i></i>
+</div>
+
+
 <br>
-<h3 style="text-align: center; color: #f2f2f2; font-family: Arial, Helvetica, sans-serif; z-index: 60;">Click A Game To Get Started!</h3>
-
 <div id="games">
 
-  <div style="float: left; ">
+  <div id="" style="float: left; ">
     <a href="https://sz-games.github.io/Privacy-Policy.html">
         <!--p class="game" style="left: 105px;" >Infinite Tower</p>
         <div class="fade" ></div-->
-     <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/icons/policy.webp?raw=true" alt="If Images Are Not Loading Please Look at your browser's Settings And Allow The Images To Load, or Check Your Internet Connection | ">
+     <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/icons/policy.webp?raw=true" alt="If Images Are Not Loading Please Look at your browser's Settings And Allow The Images To Load, or Check Your Internet Connection | ">
     </a>
    
     
   </div>
 
-<div style="float: left; ">
+<div id="" style="float: left; ">
   <a href="https://forms.gle/6R1E28R33RvK7y486">
       <!--p class="game" style="left: 105px;" >Infinite Tower</p>
       <div class="fade" ></div-->
-   <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/reqqq.png?raw=true" alt="If Images Are Not Loading Please Look at your browser's Settings And Allow The Images To Load, or Check Your Internet Connection | ">
+   <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/reqqq.png?raw=true" alt="If Images Are Not Loading Please Look at your browser's Settings And Allow The Images To Load, or Check Your Internet Connection | ">
   </a>
  
   
 </div>
 
-<div style="float: left; ">
+<div id="Infinite Tower" style="float: left; ">
     <a href="https://sz-games.github.io/home/webb/">
         <!--p class="game" style="left: 105px;" >Infinite Tower</p>
         <div class="fade" ></div-->
-     <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/Mr-funkinguy/files-and-files/blob/main/tower.png?raw=true" alt="game">
+     <img class="ImageForGame" src="https://github.com/Mr-funkinguy/files-and-files/blob/main/tower.png?raw=true" alt="game">
     </a>
    
     
 </div>
 
- <div style=" float: left;">
+ <div id="Tunnel Rush" style=" float: left;">
   <a href="https://sz-games.github.io/games/tunnel-rush/">
     
       <!--p class="game" >Tunnel Rush</p>
       <div class="fade" ></div-->
-   <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/Mr-funkinguy/files-and-files/blob/main/tunnel.png?raw=true" alt="game">
+   <img class="ImageForGame" src="https://github.com/Mr-funkinguy/files-and-files/blob/main/tunnel.png?raw=true" alt="game">
   </a>
  
   
 </div>
 
 
-<div style=" float: left;">
+<div id="Space War" style=" float: left;">
   <a href="https://sz-games.github.io/games/spac/">
     
       <!--p class="game" >Space Wars </p>
       <div class="fade" ></div-->
-   <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/Mr-funkinguy/files-and-files/blob/main/space.png?raw=true" alt="game">
+   <img class="ImageForGame" src="https://github.com/Mr-funkinguy/files-and-files/blob/main/space.png?raw=true" alt="game">
   </a>
  
   
@@ -3014,10 +3104,10 @@ console.log(curHr + '--' + today);
     
  
 
-    <div style=" float: left;">
+    <div id="Slope" style=" float: left;">
   <a href="https://sz-games.github.io/slope/">
 
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/slope.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/slope.png?raw=true" alt="game">
     
   </a>
  
@@ -3025,9 +3115,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="Asteroids Belt" style=" float: left;">
   <a href="https://sz-games.github.io/games/spacesh/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/spacesh.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/spacesh.png?raw=true" alt="game">
     
 
       
@@ -3039,9 +3129,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="Backrooms" style=" float: left;">
   <a href="https://sz-games.github.io/games/backrooms">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/back.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/back.png?raw=true" alt="game">
     
 
       
@@ -3053,9 +3143,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="Slide In The Woods" style=" float: left;">
   <a href="https://sz-games.github.io/games/woods">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/woods.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/woods.png?raw=true" alt="game">
 
       
   </a>
@@ -3064,9 +3154,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="Survivor Mode" style=" float: left;">
   <a href="https://sz-games.github.io/games/zombie">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/zombie.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/zombie.png?raw=true" alt="game">
 
       
   </a>
@@ -3075,9 +3165,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="Stack" style=" float: left;">
   <a href="https://sz-games.github.io/games/stackk">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/stack.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/stack.png?raw=true" alt="game">
 
       
   </a>
@@ -3085,9 +3175,9 @@ console.log(curHr + '--' + today);
 
 
   
-  <div style=" float: left;">
+  <div id="Fly Hydra" style=" float: left;">
     <a href="https://sz-games.github.io/games/Bin/Game_file/call/hydra">
-      <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/hydra.png?raw=true" alt="game">
+      <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/hydra.png?raw=true" alt="game">
   
         
     </a>
@@ -3098,9 +3188,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="Dungeon Warrior" style=" float: left;">
   <a href="https://sz-games.github.io/games/dungeon">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/dun.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/dun.png?raw=true" alt="game">
 
       
   </a>
@@ -3109,9 +3199,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="Iniltrating The Airship" style=" float: left;">
   <a href="https://sz-games.github.io/games/airship">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/inf.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/inf.png?raw=true" alt="game">
 
       
   </a>
@@ -3119,9 +3209,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="fleeing the complex" style=" float: left;">
   <a href="https://sz-games.github.io/games/fleeing-the-complex">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/complex.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/complex.png?raw=true" alt="game">
 
       
   </a>
@@ -3130,9 +3220,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="Escaping The Prison" style=" float: left;">
   <a href="https://sz-games.github.io/games/escaping - the prision">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/pris.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/pris.png?raw=true" alt="game">
 
       
   </a>
@@ -3141,9 +3231,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="Breaking The Bank" style=" float: left;">
   <a href="https://sz-games.github.io/games/breaking-the-bank">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/bank.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/bank.png?raw=true" alt="game">
 
       
   </a>
@@ -3151,9 +3241,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="Stealing The Diamond" style=" float: left;">
   <a href="https://sz-games.github.io/games/diamond">
-    <img  style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/dia.png?raw=true" alt="game">
+    <img  class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/dia.png?raw=true" alt="game">
 
       
   </a>
@@ -3162,9 +3252,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="PC Breakdown" style=" float: left;">
   <a href="https://sz-games.github.io/games/pc-breakdown">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/pc.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/pc.png?raw=true" alt="game">
 
       
   </a>
@@ -3173,18 +3263,18 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="1v1 lol"  style=" float: left;">
   <a href="https://sz-games.github.io/Games-2/lol/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/loll.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/loll.png?raw=true" alt="game">
 
       
   </a>
 
 </div>
 
-<div style=" float: left;">
+<div id="run 3" style=" float: left;">
   <a href="https://sz-games.github.io/Games-2/run3/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/33r.jpeg?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/33r.jpeg?raw=true" alt="game">
 
       
   </a>
@@ -3192,18 +3282,18 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="Riddle School" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid.png?raw=true" alt="game">
 
       
   </a>
 
 </div>
 
-<div style=" float: left;">
+<div id="Riddle School 2" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school2">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid2.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid2.png?raw=true" alt="game">
 
       
   </a>
@@ -3212,9 +3302,9 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="riddle school 3" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school3">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid3.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid3.png?raw=true" alt="game">
 
       
   </a>
@@ -3222,9 +3312,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="riddle school 4" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school4">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid4.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid4.png?raw=true" alt="game">
 
       
   </a>
@@ -3233,18 +3323,18 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="riddle school 5" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school5">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid5.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid5.png?raw=true" alt="game">
 
       
   </a>
 
 </div>
 
-<div style=" float: left;">
+<div id="riddle transfer" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school6">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid6.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid6.png?raw=true" alt="game">
 
       
   </a>
@@ -3253,18 +3343,18 @@ console.log(curHr + '--' + today);
 
 
 
-<div style=" float: left;">
+<div id="riddle transfer 2" style=" float: left;">
   <a href="https://sz-games.github.io/games/riddle-school7">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid7.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rid7.png?raw=true" alt="game">
 
       
   </a>
 
 </div>
 
-<div style=" float: left;">
+<div id="Subway Surfers" style=" float: left;">
   <a href="https://sz-games.github.io/games/sub">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/sub.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/sub.png?raw=true" alt="game">
 
       
   </a>
@@ -3272,9 +3362,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="Chrome Dino" style=" float: left;">
   <a href="https://sz-games.github.io/games/chrome-dino">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/dinoo.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/dinoo.png?raw=true" alt="game">
 
       
   </a>
@@ -3282,9 +3372,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="tetris" style=" float: left;">
   <a href="https://sz-games.github.io/games/tetris">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/tet.jpeg?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/tet.jpeg?raw=true" alt="game">
 
       
   </a>
@@ -3292,9 +3382,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="paper.io" style=" float: left;">
   <a href="https://sz-games.github.io/games/paperio">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/paperio.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/paperio.png?raw=true" alt="game">
 
       
   </a>
@@ -3302,9 +3392,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div id="papas burgeria" style=" float: left;">
   <a href="https://sz-games.github.io/games/papas-B">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/papab.png?raw=true" alt="game">
+    <img  class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/papab.png?raw=true" alt="game">
 
       
   </a>
@@ -3326,11 +3416,12 @@ console.log(curHr + '--' + today);
 
 
 
-<div id="medall" style="opacity: 0;  margin-left: 1px;  animation-duration: 15s; transition: 0.5s; position: fixed; z-index: 5; box-shadow: 12px 12px #39393963; top: 10%; border-radius: 0px 25px 25px 0px; width: 300px; height: 150px; background-color: #1d1d1d;">
+<!--div id="medall" style="opacity: 0;  margin-left: 1px;  animation-duration: 15s; transition: 0.5s; position: fixed; z-index: 5; box-shadow: 12px 12px #39393963; top: 10%; border-radius: 0px 25px 25px 0px; width: 300px; height: 150px; background-color: #1d1d1d;">
 <h2 id="okf" style="margin-left: 50px; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif;">Medal Earned!</h2>
 <h2  id="namemed" style=" margin-left: 0px; color: white;">Afk</h2>
 <p  id="meddle" style=" color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Stayed On The Home Page For 5 minutes.</p>
-</div>
+</div-->
+
 <script>
   var afkk = document.getElementById('afkk')
   var firststeps = document.getElementById('first-steps')
@@ -3373,27 +3464,27 @@ console.log(curHr + '--' + today);
  
 </script>
 
-<div style=" float: left;">
+<div id="bloxorz" style=" float: left;">
   <a href="https://sz-games.github.io/games/bloxx">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/blox.jpeg?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/blox.jpeg?raw=true" alt="game">
 
       
   </a>
 
 </div>
 
-<div style=" float: left;">
+<div id="cookie clicker" style=" float: left;">
   <a href="https://mr-funkinguy.github.io/cookieclicker/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/click.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/click.png?raw=true" alt="game">
 
       
   </a>
 
 </div>
 
-<div style=" float: left;">
+<div id="agar.io" style=" float: left;">
   <a href="https://sz-games.github.io/games/agario">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/agario.jpeg?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/agario.jpeg?raw=true" alt="game">
 
       
   </a>
@@ -3401,9 +3492,9 @@ console.log(curHr + '--' + today);
 </div>
 
 
-<div style=" float: left;">
+<div  id="Basketball Legends" style=" float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://www-ig-opensocial.googleusercontent.com/gadgets/ifr?url=https://sites.google.com/site/basketballlegendunblocked/basketball_stars.xml">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/bbl.png?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/bbl.png?raw=true" alt="game">
 
       
   </a>
@@ -3413,7 +3504,8 @@ console.log(curHr + '--' + today);
 <style>
   .textover {
     position: absolute; 
-    top: 10%; left: 50%; 
+    top: 15%; 
+    left: 50%; 
     transform: translate(-50%, -50%);
      z-index: 1; color: rgb(0, 0, 0);
       font-weight: bold;  
@@ -3421,119 +3513,196 @@ console.log(curHr + '--' + today);
   }
 </style>
 
-<div style="position: relative; float: left;">
+<div id="crossy road" style=" position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/crossyroad/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/crossyroad.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/crossyroad.webp?raw=true" alt="game">
     <div class="textover" style="">Crossy Road</div>
   </a>
 </div>
 
-<div style="position: relative; float: left;">
+<div id="EEL Slap" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/eel-slap/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/eel-slap.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/eel-slap.webp?raw=true" alt="game">
     <div class="textover" style="">eel Slap</div>
   </a>
 </div>
 
-<div style="position: relative; float: left;">
-  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/fruitninja/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/fruitninja.webp?raw=true" alt="game">
-    <div class="textover" style="">Fruit Ninja</div>
-  </a>
-</div>
 
-<div style="position: relative; float: left;">
-  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/krunker/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/krunker.webp?raw=true" alt="game">
-    <div class="textover" style="">Krunker</div>
-  </a>
-</div>
 
-<div style="position: relative; float: left;">
+<div id="Minecraft" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/minecraft/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/minecraft.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/minecraft.webp?raw=true" alt="game">
     <div class="textover" style="">Minecraft </div>
   </a>
 </div>
 
 
-<div style="position: relative; float: left;">
+<div id="WebGL Fluid Animation" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/webgl-fluid-simulation/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/webgl-fluid-simulation.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/webgl-fluid-simulation.webp?raw=true" alt="game">
     <div class="textover" style="">WebGl Fluid Animation</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Pokemon Fire Red" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/pokemonfirered/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/PokemonFireRed.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/PokemonFireRed.webp?raw=true" alt="game">
     <div class="textover" style="">Pokemon Fire Red</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Pacman" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/pacman/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/pacman.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/pacman.webp?raw=true" alt="game">
     <div class="textover" style="">Pacman</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Hextris" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/hextris/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/hextrt.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/hextrt.webp?raw=true" alt="game">
     <div class="textover" style="">Hextris</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Funny Shooter" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/funnyshooter/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/funnyshooter.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/funnyshooter.webp?raw=true" alt="game">
     <div class="textover" style=""></div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Geomerty Dash" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/geometrydash/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/geodash.webp?raw=true" alt="game">
-    <div class="textover" style="color: #f2f2f2 !important;">Geomerty Dash</div>
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/geodash.webp?raw=true" alt="game">
+    <div class="textover" style="color: #ffffff !important;">Geomerty Dash</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Evoloution" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/evolution/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/evolution.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/evolution.webp?raw=true" alt="game">
     <div class="textover" style="">Evoloution</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Eat.io" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/eatio/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/eatio.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/eatio.webp?raw=true" alt="game">
     <div class="textover" style="">Eat.io</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Drift City" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/drift-city/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/driftc.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/driftc.webp?raw=true" alt="game">
     <div class="textover" style="">Drift City</div>
   </a>
 </div> 
 
 
-<div style="position: relative; float: left;">
+<div id="123 Mvoies" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/123movies/agree">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/123movies.webp?raw=true" alt="game">
+    <img class="ImageForGame" src="https://github.com/sz-games/storage/blob/main/icons/123movies.webp?raw=true" alt="game">
     <div class="textover" style="">123 Movies</div>
   </a>
 </div> 
 
-<div style="position: relative; float: left;">
+<div id="Bitlife" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/storage/play/bitlife/">
-    <img style="border-radius: 15px; width: 250px; height: 250px;" src="https://github.com/sz-games/storage/blob/main/icons/bitlife.webp?raw=true" alt="game">
+    <img class="ImageForGame"  src="https://github.com/sz-games/storage/blob/main/icons/bitlife.webp?raw=true" alt="game">
     <div class="textover" style="">Bitlife</div>
   </a>
 </div> 
+
+<div id="A Dance of Fire And Ice" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://lioxryt.github.io/lioxryt-assets/other/adofai/">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/lioxrytassets/main/other/adofai/unnamed.png" alt="game">
+    <div class="textover" style="color: white !important;">A Dance Of Fire And Ice</div>
+  </a>
+</div> 
+
+<div id="Super Hot" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/superhot/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/super-hot.jpg" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;">Super Hot</div>
+  </a>
+</div> 
+
+<div id="Fnaf 1" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-1/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf1.png" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+  </a>
+</div> 
+
+<div id="Fnaf 2" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-2/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf2.png" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+  </a>
+</div> 
+
+
+<div id="Fnaf 3" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-3/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf3.png" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+  </a>
+</div> 
+
+
+<div id="Fnaf 4" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-4/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf4.png" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+  </a>
+</div> 
+
+
+<div id="Fruit Ninja" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fruitNinja/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fruitNinja.png" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;">Fruit Ninja</div>
+  </a>
+</div> 
+
+
+<div id="Temple Run 2" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/temple-run-2/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/templeRun.jpg" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 10% !important; color: rgba(255, 255, 255, 0.827) !important;">Temple Run 2</div>
+  </a>
+</div> 
+
+<div id="Uno" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/uno/index.html">
+    <img class="ImageForGame"  src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/uno.jpg" alt="game">
+    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+  </a>
+</div> 
+
+<div id="We Become What We Behold" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/gfile/wbwwb/index.html">
+    <img class="ImageForGame"  src="https://github.com/Mr-funkinguy/EmulatorOS/raw/main/img/wbwwb.webp" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important;">We Become What We Behold</div>
+  </a>
+</div> 
+
+<div id="dreader" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/gfile/dreader/index.html">
+    <img class="ImageForGame"  src="https://github.com/Mr-funkinguy/EmulatorOS/raw/main/img/dreader.webp" alt="game">
+    <div class="textover" style="color: rgba(255, 255, 255, 0.827) !important;">dreader</div>
+  </a>
+</div> 
+
+<div id="snake" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/gfile/snake/index.html">
+    <img class="ImageForGame"  src="https://github.com/Mr-funkinguy/EmulatorOS/raw/main/img/snake.webp" alt="game">
+    <div class="textover" style="color: rgba(255, 255, 255, 0.827) !important;">Snake</div>
+  </a>
+</div> 
+
 
 
 <section class="sticky">
@@ -3549,6 +3718,41 @@ console.log(curHr + '--' + today);
     <div class="bubble"></div>
     <div class="bubble"></div>
   </div>
+  <script>
+  
+
+  var input, filter, elements, element, i;
+  input = document.getElementById("SearchBox");
+  filter = input.value.toUpperCase();
+  elements = document.getElementById("games");
+  element = elements.getElementsByTagName("div");
+ 
+
+  function Search() {
+    filter = input.value.toUpperCase();
+     input.addEventListener("input", function() {
+      if (input.value.length > 0) {
+        for (i = 0; i < element.length; i++) {
+          var id = element[i].getAttribute("id");
+          if (id && id.toUpperCase().indexOf(filter) > -1) {
+            element[i].style.display = "";
+          } else {
+            element[i].style.display = "none";
+          }
+        }
+      } else {
+        for (var i = 0; i < element.length; i++) {
+          element[i].style.display = "block";
+        }
+                
+      }
+    });
+
+}
+
+  
+  </script>
+  
   <!--div class="bubbles" style="  filter: drop-shadow(0 0 10px white);" >
   <div class="snow"></div>
 <div class="snow"></div>
