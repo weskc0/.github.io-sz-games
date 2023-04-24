@@ -2910,7 +2910,14 @@ p {
 .ImageForGame:hover{
   transform: scale(1.1);
 }
-
+@keyframes scroll {
+  from {top: -0%;}
+  to {top: -50%;}
+}
+@keyframes scroll2 {
+  from {top: -50%;}
+  to {top: -0%;}
+}
 
 </style>
 
@@ -2919,7 +2926,7 @@ p {
  <p id="afkk" >Afk</p>
  <p id="first-steps" >First Steps</p>
 </div>
-<div style=" animation: border-color 2s ease infinite;  border-radius: 0px 0px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 100%; height: 50px; background-color: #1d1d1d;">
+<div id="TopMenu"  style="  border-radius: 0px 0px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 100%; height: 50px; background-color: #1d1d1d;">
   <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
   <a href="./index.html">
     <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 225px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Home</h1>
@@ -2934,7 +2941,34 @@ p {
 
 </div>
 
+<script>
+  var myElement = document.getElementById("TopMenu"); // Get the element
+  var Isscrolled = false;
+window.addEventListener("scroll", function() { // Add a scroll event listener
+  if (window.pageYOffset > 350) { // Check if the user has scrolled 100 pixels down the page
+    if(Isscrolled===false) {
+    myElement.style.animation = "scroll 0.8s"; // Hide the element
+    myElement.style.top = "-50%"
+    Isscrolled = true
+    //console.log("its false")
+    } else {
+      Isscrolled = true
+    }
+  } else  if (window.pageYOffset < 350) {
+    if(Isscrolled===true) {
+      //console.log("its true")
+      myElement.style.animation = "scroll2 0.3s"; // Hide the element
+      myElement.style.top = "-0%"
+      Isscrolled=false
+    } else {
+      Isscrolled=false
+    
+    }
+  }
 
+});
+
+</script>
 
     <div class="header">
         <!--img src="https://github.com/sz-games/sz-games.github.io/blob/main/Gh.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img"-->
