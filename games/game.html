@@ -5,7 +5,7 @@
     <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
     <title>Sz Games</title>
 <meta charset="UTF-8">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -74,17 +74,30 @@ color: white;
         height: 150px;
      border-radius: 15px;
     }
+    .buttonForMenu {
+      transition: 0.5s;
+    }
+    .buttonForMenu:hover {
+      color: #9a9a9a;
+    }
 </style>
 
 
 <iframe frameBorder="0" id="game" style="text-align: center; align-items: center; overflow: hidden; width: 100%; " src="" allowfullscreen></iframe>
 
-<h2 onclick="window.location = 'https://sz-games.github.io'" style="cursor: pointer; position: fixed; bottom: -20px;  ">Back</h2>
+<!--h2 onclick="window.location = 'https://sz-games.github.io'" style="display: none; cursor: pointer; position: fixed; bottom: -20px;  ">Back</h2>
 <h2  style="position: fixed; bottom: 10px;">____</h2>
-<h2 onclick="makeFullScreen()" style="cursor: pointer; position: fixed; bottom: 20px;">Fullscreen</h2>
+<h2 onclick="makeFullScreen()" style="cursor: pointer; position: fixed; bottom: 20px;">Fullscreen</h2-->
+<div style="cursor: pointer; position: fixed; border-radius: 15px; color: rgb(224, 224, 224); background-color: #1d1d1dc0; left: 0; bottom: 0px; margin: 10px;" id="Menu">
 
 
-
+<span class="material-icons buttonForMenu" style="margin: 5px;" onclick="window.location = 'https://sz-games.github.io'" >
+  arrow_back
+  </span>
+  <span class="material-icons buttonForMenu" style="margin: 5px;" onclick="makeFullScreen()" >
+    fullscreen
+    </span>
+</div>
   </body>
 
   <script>
@@ -121,7 +134,7 @@ function makeFullScreen() {
 
 
 
-let hh = window.innerHeight - 10;
+let hh = window.innerHeight - 0;
 
 
 document.getElementById('game').height = hh;
