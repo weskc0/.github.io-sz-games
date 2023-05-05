@@ -7,7 +7,7 @@ workbox.routing.registerRoute(
     new workbox.strategies.NetworkFirst()
 );
 
-const cacheName = 'cache-v1';
+const cacheName = 'Sz-Games';
 // List the files to precache
 const precacheResources = ['/', '/index.html', '/games/game.html'];
 
@@ -41,11 +41,13 @@ self.addEventListener('activate', (event) => {
 
 
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
     event.respondWith(
-      fetch(event.request).catch(function(error) {
-        console.error('Fetch error:', error);
-        return caches.match('/index.html');
+      caches.match(event.request).then(response => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
       })
     );
   });
