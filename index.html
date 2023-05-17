@@ -3094,6 +3094,12 @@ console.log(curHr + '--' + today);
 </style>
 
 
+
+<div class="inputbox">
+  <input onkeyup="Search()"  id="SearchBox" required="required" type="text">
+  <span>Search</span>
+  <i></i>
+</div>
 <script>
 console.log('eee')
 // Function to retrieve the value of a cookie
@@ -3116,7 +3122,7 @@ function getCookie(cookieName) {
 }
 
 // Usage example
-const cookieValue = getCookie("VIP");
+const cookieValue = getCookie("logged_in");
 
 if (cookieValue) {
   console.log("The value of the cookie is: " + cookieValue);
@@ -3126,13 +3132,6 @@ if (cookieValue) {
 
 
 </script>
-
-<div class="inputbox">
-  <input onkeyup="Search()"  id="SearchBox" required="required" type="text">
-  <span>Search</span>
-  <i></i>
-</div>
-
 
 <br>
 <div id="games">
