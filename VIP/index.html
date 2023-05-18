@@ -414,6 +414,13 @@ span.psw {
 </div>
 
 <script>
+  function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
   function check() {
     var code = document.getElementById('Code')
     var screen = document.getElementById('Screen')
@@ -421,7 +428,8 @@ span.psw {
     if(code.value === 'Sc23') {
       console.log('Yes' + code.value)
       screen.style.display = 'block'
-      document.cookie = "IsVIP=yes; expires=Thu, 18 Dec 2055 12:00:00 UTC";
+    
+      setCookie("IsVIP", 'Yes', 365);
 
     } else {
       alert('Invalid')

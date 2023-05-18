@@ -2975,7 +2975,155 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
 </script>
 
-    <div class="header">
+<div id="Vip">
+
+  <div style="opacity: 0; visibility: hidden; background-color: #1d1d1d6a; z-index: 90; position: fixed; width: 100%; height: 100%;" id="menuVip">
+    <div style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; border-radius: 15px; height: 35%; background-color: rgb(81, 81, 81); position: absolute;">
+      <h1 style="left: 10px; position: relative; font-size: 25px; color: white;">VIP Menu</h1>
+      <h1 onclick="closeFade('menuVip')" style="cursor: pointer; right: 10px; top: 5px; position: absolute; font-size: 25px; color: white;">x</h1>
+   
+      <h2 style="text-align: center; left: 10px; position: relative; font-size: 25px; color: white;">Header</h2>
+      <div style="position: relative;" id="headerBg">
+
+        <div id="normal" onclick="selectHeader('normal')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+         
+        </div>
+
+    
+        <div id="waltah" onclick="selectHeader('waltah')" style=" margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+    
+
+        <div id="east" onclick="selectHeader('east')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+      
+
+        <div id="shock" onclick="selectHeader('shock')" style="margin: 3px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+        <div id="shock" onclick="selectHeader('AMeme')" style="margin: 3px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div onclick="openFade('menuVip')" style="cursor: pointer; border-radius: 30px; width: 70px; right: 5px; height: 35px; position: fixed; top: 70px; z-index: 5; background-color: #1d1d1db9;">
+    <h1 style="font-size: 25px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">VIP</h1>
+  </div>
+
+  <script>
+    function changeItem(item) {
+
+    }
+
+    function openFade(element2) {
+    var element = document.getElementById(element2)
+    element.style.transition = '0.5s'
+    element.style.visibility = 'visible'
+   
+    element.style.opacity = 1
+
+  }
+
+  function closeFade(element2) {
+    var element = document.getElementById(element2)
+    element.style.transition = '0.5s'
+    element.style.opacity = 0
+    setTimeout(() => {
+      element.style.visibility = 'hidden'
+    }, 500);
+  }
+
+    
+
+    
+  </script>
+
+  
+
+</div>
+
+<style>
+
+.header-waltah {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+.header-east {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+.header-shock {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position: 0px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+.header-AMeme {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true");
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+</style>
+
+    <div id="Header" class="header">
         <!--img src="https://github.com/sz-games/sz-games.github.io/blob/main/Gh.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img"-->
         <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
         <h1>Sz Games</h1>
@@ -2986,6 +3134,93 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
 </div>
       
+<script>
+  console.log('eee')
+  // Function to retrieve the value of a cookie
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+    function selectHeader(item) {
+      if(item === 'waltah') {
+        document.getElementById('Header').classList.remove('header-east')
+        document.getElementById('Header').classList.remove('header')
+        document.getElementById('Header').classList.remove('header-shock')
+        document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.add('header-waltah')
+        setCookie("Header", 'waltah', 365);
+      } else if (item === 'normal') {
+        document.getElementById('Header').classList.add('header')
+        document.getElementById('Header').classList.remove('header-east')
+        document.getElementById('Header').classList.remove('header-waltah')
+        document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.remove('header-shock')
+        setCookie("Header", 'normal', 365);
+      } else if(item==='east') {
+        document.getElementById('Header').classList.remove('header')
+        document.getElementById('Header').classList.add('header-east')
+        document.getElementById('Header').classList.remove('header-waltah')
+        document.getElementById('Header').classList.remove('header-shock')
+        document.getElementById('Header').classList.remove('header-AMeme')
+        setCookie("Header", 'east', 365);
+      } else if(item==='shock') {
+        document.getElementById('Header').classList.remove('header')
+        document.getElementById('Header').classList.remove('header-east')
+        document.getElementById('Header').classList.remove('header-waltah')
+        document.getElementById('Header').classList.add('header-shock')
+        document.getElementById('Header').classList.remove('header-AMeme')
+        setCookie("Header", 'shock', 365);
+      } else if(item==='AMeme') {
+        document.getElementById('Header').classList.remove('header')
+        document.getElementById('Header').classList.remove('header-east')
+        document.getElementById('Header').classList.remove('header-waltah')
+        document.getElementById('Header').classList.remove('header-shock')
+        document.getElementById('Header').classList.add('header-AMeme')
+        setCookie("Header", 'AMeme', 365);
+      }
+    }
+  
+  // Usage example
+  const cookieValue = getCookie("IsVIP");
+  
+  if (cookieValue) {
+    //console.log("The value of the cookie is: " + cookieValue);
+    document.getElementById('Vip').style.display = 'block'
+  } else {
+    console.log("The cookie is not set or expired.");
+    document.getElementById('Vip').style.display = 'none'
+
+  }
+
+  const Header = getCookie("Header");
+  
+  if (Header) {
+    console.log("The value of the cookie is: " + Header);
+    selectHeader(Header)
+  } else {
+    console.log("The cookie is not set or expired.");
+  }
+  </script>
+
 <script>
 var dayy = document.getElementById('ec');
 
@@ -3100,39 +3335,17 @@ console.log(curHr + '--' + today);
   <span>Search</span>
   <i></i>
 </div>
-<script>
-console.log('eee')
-// Function to retrieve the value of a cookie
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-// Usage example
-const cookieValue = getCookie("IsVIP");
-
-if (cookieValue) {
-  console.log("The value of the cookie is: " + cookieValue);
-} else {
-  console.log("The cookie is not set or expired.");
-}
 
 
-</script>
 
 <br>
+
+
+
 <div id="games">
+
+
+
 
   <div class="box" id="" style="position: relative; float: left; ">
     <a href="https://sz-games.github.io/Privacy-Policy.html">
