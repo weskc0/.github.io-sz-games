@@ -29,10 +29,16 @@ content="sz games, games, unblocked games, schoo, games, games to play, games on
 </head>
 
 <style>
-
+::-webkit-scrollbar-track-piece {
+ 
+  border-radius: 15px;
+}
 
 body {
   background: linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
@@ -1902,6 +1908,7 @@ z-index: 1;
   }
   to {
     transform: translate(74.4674vw, 100vh) scale(0.8905);
+    
   }
 }
 .snow:nth-child(126) {
@@ -2923,6 +2930,41 @@ p {
   from {top: -50%;}
   to {top: -0%;}
 }
+/* Webkit based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width as needed */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(146, 145, 145, 0.737); /* Adjust the color and opacity as needed */
+  border-radius: 20px;
+}
+
+/* Firefox */
+body {
+  
+}
+::-moz-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+}
+
+::-moz-scrollbar-track {
+  background-color: transparent;
+}
+::-moz-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
+}
+
+/* Hide default scrollbar track */
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-corner,
+::-moz-scrollbar-track-piece {
+  background-color: transparent;
+}
 
 </style>
 
@@ -2978,15 +3020,23 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 <div id="Vip">
 
   <div style=" opacity: 0; visibility: hidden; background-color: #1d1d1d6a; z-index: 90; position: fixed; width: 100%; height: 100%;" id="menuVip">
-    <div style="overflow: auto; overflow-x: hidden; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; border-radius: 15px; height: 35%; background-color: rgb(81, 81, 81); position: absolute;">
-      <h1 style="left: 10px; position: relative; font-size: 25px; color: white;">VIP Menu</h1>
+    <div style="overflow: auto;  overflow-x: hidden; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; border-radius: 15px; height: 100%; background-color: rgb(81, 81, 81); position: absolute;">
+      <h1 style=" left: 10px; position: relative; font-size: 25px; color: white;">VIP Menu</h1>
       <h1 onclick="closeFade('menuVip')" style="cursor: pointer; right: 10px; top: 5px; position: absolute; font-size: 25px; color: white;">x</h1>
-   
       <h2 style="text-align: center; left: 10px; position: relative; font-size: 25px; color: white;">Header</h2>
-      <div style="position: relative;  height: 100px;" id="headerBg">
-
-        <div id="normal" onclick="selectHeader('normal')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+      <br>
+      <div style="width: 100%; position: relative; height: 100px;" id="headerBg">
+        <div style="width: 100%; overflow-y: hidden; display: flex; white-space: nowrap; overflow-x: scroll;">
          
+          <div id="normal" onclick="selectHeader('normal')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+            <div style="border-radius: 5px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); width: 120px; height: 70px;">
+
+            </div>
+        </div>
+
+        <div id="Transperent" onclick="selectHeader('Tsp')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+         <p style="text-align: center; color: white;">Transperent</p>
+         <div style="width: 120px; height: 70px;"></div>
         </div>
 
     
@@ -3002,16 +3052,73 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
       
 
-        <div id="shock" onclick="selectHeader('shock')" style="margin: 3px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+        <div id="shock" onclick="selectHeader('shock')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
           <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
         </div>
 
-        <div id="shock" onclick="selectHeader('AMeme')" style="margin: 3px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+        <div id="shock" onclick="selectHeader('AMeme')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
           <img src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
         </div>
 
+        <div id="chip" onclick="selectHeader('chip')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/chip.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+
+        </div>
       </div>
+      <br>
+     
+      <h1 style="text-align: center;  font-size: 25px; color: white;">Background:</h1>
+
+      <div style="position: relative; width: 100%; height: 100px;" id="BG">
+        
+        <div style="width: 100%; overflow-y: hidden; display: flex; white-space: nowrap; overflow-x: scroll;">
+        <div id="normal" onclick="selectHeader2('normal')" style="margin: 2px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+         
+        </div>
+
+    
+        <div id="waltah" onclick="selectHeader2('waltah')" style=" margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+    
+
+        <div id="east" onclick="selectHeader2('east')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+      
+
+        <div id="shock" onclick="selectHeader2('shock')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
+        </div>
+
+        <div id="shock" onclick="selectHeader2('AMeme')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+          <img style="" src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
+        </div>
+        </div>
+      </div>
+
+   
+      <br>
+ 
+    
+
+    <br>
+    <div style="  " id="Opacity">
+      <h2 style="text-align: center; left: 10px;  font-size: 25px; color: white;">Game Icon Styles</h2>
+      <p style="text-align: center; color: white;">Opacity</p>
+      <input style="left: 50%; position: relative; transform:  translate(-50%, 0%);" type="range" id="opacitySlider" min="0" max="1" step="0.1" value="1" />
+
+      
     </div>
+    <h1 style="position: absolute; bottom: 0;"><a style=" text-decoration: none; color: white;" href="./hacks">School Hacks</a></h1>
+    <br>
+    </div>
+  </div>
+    
   </div>
   <div onclick="openFade('menuVip')" style="cursor: pointer; border-radius: 30px; width: 70px; right: 5px; height: 35px; position: fixed; top: 70px; z-index: 5; background-color: #1d1d1db9;">
     <h1 style="font-size: 25px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">VIP</h1>
@@ -3121,6 +3228,40 @@ z-index: 1;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 15px;
 }
+.header-Tsp {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background: rgba(172, 157, 157, 0);
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+.header-chip {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background: rgba(172, 157, 157, 0);
+  background-image: url("https://github.com/sz-games/sz-games.github.io/blob/main/chip.gif?raw=true");
+  background-position-y: 10px;
+  background-size: cover;
+  color: white;
+  width: auto;
+  font-size: 30px;
+
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
 </style>
 
     <div id="Header" class="header">
@@ -3160,13 +3301,45 @@ z-index: 1;
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+    function selectHeader2(item) {
+      document.body.style.backgroundAttachment = "fixed"
+      
+      if(item === 'waltah') {
+        document.body.style.backgroundImage = "url('https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true')"
+
+        setCookie("BG", 'waltah', 365);
+      } else if (item === 'normal') {
+        document.body.style.background = 'linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f)';
+        document.body.style.backgroundAttachment = "scroll"
+
+        setCookie("BG", 'normal', 365);
+      } else if(item==='east') {
+        document.body.style.backgroundImage = "url('https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true')"
+        setCookie("BG", 'east', 365);
+      } else if(item==='shock') {
+        document.body.style.backgroundImage = "url('https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true')"
+
+        setCookie("BG", 'shock', 365);
+      } else if(item==='AMeme') {
+        document.body.style.backgroundImage = "url('https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true')"
+        setCookie("BG", 'AMeme', 365);
+      }
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundSize = 'cover';
+    }
+
+//HEADER
+
     function selectHeader(item) {
       if(item === 'waltah') {
         document.getElementById('Header').classList.remove('header-east')
         document.getElementById('Header').classList.remove('header')
         document.getElementById('Header').classList.remove('header-shock')
         document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.remove('header-Tsp')
         document.getElementById('Header').classList.add('header-waltah')
+        document.getElementById('Header').classList.remove('header-chip')
+
         setCookie("Header", 'waltah', 365);
       } else if (item === 'normal') {
         document.getElementById('Header').classList.add('header')
@@ -3174,6 +3347,9 @@ z-index: 1;
         document.getElementById('Header').classList.remove('header-waltah')
         document.getElementById('Header').classList.remove('header-AMeme')
         document.getElementById('Header').classList.remove('header-shock')
+        document.getElementById('Header').classList.remove('header-Tsp')
+        document.getElementById('Header').classList.remove('header-chip')
+
         setCookie("Header", 'normal', 365);
       } else if(item==='east') {
         document.getElementById('Header').classList.remove('header')
@@ -3181,6 +3357,9 @@ z-index: 1;
         document.getElementById('Header').classList.remove('header-waltah')
         document.getElementById('Header').classList.remove('header-shock')
         document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.remove('header-Tsp')
+        document.getElementById('Header').classList.remove('header-chip')
+
         setCookie("Header", 'east', 365);
       } else if(item==='shock') {
         document.getElementById('Header').classList.remove('header')
@@ -3188,6 +3367,9 @@ z-index: 1;
         document.getElementById('Header').classList.remove('header-waltah')
         document.getElementById('Header').classList.add('header-shock')
         document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.remove('header-Tsp')
+        document.getElementById('Header').classList.remove('header-chip')
+
         setCookie("Header", 'shock', 365);
       } else if(item==='AMeme') {
         document.getElementById('Header').classList.remove('header')
@@ -3195,7 +3377,29 @@ z-index: 1;
         document.getElementById('Header').classList.remove('header-waltah')
         document.getElementById('Header').classList.remove('header-shock')
         document.getElementById('Header').classList.add('header-AMeme')
+        document.getElementById('Header').classList.remove('header-Tsp')
+        document.getElementById('Header').classList.remove('header-chip')
+
         setCookie("Header", 'AMeme', 365);
+      } else if(item==='Tsp') {
+        document.getElementById('Header').classList.remove('header')
+        document.getElementById('Header').classList.remove('header-east')
+        document.getElementById('Header').classList.remove('header-waltah')
+        document.getElementById('Header').classList.remove('header-shock')
+        document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.remove('header-chip')
+        document.getElementById('Header').classList.add('header-Tsp')
+        setCookie("Header", 'Tsp', 365);
+      } else if(item==='chip') {
+        document.getElementById('Header').classList.remove('header')
+        document.getElementById('Header').classList.remove('header-east')
+        document.getElementById('Header').classList.remove('header-waltah')
+        document.getElementById('Header').classList.remove('header-shock')
+        document.getElementById('Header').classList.remove('header-AMeme')
+        document.getElementById('Header').classList.remove('header-Tsp')
+        document.getElementById('Header').classList.add('header-chip')
+
+        setCookie("Header", 'chip', 365);
       }
     }
   
@@ -3212,13 +3416,60 @@ z-index: 1;
   }
 
   const Header = getCookie("Header");
-  
+  const bg = getCookie("BG");
   if (Header) {
     console.log("The value of the cookie is: " + Header);
     selectHeader(Header)
   } else {
     console.log("The cookie is not set or expired.");
   }
+
+  if (bg) {
+    console.log("The value of the cookie is: " + bg);
+    selectHeader2(bg)
+  } else {
+    console.log("The cookie is not set or expired.");
+  }
+
+
+  const opacitySlider = document.getElementById('opacitySlider');
+const targetElements = document.getElementsByClassName('show');
+var loadedStuffVIPO = false;
+
+
+function searchHandleLoad2() {
+  const hiddenDivs = document.querySelectorAll('.box');
+  const lazyImages = document.querySelectorAll('.ImageForGame');
+ 
+  lazyImages.forEach(image => {
+   
+      image.src = image.getAttribute('data-src');
+      image.onload = function() {
+        image.classList.add('showIMG');
+      
+    }
+  });
+  hiddenDivs.forEach(div => {
+   
+      div.classList.add('show');
+    
+  });
+
+
+}
+
+opacitySlider.addEventListener('input', function() {
+  console.log('Yo')
+  if(loadedStuffVIPO===false) {
+    searchHandleLoad2()
+    loadedStuffVIPO = true
+  }
+ 
+  for (let i = 0; i < targetElements.length; i++) {
+    targetElements[i].style.cssText += 'opacity: ' + opacitySlider.value + ' !important;';
+  }
+});
+
   </script>
 
 <script>
