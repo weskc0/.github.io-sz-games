@@ -3569,13 +3569,13 @@ console.log(curHr + '--' + today);
 }
 
 .box {
-  visibility: hidden;
+ 
   opacity: 0;
   transition: 0.5s;
 }
 
 .show {
-  visibility: visible !important;
+
   opacity: 1 !important;
 }
 
@@ -4366,7 +4366,7 @@ function isElementInViewport(element) {
   return (
 
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight + 100 || document.documentElement.clientHeight) &&
+    rect.bottom <= (window.innerHeight + 400 || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
@@ -4403,7 +4403,7 @@ function searchHandleLoad() {
       image.onload = function() {
         image.classList.add('showIMG');
       
-    }
+      }
   });
   hiddenDivs.forEach(div => {
    
