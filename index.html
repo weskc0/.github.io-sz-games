@@ -2923,10 +2923,14 @@ p {
  opacity: 0;
  
   height: 180px;
-  transition: 0.8s;
+  transition: 0.5s;
+  box-shadow: 5px 5px 5px 5px rgba(13, 13, 13, 0.725);
+
 }
 .ImageForGame:hover{
   transform: scale(1.1);
+  box-shadow: 2px 2px 2px 2px rgba(79, 79, 79, 0.725);
+
 }
 @keyframes scroll {
   from {top: -0%;}
@@ -3576,14 +3580,26 @@ console.log(curHr + '--' + today);
   height: 44px;
 }
 
+@keyframes show {
+  from {
+    transform: scale(1.3);
+    opacity: 0 !important;
+  }
+
+  to {
+    transform: scale(1.0);
+    opacity: 1 !important;
+  }
+}
+
 .box {
- 
+
   opacity: 0;
   transition: 0.5s;
 }
 
 .show {
-
+  animation: show 0.5s;
   opacity: 1 !important;
 }
 
@@ -4301,7 +4317,7 @@ console.log(curHr + '--' + today);
 </div> 
 
 <div class="box" id="Smash Karts" style="position: relative; float: left;">
-  <a href="https://sz-games.github.io/games/game.html?game=https://unblockeds-games.com/webgl/smash-karts/index.html">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/smashkarts/index.html">
     <img class="ImageForGame"  data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/smash-karts.jpg?raw=true" alt="game">
     <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;"></div>
   </a>
@@ -4348,6 +4364,114 @@ console.log(curHr + '--' + today);
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Cube-engine/play.html">
     <img class="ImageForGame"  data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/CubeEngine.png?raw=true" alt="game">
     <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Cube Engine</div>
+  </a>
+</div> 
+
+<div class="box" id="Super Mario 64" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mathadventure1.github.io/sm64/sm64/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/64.jpeg?raw=true" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Super Mario 64</div>
+  </a>
+</div> 
+
+
+<div class="box" id="Doodle Jump" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/gfile/doodle/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/EmulatorOS/raw/main/img/doodle.webp" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Doodle Jump</div>
+  </a>
+</div> 
+
+<div class="box" id="draw the hill" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/draw-the-hill/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/draw-the-hill/icons/icon-512.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Draw The Hill</div>
+  </a>
+</div> 
+
+<div class="box" id="Flappy Bird" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/83/flappy-bird/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/flappy-bird/assets/thumb.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">flappy-bird</div>
+  </a>
+</div> 
+
+<div class="box" id="Five Nights at Winston's" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/fnaw/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/fnaw/splash.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Five Nights at Winston's</div>
+  </a>
+</div> 
+
+<div class="box" id="Google Feud" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/83/google-feud/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/google-feud/splash.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Google Feud</div>
+  </a>
+</div> 
+
+<div class="box" id="Grey Box Testing" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/greybox/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/greybox/ico.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Grey Box Testing</div>
+  </a>
+</div> 
+
+<div class="box" id="Kitchen Gun" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/kitchen-gun-game/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/kitchen-gun-game/splash.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Kitchen Gun</div>
+  </a>
+</div> 
+
+<div class="box" id="Noob Steve Parkour" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/noob-steve-parkour/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/noob-steve-parkour/512x512.jpg" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Noob Steve Parkour</div>
+  </a>
+</div> 
+
+<div class="box" id="Popcat Classic" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/popcat-classic/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/popcat-classic/splash.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Popcat Classic</div>
+  </a>
+</div> 
+
+<div class="box" id="PolyBranch" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/polybranch/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/polybranch/img/pic1.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">PolyBranch</div>
+  </a>
+</div> 
+
+
+<div class="box" id="Push Your Luck" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/push-your-luck/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/push-your-luck/assets/img/push.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Push Your Luck</div>
+  </a>
+</div> 
+
+<div class="box" id="SoundBoard" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/83/soundboard/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/soundboard/img/mlg-favicon.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">SoundBoard</div>
+  </a>
+</div> 
+
+<div class="box" id="Papery Planes" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/papery-planes/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/papery-planes/splash.jpg" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Papery Planes</div>
+  </a>
+</div> 
+
+
+<div class="box" id="The Heist" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/theheist/index.html">
+    <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/theheist/theheist.jpg" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">The Heist</div>
   </a>
 </div> 
 
