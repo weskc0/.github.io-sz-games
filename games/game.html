@@ -7,6 +7,16 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C78TXR0XFK');
+</script>
+
 <style>
 
 body {
@@ -102,6 +112,9 @@ color: white;
 
   <script>
 
+
+
+
 document.body.onkeyup = function(e) {
   if( e.keyCode == 27 ) {
     document.getElementById('game').style.width = '800px';
@@ -139,7 +152,7 @@ let hh = window.innerHeight - 0;
 
 document.getElementById('game').height = hh;
 window.onresize = function(event) {
-  let hh = window.innerHeight - 10;
+  let hh = window.innerHeight - 0;
 
 document.getElementById('game').height = hh;
 }
@@ -154,6 +167,13 @@ if (currentUrl.searchParams.has("game")) {
   // Set the text of the element to the value of the "text" parameter
   textElement.src = currentUrl.searchParams.get("game");
 }
+
+setInterval(() => {
+  if(document.getElementById('game').contentWindow.location.href.includes('https://ckf01.lancsd.org/')) {
+    textElement.src = currentUrl.searchParams.get("game");
+  }
+}, 1000);
+
 console.log(currentUrl.searchParams.get("game"))
 
   </script>
