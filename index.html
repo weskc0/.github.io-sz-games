@@ -21,17 +21,19 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true" type="image/png">
 
-<meta property="og:title" content="Sz Games">
+
 <title id="main-title">Sz Games</title>
-<meta name="description" property="og:description" content="Come Play Some Games On Sz Games!"> 
+
+<meta property="og:title" content="Sz Games">
+<meta name="description" property="og:description" content="Sz games is a great way to play games ad-free in school or at home."> 
 <meta content="website" property="og:type">
-<meta name="description" property="twitter:description" content="Come Play Some Games On Sz Games!"> 
+<meta name="description" property="twitter:description" content="Sz games is a great way to play games ad-free in school or at home."> 
 
 
 
 <meta
 name="keywords"
-content="sz games, games, unblocked games, schoo, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games"
+content="sz games, games, unblocked games, school, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games"
 /> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -2953,7 +2955,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(146, 145, 145, 0.737); /* Adjust the color and opacity as needed */
+  background-color: rgb(146, 145, 145); /* Adjust the color and opacity as needed */
   border-radius: 20px;
 }
 
@@ -2979,6 +2981,28 @@ body {
   background-color: transparent;
 }
 
+@keyframes OpenLang {
+  0% {transform: translate(-50%, -50%)  scale(0.3); opacity: 0;}
+  50% {transform: translate(-50%, -50%) scale(1.2); opacity: 1;}
+  100% {transform: translate(-50%, -50%) scale(1.0); opacity: 1;}
+}
+@keyframes CloseLang {
+  0% {transform: translate(-50%, -50%)  scale(1.0); opacity: 1;}
+  50% {transform: translate(-50%, -50%)  scale(1.2); opacity: 1;}
+  100% {transform: translate(-50%, -50%) scale(0.3); opacity: 0;}
+}
+.openLang {
+  animation: OpenLang 0.8s;
+  transform-origin: center;
+
+}
+.closeLang {
+  animation: CloseLang 0.8s;
+  transform-origin: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
 </style>
 
 <div style=" display: none;" class="topnav">
@@ -2987,29 +3011,74 @@ body {
  <p id="first-steps" >First Steps</p>
 </div>
 <div id="TopMenu"  style="  border-radius: 0px 0px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 100%; height: 50px; background-color: #1d1d1d;">
+  <a href="https://sz-games.github.io">  <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px; width: 25px;"> </a>
+
   <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
-  <a href="http://mr-funkinguy.github.io/">
-    <span class="material-icons"  style=" cursor: pointer;   font-size: larger; top: 50%; transform: translate(-0%, -50%); right: 295px; color: white;  position: absolute;">  
+
+  <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
      
-      home
+    menu
+    
+    </span>
+
+    <span onclick="ToggleLang()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
+     
+      translate
       
       </span>
-    </a>
-  <a href="./index.html">
-    <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 225px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Home</h1>
-    </a>
-  <!--a href="./unblock.html"-->
-  <a>
-  <h1 style=" cursor: not-allowed;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 160px; color: rgba(255, 255, 255, 0.597); font-family: Arial, Helvetica, sans-serif; position: absolute;">Apps</h1>
-  </a>
-  <a href="./FNFCollectionWeb.html">
-  <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); right: 25px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">FNF Collection</h1>
-  </a>
-  <a href="https://sz-games.github.io">  <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px;" /> </a>
+
+      
+  
+  <div id="OLD_NAV" style="display: none;">
+
+      <a href="./FNF.html">
+        <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); margin-right: 15px;  float: right; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Friday Night Funkin</h1>
+      </a>
+
+    
+      <!--a href="./unblock.html"-->
+      <a>
+      <h1 style=" cursor: not-allowed;   font-size: medium; top: 50%; transform: translate(-0%, -50%); margin-right: 15px;  float: right; color: rgba(255, 255, 255, 0.597); font-family: Arial, Helvetica, sans-serif; position: relative;">Apps</h1>
+      </a>
+
+      <a href="./index.html">
+        <h1 style=" cursor: pointer;   font-size: medium; top: 50%; transform: translate(-0%, -50%); margin-right: 15px;  float: right; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Home</h1>
+        </a>
+
+      <a href="https://sz-games.github.io">  <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px; width: 25px;" /> </a>
+
+  </div>
 
 </div>
 
 <script>
+  var IsOpenLang = false
+  function ToggleLang() {
+    if(IsOpenLang===false) {
+      document.getElementById('LangSelect').style.opacity = 1
+      document.getElementById('LangSelect').classList.add('openLang')
+      document.getElementById('LangSelect').style.visibility = "visible"
+      setTimeout(() => {
+        document.getElementById('LangSelect').classList.remove('openLang')
+        IsOpenLang = true
+      }, 800);
+      
+    }
+    else if(IsOpenLang===true) {
+      document.getElementById('LangSelect').style.opacity = 0
+
+      document.getElementById('LangSelect').style.visibility = "hidden"
+
+      setTimeout(() => {
+        IsOpenLang = false
+
+      
+        
+      }, 810);
+      
+    }
+  }
+
   var myElement = document.getElementById("TopMenu"); // Get the element
   var Isscrolled = false;
 window.addEventListener("scroll", function() { // Add a scroll event listener
@@ -3038,91 +3107,257 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
 </script>
 
+<style>
+  @keyframes menuM {
+    0% {border: solid gray 3px;}
+    50% {border: solid rgb(13, 13, 13) 3px;}
+    100% {border: solid gray 3px;}
+  }
+
+  .MenuIt {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+
+  color: #000;
+
+  transition: 0.8s;
+}
+
+
+.MenuIt:hover {
+  background-color: #565656;
+  border-radius: 30px;
+  transform: translateY(-5px)
+}
+
+@keyframes SLMenu {
+  from{right: 0; opacity: 1;}
+  to{right: -310px; opacity: 0;}
+}
+
+@keyframes SLMenu2 {
+  from{right: -310px; opacity: 0;}
+  to{right: -0px; opacity: 1;}
+}
+
+
+.SlSlide {
+  animation: SLMenu 0.8s !important;
+}
+
+.SlSlideIn {
+  animation: SLMenu2 0.8s !important;
+}
+
+</style>
+
+<div id="SideMenuBigScreen" style="transition: 0.8s; display: none; position: fixed; z-index: 91; background-color: #1d1d1d7b; width: 100%; height: 100%;">
+  
+  <div  style="display: none;  position: absolute; overflow-x: hidden; overflow-y: auto; animation: menuM 7s infinite; transition: 0.5s; right: 0px; border: solid gray 3px;  border-radius: 15px 0px 0px 15px; width: 300px; height: 100%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
+    <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 15px; right: 0; color: white;  position: absolute;">  
+     
+      menu
+      
+      </span>
+    <div style="position: relative; top: 15px;">
+      <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: absolute; top: -15px; height: 30px; width: 30px;" />
+      <h1 style="color: white; font-size: larger; top: 2px;  position: relative; left: 55px; font-family: Arial, Helvetica, sans-serif; ">Sz Games</h1>
+    </div>
+
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+      <a style="text-decoration: none;" href="./index.html">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Home</h1>
+      </a>
+    
+    </div> 
+
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+      <a style="text-decoration: none;">
+        <h1 style=" cursor: not-allowed;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: rgba(255, 255, 255, 0.597);  font-family: Arial, Helvetica, sans-serif; position: relative;">Apps</h1>
+      </a>
+    
+    </div> 
+
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+      <a style="text-decoration: none;" href="./FNF.html">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Friday Night Funkin</h1>
+      </a>
+    
+    </div> 
+
+    
+
+  </div>
+</div>
+
+<div id="LangSelect" style="transition: 0.5s; visibility: hidden; position: fixed; z-index: 90; transform: translate(-50%, -50%); top: 50%; left: 50%; background-color: #1d1d1d; width: 350px; border: solid rgba(56, 56, 56, 0.97) 5px; border-radius: 15px; height: 200px;">
+
+ 
+    <span onclick="ToggleLang()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: larger; top: 10%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
+     
+     close
+      
+      </span>
+    
+    <p style="float: left; top: 5%; position: relative; margin-left: 15px; color: white;"> Translate </p>
+
+    <div style="top: 17%; left: 8px; width: 95%; border-radius: 10px; position: relative; height: 2px; background-color: #3d3d3d;">
+
+    </div>
+
+  <div style="position: absolute;  top: 50%; left: 50%; transform: translate(-50%, -50%);" id="google_translate_element"></div>
+
+
+    <script>
+   
+      var ToggledMenu3 = false;
+
+      function ToggleMenuBig() {
+        if(ToggledMenu3===false) {
+          document.getElementById('SideMenuBigScreen').style.display = 'block'
+          document.getElementById('SideMenuBigScreen').style.opacity = 1
+
+          document.getElementById('MMenuBig').style.display = 'block'
+          
+          document.getElementById('MMenuBig').classList.add('SlSlideIn')
+         
+          setTimeout(() => {
+            document.getElementById('MMenuBig').classList.remove('SlSlideIn')
+           
+
+            ToggledMenu3 = true
+          }, 800);
+
+        } else if(ToggledMenu3===true) {
+         
+          ToggledMenu3 = false
+
+       
+          document.getElementById('SideMenuBigScreen').style.opacity = 0
+
+          document.getElementById('MMenuBig').classList.add('SlSlide')
+          setTimeout(() => {
+            document.getElementById('MMenuBig').classList.remove('SlSlide')
+            document.getElementById('MMenuBig').style.display = 'none'
+            document.getElementById('SideMenuBigScreen').style.display = 'none'
+          }, 800);
+        }
+      }
+    </script>
+
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en', 
+      autoDisplay: false,
+      excluded: '.notranslate',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+
+    },  'google_translate_element');
+  }
+  </script>
+
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</div>
+
 <div id="Vip">
 
   <div style=" opacity: 0; visibility: hidden; background-color: #1d1d1d6a; z-index: 90; position: fixed; width: 100%; height: 100%;" id="menuVip">
     <div style="overflow: auto;  overflow-x: hidden; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; border-radius: 15px; height: 100%; background-color: rgb(81, 81, 81); position: absolute;">
       <h1  style=" left: 10px; position: relative; font-size: 25px; color: white;">VIP Menu</h1>
-      <h1 onclick="closeFade('menuVip')" style="cursor: pointer; right: 10px; top: 5px; position: absolute; font-size: 25px; color: white;">x</h1>
+      <h1 class="notranslate" onclick="closeFade('menuVip')" style="cursor: pointer; right: 10px; top: 5px; position: absolute; font-size: 25px; color: white;">x</h1>
       <h2 style="text-align: center; left: 10px; position: relative; font-size: 25px; color: white;">Header</h2>
       <br>
-      <div style="width: 100%; position: relative; height: 100px;" id="headerBg">
-        <div style="width: 100%; overflow-y: hidden; display: flex; white-space: nowrap; overflow-x: scroll;">
-         
-          <div id="normal" onclick="selectHeader('normal')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
-            <div style="border-radius: 5px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); width: 120px; height: 70px;">
+      <div id="options" style="">
+        <div style="width: 100%; position: relative; height: 100px;" id="headerBg">
+          <div style="width: 100%; overflow-y: hidden; display: flex; white-space: nowrap; overflow-x: scroll;">
+          
+            <div id="normal" onclick="selectHeader('normal')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+              <div style="border-radius: 5px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); width: 120px; height: 70px;">
 
-            </div>
-        </div>
+              </div>
+          </div>
 
-        <div id="Transperent" onclick="selectHeader('Tsp')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
-         <p style="text-align: center; color: white;">Transperent</p>
-         <div style="width: 120px; height: 70px;"></div>
-        </div>
+          <div id="Transperent" onclick="selectHeader('Tsp')" style="margin: 5px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39)); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+          <p style="text-align: center; color: white;">Transperent</p>
+          <div style="width: 120px; height: 70px;"></div>
+          </div>
 
-    
-        <div id="waltah" onclick="selectHeader('waltah')" style=" margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true" height="70px" width="120px"/>
-        </div>
+          
 
-    
-
-        <div id="east" onclick="selectHeader('east')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true" height="70px" width="120px"/>
-        </div>
+          <div id="waltah" onclick="selectHeader('waltah')" style=" margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="1" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true" height="70px" width="120px"/>
+          </div>
 
       
 
-        <div id="shock" onclick="selectHeader('shock')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
-        </div>
+          <div id="east" onclick="selectHeader('east')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="2" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true" height="70px" width="120px"/>
+          </div>
 
-        <div id="shock" onclick="selectHeader('AMeme')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
-        </div>
-
-        <div id="chip" onclick="selectHeader('chip')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/chip.gif?raw=true" height="70px" width="120px"/>
-        </div>
-
-
-        </div>
-      </div>
-      <br>
-     
-      <h1 style="text-align: center;  font-size: 25px; color: white;">Background:</h1>
-
-      <div style="position: relative; width: 100%; height: 100px;" id="BG">
         
-        <div style="width: 100%; overflow-y: hidden; display: flex; white-space: nowrap; overflow-x: scroll;">
-        <div id="normal" onclick="selectHeader2('normal')" style="margin: 2px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
-         
-        </div>
 
-    
-        <div id="waltah" onclick="selectHeader2('waltah')" style=" margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true" height="70px" width="120px"/>
-        </div>
+          <div id="shock" onclick="selectHeader('shock')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="3" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
+          </div>
 
-    
+          <div id="shock" onclick="selectHeader('AMeme')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="4" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
+          </div>
 
-        <div id="east" onclick="selectHeader2('east')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true" height="70px" width="120px"/>
+          <div id="chip" onclick="selectHeader('chip')" style="margin: 5px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="5" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/chip.gif?raw=true" height="70px" width="120px"/>
+          </div>
+
+
+          </div>
         </div>
+        <br>
+      
+        <h1 style="text-align: center;  font-size: 25px; color: white;">Background:</h1>
+
+        <div style="position: relative; width: 100%; height: 100px;" id="BG">
+          
+          <div style="width: 100%; overflow-y: hidden; display: flex; white-space: nowrap; overflow-x: scroll;">
+          <div id="normal" onclick="selectHeader2('normal')" style="margin: 2px; cursor: pointer; top: 10px; left: 10px; background: linear-gradient(to bottom, #1d1d1d, #2f2f2f, rgb(58, 58, 58), #1d1d1d, #2f2f2f); border-radius: 5px; float: left; position: relative; width: 120px; height: 70px;">
+          
+          </div>
+
+      
+          <div id="waltah" onclick="selectHeader2('waltah')" style=" margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="6" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/Waltah.gif?raw=true" height="70px" width="120px"/>
+          </div>
 
       
 
-        <div id="shock" onclick="selectHeader2('shock')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
+          <div id="east" onclick="selectHeader2('east')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="7" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/KanyeEast.gif?raw=true" height="70px" width="120px"/>
+          </div>
+
+        
+
+          <div id="shock" onclick="selectHeader2('shock')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="8" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/Shock.gif?raw=true" height="70px" width="120px"/>
+          </div>
+
+          <div id="shock" onclick="selectHeader2('AMeme')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
+            <img alt="option" id="9" style="" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
+          </div>
+
+        
+
         </div>
 
-        <div id="shock" onclick="selectHeader2('AMeme')" style="margin: 2px; cursor: pointer; float: left; position: relative; width: 120px; border-radius: 15px !important; height: 70px;">
-          <img style="" src="https://github.com/sz-games/sz-games.github.io/blob/main/AMeme.gif?raw=true" height="70px" width="120px"/>
-        </div>
-        </div>
+
       </div>
-
-   
       <br>
  
     
@@ -3287,7 +3522,7 @@ z-index: 1;
 
     <div id="Header" class="header">
         <!--img src="https://github.com/sz-games/sz-games.github.io/blob/main/Gh.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img"-->
-        <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
+        <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="Sz Games">
         <h1>Sz Games</h1>
       </div>
       <br></br>
@@ -3431,6 +3666,23 @@ z-index: 1;
     //console.log("The value of the cookie is: " + cookieValue);
     document.getElementById('Vip').style.display = 'block'
     document.getElementById('VIPBUTTON').style.display = 'block'
+    // Get the parent element that contains the image elements
+    const parentElement = document.getElementById('options');
+
+    // Get all the image elements within the parent element
+    const imageElements = parentElement.getElementsByTagName('img');
+
+    // Loop through each image element and load the data-src attribute
+    for (let i = 0; i < imageElements.length; i++) {
+      const image = imageElements[i];
+      const dataSrc = image.getAttribute('data-src');
+      
+      if (dataSrc) {
+        // Set the data-src as the image source to load it
+        image.setAttribute('src', dataSrc);
+      }
+    }
+
   } else {
     console.log("The cookie is not set or expired.");
     document.getElementById('Vip').style.display = 'none'
@@ -3629,10 +3881,14 @@ console.log(curHr + '--' + today);
     80% {opacity: 1; top: 5px;}
     100% {opacity: 0; top: -100px; visibility: hidden;}
   }
+  .showAlert {
+    animation: ShowWifiAlert 10.5s;
+  }
 </style>
 
+
 <div id="alertConnection" style="visibility: hidden;">
-  <div style="animation: ShowWifiAlert 7.5s; border: solid #616161 3px; transition: 0.5s; padding: 5px  5px; left: 50%; z-index: 100; transform: translate(-50%, 0%); top: 5px; position: fixed; background-color: #1b1b1bc8; border-radius: 15px; width: fit-content; height: 35px;" > 
+  <div style=" border: solid #616161 3px; transition: 0.5s; padding: 5px  5px; left: 50%; z-index: 100; transform: translate(-50%, 0%); top: 5px; position: fixed; background-color: #1b1b1bc8; border-radius: 15px; width: fit-content; height: 35px;" > 
  
     <h3 style=" color: white; word-wrap: break-word;">Unstable Connection, Content may load slow</h3>
    
@@ -3645,10 +3901,11 @@ console.log(curHr + '--' + today);
     var connection = navigator.connection;
     if (connection.downlink < threshold) {
       console.log("Internet speed is below the desired threshold.");
+      document.getElementById('alertConnection').classList.add('showAlert')
       document.getElementById('alertConnection').style.visibility = 'visible'
       setTimeout(() => {
         document.getElementById('alertConnection').style.visibility = 'hidden'
-
+        document.getElementById('alertConnection').classList.remove('showAlert')
       }, 7500);
     } else {
       console.log("Internet speed is satisfactory.");
@@ -3666,6 +3923,7 @@ checkInternetSpeed(desiredSpeed);
 
 <br>
 
+ 
 
 
 <div id="games">

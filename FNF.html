@@ -3,7 +3,28 @@
 <head>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games - FNF</title>
+    <title>Sz Games - Friday Night Funkin</title>
+
+<meta property="og:title" content="Sz Games - Friday Night Funkin">
+<meta name="description" property="og:description" content="Come play some friday night funkin on sz games!"> 
+<meta content="website" property="og:type">
+<meta name="description" property="twitter:description" content="Come play some friday night funkin on sz games!"> 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C78TXR0XFK');
+</script>
+
+<meta
+name="keywords"
+content="sz games, games, friday night funkin, fnf, unblocked games, school, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games"
+/> 
+
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -102,11 +123,14 @@ color: white;
 </style>
 
 <style>
-  @keyframes ShowWifiAlert {
+  @keyframes ShowAlert {
     0% {opacity: 0; top: -100px;}
     20% {opacity: 1; top: 5px;}
     80% {opacity: 1; top: 5px;}
     100% {opacity: 0; top: -100px;}
+  }
+  .showAlert {
+    animation: ShowAlert 10.5s;
   }
 </style>
 <style>
@@ -294,6 +318,7 @@ color: white;
   </body>
 
   <script>
+
 var toggleMenu = false;
 
 function toggle() {
@@ -384,7 +409,7 @@ function Change(Mod) {
   }
   if(Mod==='date') {
     stuffForMod = 'https://mr-funkinguy.github.io/dw/' 
-    alertt('This Mod Only Supports W, A, S, D Keys')
+    
   }
 
   if(Mod==='golf') {
@@ -434,13 +459,13 @@ function Change(Mod) {
 
 function alertt(msg) {
   document.getElementById('AlertText').innerHTML = msg
-    document.getElementById('AlertU').style.animation = "ShowWifiAlert 10.5s"
+    document.getElementById('AlertU').classList.add('showAlert')
   
 
     document.getElementById('Alertt').style.visibility = 'visible'
     setTimeout(() => {
         document.getElementById('Alertt').style.visibility = 'hidden'
-
+        document.getElementById('AlertU').classList.remove('showAlert')
     }, 9900);
 }
 
