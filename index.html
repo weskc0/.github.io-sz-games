@@ -565,6 +565,24 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
     <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
 
+      <a style="text-decoration: none;" href="./Privacy-Policy.html">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Privacy Policy</h1>
+      </a>
+
+    </div> 
+
+
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+      <a style="text-decoration: none;" href="https://forms.gle/6R1E28R33RvK7y486">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Game Request</h1>
+      </a>
+    
+    </div> 
+
+
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
     
         <h1 style=" cursor: not-allowed;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: rgba(255, 255, 255, 0.597);  font-family: Arial, Helvetica, sans-serif; position: relative;">Apps</h1>
       
@@ -604,6 +622,31 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
     <script>
    
+      // Make a request to the geolocation API to retrieve the user's country
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          var userCountryCode = data.country;
+
+          // Check if the user's country is different from the desired country
+          if (userCountryCode !== 'US') {
+            // Display the specific element for users in a different country
+            console.log('isNot')
+            IsOpenLang=true
+            var element = document.getElementById('LangSelect');
+            element.style.visibility = 'visible'
+          } else {
+            console.log('us')
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+
+
+
+
+
       var ToggledMenu3 = false;
 
       function ToggleMenuBig() {
@@ -1371,45 +1414,30 @@ console.log(curHr + '--' + today);
 
 
 
-  <div class="box" id="" style="position: relative; float: left; ">
-    <a href="https://sz-games.github.io/Privacy-Policy.html">
-        <!--p class="game" style="left: 105px;" >Infinite Tower</p>
-        <div class="fade" ></div-->
-     <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/storage3/blob/main/NOMG.png?raw=true" alt="If Images Are Not Loading Please Look at your browser's Settings And Allow The Images To Load, or Check Your Internet Connection | ">
-     <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Privacy Policy</div>
-    </a>
-   
-    
-  </div>
-
-<div id="" class="box" style="float: left; ">
-  <a href="https://forms.gle/6R1E28R33RvK7y486">
-      <!--p class="game" style="left: 105px;" >Infinite Tower</p>
-      <div class="fade" ></div-->
-   <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/reqqq.png?raw=true" alt="If Images Are Not Loading Please Look at your browser's Settings And Allow The Images To Load, or Check Your Internet Connection | ">
-  </a>
  
-  
-</div>
 
 
+<div class="box" id="Infinite Tower" style="position: relative; float: left; ">
 
-<div class="box" id="Infinite Tower" style="float: left; ">
+
     <a href="https://sz-games.github.io/home/webb/">
         <!--p class="game" style="left: 105px;" >Infinite Tower</p>
         <div class="fade" ></div-->
-     <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/Mr-funkinguy/files-and-files/blob/main/tower.png?raw=true" alt="game">
+
+      <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/helix.webp?raw=true" alt="game">
+      <div class="textover" style="  border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgba(255, 255, 255, 0.827) !important;">Infinite Tower</div>
     </a>
    
     
 </div>
 
- <div class="box" id="Tunnel Rush" style=" float: left;">
+ <div class="box" id="Tunnel Rush" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/tunnel-rush/">
     
       <!--p class="game" >Tunnel Rush</p>
       <div class="fade" ></div-->
-   <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/Mr-funkinguy/files-and-files/blob/main/tunnel.png?raw=true" alt="game">
+   <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/tunnel.webp?raw=true" alt="game">
+   <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgba(255, 255, 255, 0.827) !important;">Tunnel Rush</div>
   </a>
  
   
@@ -1812,7 +1840,7 @@ console.log(curHr + '--' + today);
   <a href="https://sz-games.github.io/games/agario">
     <img class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/agario.jpeg?raw=true" alt="game">
 
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Agar.io</div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Agar.io</div>
   </a>
 
 </div>
@@ -1822,10 +1850,15 @@ console.log(curHr + '--' + today);
     position: absolute; 
     top: 15%; 
     left: 50%; 
+    width: 80% !important;
     transform: translate(-50%, -50%);
-     z-index: 1; color: rgb(0, 0, 0);
+     z-index: 1;
+     border-radius: 15px;
+     background-color: #191919db;
+      color: rgb(255, 255, 255) !important;
       font-weight: bold;  
       text-align: center;
+      padding: 0px 5px;
   }
 </style>
 
@@ -1833,7 +1866,7 @@ console.log(curHr + '--' + today);
   <a href="https://sz-games.github.io/games/game.html?game=https://www-ig-opensocial.googleusercontent.com/gadgets/ifr?url=https://sites.google.com/site/basketballlegendunblocked/basketball_stars.xml">
   
     <img class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/bscLeg.avif?raw=true" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Basketball Legends</div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  ">Basketball Legends</div>
       
   </a>
 
@@ -1906,21 +1939,21 @@ console.log(curHr + '--' + today);
 <div class="box" id="Super Hot" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/superhot/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/super-hot.jpg" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;">Super Hot</div>
+    <div class="textover" style="color: rgb(255, 255, 255) !important;">Super Hot</div>
   </a>
 </div> 
 
 <div class="box" id="Fnaf 1" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-1/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf1.png" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+    <div class="textover" >FNAF</div>
   </a>
 </div> 
 
 <div class="box"  id="Fnaf 2" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-2/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf2.png" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+    <div class="textover" >FNAF</div>
   </a>
 </div> 
 
@@ -1928,7 +1961,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Fnaf 3" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-3/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf3.png" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+    <div class="textover" >FNAF 3</div>
   </a>
 </div> 
 
@@ -1936,7 +1969,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Fnaf 4" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fnaf/fnaf-4/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fnaf4.png" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+    <div class="textover" >FNAF 3</div>
   </a>
 </div> 
 
@@ -1944,7 +1977,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Fruit Ninja" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/fruitNinja/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/fruitNinja.png" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;">Fruit Ninja</div>
+    <div class="textover" style="color: rgb(255, 255, 255) !important;">Fruit Ninja</div>
   </a>
 </div> 
 
@@ -1952,14 +1985,14 @@ console.log(curHr + '--' + today);
 <div  class="box" id="Temple Run 2" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/temple-run-2/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/templeRun.jpg" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 10% !important; color: rgba(255, 255, 255, 0.827) !important;">Temple Run 2</div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  color: rgba(255, 255, 255, 0.827) !important;">Temple Run 2</div>
   </a>
 </div> 
 
 <div class="box" id="Uno" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/Abc6782/games/uno/index.html">
     <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/Mr-funkinguy/Abc6782/main/cardImages/uno.jpg" alt="game">
-    <div class="textover" style="color: rgb(0, 0, 0) !important;"></div>
+    <div class="textover" >UNO</div>
   </a>
 </div> 
 
@@ -1994,7 +2027,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Mario Vs Luigi" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/gfile/mariovsluigi/index.html">
     <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/EmulatorOS/raw/main/img/mariovsluigi.webp" alt="game">
-    <div class="textover" style="color: rgba(255, 255, 255, 0.827) !important;"></div>
+    <div class="textover" style="color: rgba(255, 255, 255, 0.827) !important;">Super Mario Bros. Multiplayer</div>
   </a>
 </div> 
 
@@ -2010,7 +2043,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Chess" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/games/chess/index.html">
     <img class="ImageForGame"  data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/chess.png?raw=true" alt="game">
-    <div class="textover" style="color: rgba(0, 0, 0, 0.827) !important;"></div>
+    <div class="textover" style="color: rgba(255, 255, 255, 0.827) !important;">Chess</div>
   </a>
 </div> 
 
@@ -2019,14 +2052,14 @@ console.log(curHr + '--' + today);
 <div class="box" id="george and the printer" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/gfile/georgeandtheprinter/index.html">
     <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/EmulatorOS/raw/main/img/georgeandtheprinter.webp" alt="game">
-    <div class="textover" style="color: rgba(0, 0, 0, 0.827) !important;"></div>
+    <div class="textover" style="color: rgba(255, 255, 255, 0.827) !important;">George And the Printer</div>
   </a>
 </div> 
 
 <div class="box" id="Bloons Tower Defense 2" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/GameStuff/gfiles/btd2/index.html">
     <img class="ImageForGame"  data-src="https://mr-funkinguy.github.io/GameStuff/img/btd2.jpg" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 2</div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 2</div>
   </a>
 </div> 
 
@@ -2055,14 +2088,14 @@ console.log(curHr + '--' + today);
 <div class="box" id="Street Fighter" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/games3/fighter2">
     <img class="ImageForGame"  data-src="https://sz-games.github.io/MoreGames/img/street2.webp" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;"></div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important;">Street Fighter 2</div>
   </a>
 </div> 
 
 <div class="box" id="Smash Karts" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/smashkarts/index.html">
     <img class="ImageForGame"  data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/smash-karts.jpg?raw=true" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;"></div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Smash Karts</div>
   </a>
 </div> 
 
@@ -2091,7 +2124,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Rooftop Snipers" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/games/rooftop-snipers/">
     <img class="ImageForGame"  data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/rooftop-snipers.png?raw=true" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;"></div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Rooftop Snipers</div>
   </a>
 </div> 
 
@@ -2142,7 +2175,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Five Nights at Winston's" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/fnaw/index.html">
     <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/fnaw/splash.png" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Five Nights at Winston's</div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  color: rgba(255, 255, 255, 0.827) !important;">Five Nights at Winston's</div>
   </a>
 </div> 
 
@@ -2170,7 +2203,7 @@ console.log(curHr + '--' + today);
 <div class="box" id="Noob Steve Parkour" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/75/projects/noob-steve-parkour/index.html">
     <img class="ImageForGame"  data-src="https://github.com/Mr-funkinguy/75/raw/main/projects/noob-steve-parkour/512x512.jpg" alt="game">
-    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Noob Steve Parkour</div>
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Noob Steve Parkour</div>
   </a>
 </div> 
 
