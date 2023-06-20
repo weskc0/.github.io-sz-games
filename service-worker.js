@@ -7,10 +7,10 @@ workbox.routing.registerRoute(
     new workbox.strategies.NetworkFirst()
 );
 
-const cacheName = 'Sz-Games';
+const cacheName = 'SzGames';
 // List the files to precache
 const precacheResources = ['/',
- '/index.html',
+ '/Offline.html',
 ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
@@ -19,9 +19,22 @@ self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
 
 });
+const cacheNameToDelete = 'Sz-Games';
 
 self.addEventListener('activate', (event) => {
   console.log('Service worker activate event!');
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(cacheName => {
+          // Delete the specific cache
+          return cacheName === cacheNameToDelete;
+        }).map(cacheName => {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
 
 
