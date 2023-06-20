@@ -399,7 +399,7 @@ body {
  <p id="first-steps" >First Steps</p>
 </div>
 <div id="TopMenu"  style="  border-radius: 0px 0px 15px 15px; z-index: 7; position: fixed; overflow-y: hidden; width: 100%; height: 50px; background-color: #1d1d1d;">
-  <a href="https://sz-games.github.io">  <img fetchpriority="low" src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px; width: 25px;"> </a>
+  <a href="https://sz-games.github.io" aria-label="Home">  <img alt="Icon" fetchpriority="low" src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="z-index: 7; height: 25px; width: 25px;"> </a>
 
   <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
 
@@ -565,9 +565,9 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
     <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
 
-      <a style="text-decoration: none;">
+    
         <h1 style=" cursor: not-allowed;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: rgba(255, 255, 255, 0.597);  font-family: Arial, Helvetica, sans-serif; position: relative;">Apps</h1>
-      </a>
+      
     
     </div> 
 
@@ -1267,7 +1267,7 @@ console.log(curHr + '--' + today);
   z-index: 10;
 }
 
-.inputbox span {
+.inputbox label {
   position: absolute;
   left: 0;
   padding: 20px 10px 10px;
@@ -1278,8 +1278,8 @@ console.log(curHr + '--' + today);
   pointer-events: none;
 }
 
-.inputbox input:valid ~span,
-.inputbox input:focus ~span {
+.inputbox input:valid ~label,
+.inputbox input:focus ~label {
   color: #ffffff;
   transform: translateX(-10px) translateY(-34px);
   font-size: 0,75em;
@@ -1335,8 +1335,10 @@ console.log(curHr + '--' + today);
 
 
 <div class="inputbox">
-  <input onkeyup="Search()"  id="SearchBox" required="required" type="text">
-  <span>Search</span>
+
+    <input onkeyup="Search()"  id="SearchBox" required="required" type="text">
+  
+  <label style="color: white;">Search</label>
   <i></i>
 </div>
 
