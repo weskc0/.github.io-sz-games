@@ -16,6 +16,11 @@
 
   gtag('config', 'G-C78TXR0XFK');
 </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true" type="image/png">
@@ -24,9 +29,9 @@
 <title id="main-title">Sz Games</title>
 
 <meta property="og:title" content="Sz Games">
-<meta name="description" property="og:description" content="Sz games is a great way to play games ad-free in school or at home."> 
+<meta name="description" property="og:description" content="Play games ad-free in school or at home! "> 
 <meta content="website" property="og:type">
-<meta name="description" property="twitter:description" content="Sz games is a great way to play games ad-free in school or at home."> 
+<meta name="description" property="twitter:description" content="Play games ad-free in school or at home!"> 
 
 
 
@@ -1425,7 +1430,7 @@ console.log(curHr + '--' + today);
         <div class="fade" ></div-->
 
       <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/helix.webp?raw=true" alt="game">
-      <div class="textover" style="  border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgba(255, 255, 255, 0.827) !important;">Infinite Tower</div>
+      <div class="textover" style="  border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgb(255, 255, 255) !important;">Infinite Tower</div>
     </a>
    
     
@@ -1437,19 +1442,20 @@ console.log(curHr + '--' + today);
       <!--p class="game" >Tunnel Rush</p>
       <div class="fade" ></div-->
    <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/tunnel.webp?raw=true" alt="game">
-   <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgba(255, 255, 255, 0.827) !important;">Tunnel Rush</div>
+   <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgb(255, 255, 255) !important;">Tunnel Rush</div>
   </a>
  
   
 </div>
 
 
-<div class="box" id="Space War" style=" float: left;">
+<div class="box" id="Space War" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/spac/">
     
       <!--p class="game" >Space Wars </p>
       <div class="fade" ></div-->
-   <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/Mr-funkinguy/files-and-files/blob/main/space.png?raw=true" alt="game">
+   <img fetchpriority="low" class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/space.webp" alt="game">
+   <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgb(255, 255, 255) !important;">Space War</div>
   </a>
  
   
@@ -1457,21 +1463,23 @@ console.log(curHr + '--' + today);
     
  
 
-    <div class="box" id="Slope" style=" float: left;">
+    <div class="box" id="Slope" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/slope/">
 
-    <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/slope.png?raw=true" alt="game">
-    
+    <img fetchpriority="low" class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/slope.webp" alt="game">
+    <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgb(255, 255, 255) !important;">Slope</div>
+
   </a>
  
   
 </div>
 
 
-<div class="box" id="Asteroids Belt" style=" float: left;">
+<div class="box" id="Asteroids Belt" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/spacesh/">
-    <img fetchpriority="low" class="ImageForGame" data-src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/spacesh.png?raw=true" alt="game">
+    <img fetchpriority="low" class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/Astr.webp" alt="game">
     
+    <div class="textover" style=" border-radius: 15px; background-color: #191919db;   top: 15% !important; color: rgb(255, 255, 255) !important;">Asteroids Belt</div>
 
       
   </a>
@@ -2591,9 +2599,7 @@ function loadGame() {
 </body>
 
 <script>
-  if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
-    }
+  
   /*
     firststeps.style.color = "#595959";
     setInterval(displayHelloo, 1000);
