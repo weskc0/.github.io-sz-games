@@ -2289,30 +2289,50 @@ function isElementInViewport(element) {
   );
 }
 
+var canLoadImages = false
+
 // Function to handle scroll event
 function handleScroll() {
   const hiddenDivs = document.querySelectorAll('.box');
   const lazyImages = document.querySelectorAll('.ImageForGame');
   
-  lazyImages.forEach(image => {
-    if (isElementInViewport(image) && !image.src) {
-      image.src = image.getAttribute('data-src');
-      image.onload = function() {
+  if(canLoadImages = true) {
+    
+    lazyImages.forEach(image => {
+      if (isElementInViewport(image) && !image.src) {
+        image.src = image.getAttribute('data-src');
+        image.onload = function() {
+          
+          image.classList.add('showIMG');
         
-        image.classList.add('showIMG');
-      
-        console.log('Loaded Game')
-      };
-    }
-  });
-  
-  hiddenDivs.forEach(div => {
-    if (isElementInViewport(div)) {
-      div.classList.add('show');
-      console.log('Loaded Game')
-    }
-  });
+         // console.log('Loaded Game')
+        };
+      }
+    });
+    
+    hiddenDivs.forEach(div => {
+      if (isElementInViewport(div)) {
+        div.classList.add('show');
+        //console.log('Loaded ' + div.id)
+      }
+    });
+  }
 }
+
+var PageHasLoaded = false
+
+window.addEventListener("load", function(event) {
+    if(PageHasLoaded = false) {
+      canLoadImages = true
+      console.log('E-2')
+
+      handleScroll()
+    }
+    console.log('E-1')
+
+});
+
+
 
 var preloaded = false
 function searchHandleLoad() {
