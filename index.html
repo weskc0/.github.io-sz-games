@@ -2293,26 +2293,41 @@ function isElementInViewport(element) {
 function handleScroll() {
   const hiddenDivs = document.querySelectorAll('.box');
   const lazyImages = document.querySelectorAll('.ImageForGame');
-  
-  lazyImages.forEach(image => {
-    if (isElementInViewport(image) && !image.src) {
-      image.src = image.getAttribute('data-src');
-      image.onload = function() {
-        
-        image.classList.add('showIMG');
-      
-        console.log('Loaded Game')
-      };
-    }
+
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.src) {
+        entry.target.src = entry.target.getAttribute('data-src');
+        entry.target.onload = function() {
+          entry.target.classList.add('showIMG');
+          console.log('Loaded Game');
+        };
+        observer.unobserve(entry.target);
+      }
+    });
   });
-  
-  hiddenDivs.forEach(div => {
-    if (isElementInViewport(div)) {
-      div.classList.add('show');
-      console.log('Loaded Game')
-    }
+
+  const divObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        console.log('Loaded Game');
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  lazyImages.forEach((image) => {
+    imageObserver.observe(image);
+  });
+
+  hiddenDivs.forEach((div) => {
+    divObserver.observe(div);
   });
 }
+
+
+
 var preloaded = false
 function searchHandleLoad() {
   const hiddenDivs = document.querySelectorAll('.box');
