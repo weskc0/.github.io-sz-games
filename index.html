@@ -627,26 +627,35 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
     <script>
    
-      // Make a request to the geolocation API to retrieve the user's country
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          var userCountryCode = data.country;
+   fetch('https://ipapi.co/json/')
+  .then(response => {
+    if (response.status === 429) {
+      // Request returned with code 429 (Too Many Requests)
+      console.log('Too Many Requests');
+      // Handle the error or implement retry logic here
+      return;
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data) {
+      var userCountryCode = data.country;
 
-          // Check if the user's country is different from the desired country
-          if (userCountryCode !== 'US') {
-            // Display the specific element for users in a different country
-            console.log('isNot')
-            IsOpenLang=true
-            var element = document.getElementById('LangSelect');
-            element.style.visibility = 'visible'
-          } else {
-            console.log('us')
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+      // Check if the user's country is different from the desired country
+      if (userCountryCode !== 'US') {
+        // Display the specific element for users in a different country
+        console.log('isNot');
+        IsOpenLang = true;
+        var element = document.getElementById('LangSelect');
+        element.style.visibility = 'visible';
+      } else {
+        console.log('us');
+      }
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 
 
