@@ -9,7 +9,13 @@
 <meta name="description" property="og:description" content="Come play some friday night funkin on sz games!"> 
 <meta content="website" property="og:type">
 <meta name="description" property="twitter:description" content="Come play some friday night funkin on sz games!"> 
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
 
+<link rel="manifest" href="manifest.json">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
 <script>
