@@ -16,7 +16,13 @@
 
   gtag('config', 'G-C78TXR0XFK');
 </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script>
 
+<link rel="manifest" href="manifest.json">
 <style>
 body {
   margin: 0;
