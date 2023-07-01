@@ -3,7 +3,7 @@
 <head>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games</title>
+    <title>Sz Games - Game</title>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +23,7 @@ body {
   margin: 0;
  overflow: hidden;
  font-family: Arial, Helvetica, sans-serif;
+ background-color: rgb(117, 117, 117);
 }
 
 .btn-group button {
@@ -114,10 +115,13 @@ color: white;
 
 
 
+var isFUll = false
 
 document.body.onkeyup = function(e) {
   if( e.keyCode == 27 ) {
-    document.getElementById('game').style.width = '800px';
+    if(isFUll) {
+    //document.getElementById('game').style.width = '800px';
+    }
   }
 }
 
@@ -127,7 +131,7 @@ function requestFullScreen(element) {
     
     if (requestMethod) { // Native full screen.
         requestMethod.call(element);
-        let hh = window.innerHeight - 10;
+        let hh = window.innerHeight;
 
 document.getElementById('game').height = hh;
     } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
@@ -141,18 +145,18 @@ var canvas = document.getElementById('game');
 
 function makeFullScreen() {
 
-
+    isFUll = true
     requestFullScreen(canvas);
 }
 
 
 
-let hh = window.innerHeight - 0;
+let hh = window.innerHeight;
 
 
 document.getElementById('game').height = hh;
 window.onresize = function(event) {
-  let hh = window.innerHeight - 0;
+  let hh = window.innerHeight;
 
 document.getElementById('game').height = hh;
 }
@@ -168,11 +172,6 @@ if (currentUrl.searchParams.has("game")) {
   textElement.src = currentUrl.searchParams.get("game");
 }
 
-setInterval(() => {
-  if(document.getElementById('game').contentWindow.location.href.includes('https://ckf01.lancsd.org/')) {
-    textElement.src = currentUrl.searchParams.get("game");
-  }
-}, 1000);
 
 console.log(currentUrl.searchParams.get("game"))
 
