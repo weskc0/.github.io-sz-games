@@ -2220,6 +2220,13 @@ console.log(curHr + '--' + today);
   </a>
 </div> 
 
+<div class="box" id="Incredibox" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/incredibox-v9/">
+    <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/incred.jpeg" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 13% !important; color: rgba(255, 255, 255, 0.827) !important;">Incredibox</div>
+  </a>
+</div> 
+
 <section class="sticky">
   <!--div class="bubbles">
       <div class="bubble"></div>
@@ -2338,32 +2345,30 @@ handleScroll();
  
 
   function Search() {
-    filter = input.value.toUpperCase();
-     input.addEventListener("input", function() {
-      if (input.value.length > 0) {
-        for (i = 0; i < element.length; i++) {
-          var id = element[i].getAttribute("id");
-          if (id && id.toUpperCase().indexOf(filter) > -1) {
-            element[i].style.display = "";
-       
-            searchHandleLoad()
-
-            
-          } else {
+  filter = input.value.toUpperCase();
+  input.addEventListener("input", function() {
+    if (input.value.length > 0) {
+      for (i = 0; i < element.length; i++) {
+        var id = element[i].getAttribute("id");
+        if (id && id.toUpperCase().indexOf(filter) > -1) {
+          element[i].style.display = "";
+          searchHandleLoad();
+        } else {
+          // Check if the element should be excluded from hiding
+          var shouldExclude = element[i].classList.contains("textover");
+          if (!shouldExclude) {
             element[i].style.display = "none";
           }
         }
-      } else {
-        for (var i = 0; i < element.length; i++) {
-          
-          element[i].style.display = "block";
-          
-        }
-                
       }
-    });
-
+    } else {
+      for (var i = 0; i < element.length; i++) {
+        element[i].style.display = "block";
+      }
+    }
+  });
 }
+
 var usingLoad = false
 
 function loadGame() {
