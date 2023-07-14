@@ -7,7 +7,21 @@
      <!--link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
 
      <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
+     
+     <!--ONESIGNAL PUSH-->
+     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+     <script>
+       window.OneSignal = window.OneSignal || [];
+       OneSignal.push(function() {
+         OneSignal.init({
+           appId: "08b63425-6f02-4ecb-ad79-8bb871e63518",
+           safari_web_id: "web.onesignal.auto.54d60a3d-c0d7-4ae1-b490-c29a9cfa7b70",
+           notifyButton: {
+             enable: true,
+           },
+         });
+       });
+     </script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
