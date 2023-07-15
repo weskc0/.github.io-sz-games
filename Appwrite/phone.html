@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<script src="https://cdn.jsdelivr.net/npm/appwrite@10.1.0"></script>
+<script src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/AppWriteConfig.js"></script>
+
+
+</head>
+
+<body>
+    <script type="module">
+        import { Client, Account, ID } from "appwrite";
+
+        const client = new Client()
+        .setEndpoint('https://cloud.appwrite.io/v1')
+        .setProject('64b1f8fe77b86539c325');
+
+        const account = new Account(client);
+
+        const promise = account.createPhoneSession(
+            ID.unique(),
+            '+16614355997'
+        );
+
+        promise.then(function (response) {
+            console.log(response);
+        }, function (error) {
+            console.log(error);
+        });
+    </script>
+</body>
+</html>
