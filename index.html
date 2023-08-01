@@ -1737,7 +1737,7 @@ console.log(curHr + '--' + today);
 
 
 <div class="box"  id="papas burgeria" style="position: relative; float: left;">
-  <a href="https://sz-games.github.io/games/game.html?game=https://mazahacka2017.github.io/papas-burgeria/">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/FlashGames/papasburgeria.swf">
 
     <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/papasbur.webp" alt="game">
  <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Papa's Burgeria</div>
@@ -2389,6 +2389,31 @@ console.log(curHr + '--' + today);
 
 
   <script>
+
+// Get the container element that holds all the images
+const imageContainer = document.getElementById("games");
+
+// Get all the image elements inside the container
+const images = imageContainer.getElementsByTagName("img");
+
+// Loop through all the images and attach the error event handler
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener("error", function() {
+    // Code to handle the image loading error for each image
+    console.log(`Image ${i+1} failed to load!`);
+
+    // Try to reload the image by setting the src attribute again
+    //images[i].src = images[i].src; // This attempts to reload the image
+
+    // You can also add a delay before retrying to avoid excessive reload attempts
+     setTimeout(function() {
+      images[i].src = images[i].src;
+     }, 3000); // Retry after 3 seconds (adjust the delay as needed)
+  });
+  console.log('code: 9')
+}
+
+
   const container = document.getElementById('games');
 const boxes = document.querySelectorAll('.box');
 
