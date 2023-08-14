@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+  <meta charset="UTF-8">
 
 
      <!--link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
@@ -48,14 +49,16 @@
 
 <meta name="title" content="Sz Games">
 
-<title id="main-title">Sz Games</title>
+<title>Sz Games</title>
+<meta property="og:image" content="https://raw.githubusercontent.com/sz-games/home/main/G.png" />
 
 <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sz-games/home/main/G.png">
+<meta name="description" content="Play more then 100 games ad-free in school or at home!"> 
 
 <meta property="og:title" content="Sz Games">
-<meta name="description" property="og:description" content="Play games ad-free in school or at home! "> 
+<meta name="description" property="og:description" content="Play more then 100 games ad-free in school or at home!"> 
 <meta content="website" property="og:type">
-<meta name="description" property="twitter:description" content="Play games ad-free in school or at home!"> 
+<meta name="description" property="twitter:description" content="Play more then 100 games ad-free in school or at home!"> 
 
 <meta name="language" content="English">
 
@@ -427,8 +430,123 @@ p {
   opacity: 0;
   visibility: hidden;
 }
+.loader {
+  display: block;
+  --height-of-loader: 4px;
+  --loader-color: #7c7c7c;
+  width: 400px;
+  height: var(--height-of-loader);
+  border-radius: 30px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
 
+.loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1.5s ease-in-out infinite;
+  ;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
 </style>
+
+
+
+<div id="LOADINGSCREEN11" style="display: none; opacity: 1; transition: 0.8s; background-color: #525252; z-index: 100; position: fixed; width: 100%; height: 100%;">
+  <div id="FRONT" style="z-index: 103;">
+    <div style="position: absolute; top: 25%; left: 5px; width: 100%; height: 200px;">
+  <img src="https://raw.githubusercontent.com/sz-games/home/main/G.png" style="z-index: 107; position:relative; width: 100px; height: 100px; left: 30px; " alt="Sz Games">
+  <h1 style="z-index: 107; z-index: 103; bottom: 50%; transform: translate(-0%, 50%); font-size: 40px; left: 150px; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Sz Games</h1>
+  <p  style="font-family: Arial, Helvetica, sans-serif; position: absolute; z-index: 103; color: rgb(164, 164, 164); left: 405px; top: 100px; " id="loading-percentage">0%</p>
+
+<div style="z-index: 103; left: 50px; top: 125px; position: absolute;" class="loader"></div>
+</div>
+</div>
+  <div id="BACKLOAD" style="z-index: 101;">
+    <div style="position: absolute; transform: scale(1.0) translate(-0%, -50%); right: -10px; top: 50%;" id="SCREENSHOT">
+      <img style="border-radius: 15px;" src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/SZ-BG.png"/>
+      <div style="width: 100%; height: 85px; z-index: 102; position: absolute; right: 0; bottom: 0%;  background-image: linear-gradient(to top, #525252, #525252, rgba(255, 255, 0, 0));">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var LoadPWA = false
+  let LOADCHECK = sessionStorage.getItem("HasLoadedPWA1");
+  if ('matchMedia' in window && (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true)) {
+    if(LOADCHECK === 'true') {
+        console.log('E-11.0')
+    } else {
+      console.log('E-33')
+    document.getElementById('LOADINGSCREEN11').style.display = "block"
+
+      //LOADING PERCENTAGE
+
+      window.addEventListener('load', function() {
+        // All resources have finished loading
+        document.getElementById('loading-percentage').textContent = '100%';
+      });
+
+      window.addEventListener('DOMContentLoaded', function() {
+        // DOM content has finished loading
+        const totalResources = document.getElementsByTagName('*').length;
+        let loadedResources = 0;
+
+        const loadingPercentage = document.getElementById('loading-percentage');
+
+        function updateLoadingPercentage() {
+          loadedResources++;
+          const percentage = ((loadedResources / totalResources) * 100).toFixed(2);
+          loadingPercentage.textContent = percentage + '%';
+        }
+
+        const elements = document.getElementsByTagName('*');
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].addEventListener('load', updateLoadingPercentage);
+          elements[i].addEventListener('error', updateLoadingPercentage); // Handle resource load errors
+        }
+      });
+      //END
+
+    if(LoadPWA === false) {
+      window.addEventListener('load', function() {
+        sessionStorage.setItem("HasLoadedPWA1", 'true');
+
+        LoadPWA = true
+
+        document.getElementById('LOADINGSCREEN11').style.opacity = 0
+        setTimeout(() => {
+          document.getElementById('LOADINGSCREEN11').style.display = 'none'
+        }, 800);
+      });
+    }
+  }
+  } else {
+    console.log('External Code Did Not Load In')
+  }
+
+</script>
+
+<!--LOADER -->
 
 <div style=" display: none;" class="topnav">
  <p>Medals:</p>
@@ -463,7 +581,12 @@ p {
         }
 
       </style>
+          <a href="./Chat.html">
 
+            <span  class="material-icons notranslate"  style=" cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
+                chat
+            </span>
+          </a>
       <a href="https://discord.gg/DzKRSntb87">
         <i class='fab fa-discord Discord'  style='cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative; '></i>
       </a>
@@ -619,6 +742,11 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
       menu
       
       </span>
+      <span onclick="toggleSetings1()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 45px; right: 0; color: white;  position: absolute;">  
+     
+        settings
+        
+        </span>
       <div style="border-radius: 15px; background-color: #1d1d1d; height: 50px;">
     <div style="position: relative; top: 15px; ">
       <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: absolute; top: -15px; height: 30px; width: 30px;" />
@@ -681,7 +809,7 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
     
     </div> 
 
-    
+
     <div style="bottom: 0; position: absolute; left: 50%; transform: translate(-50%, -0%);">
       <a href="https://www.buymeacoffee.com/SzGames" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px; "  ></a>  
     </div>
@@ -689,6 +817,360 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
   </div>
 </div>
 
+<!--Menus-->
+
+<!--Settings-->
+
+<style>
+  .notification2LOCK {
+  visibility: hidden;
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  width: 40%;
+  border: solid 3px grey;
+  height:  50px;
+  transform: translateX(-50%);
+  background-color: #212121;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 15px;
+  z-index: 50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.5s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --locked-color: #9d9d9d;
+  --unlocked-color: #ff4e4e;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+/* :::::::::::::: Required CSS */
+/* Locked */
+.lock {
+  width: 24px;
+  height: 21px;
+  border: 3px solid var(--locked-color);
+  border-radius: 5px;
+  top: 70%; left: 2%;
+  transform: translate(-0%, -70%);
+  position: absolute;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lock:after {
+  content: "";
+  display: block;
+  background: var(--locked-color);
+  width: 3px;
+  height: 7px;
+  position: absolute;
+  
+  top: 50%;
+  left: 50%;
+  margin: -3.5px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lock:before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  bottom: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  border: 3px solid var(--locked-color);
+  border-top-right-radius: 50%;
+  
+  border-top-left-radius: 50%;
+  border-bottom: 0;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+/* Locked Hover */
+.lock:hover:before {
+  height: 12px;
+}
+/* Unlocked */
+.unlocked {
+  transform: rotate(10deg);
+  top: 70%; left: 2%;
+  transform: translate(-0%, -70%) scale(0.7);
+}
+.unlocked:before {
+  bottom: 130%;
+  left: 31%;
+  margin-left: -11.5px;
+  transform: rotate(-30deg);
+}
+.unlocked,
+.unlocked:before {
+  border-color: var(--unlocked-color);
+}
+.unlocked:after {
+  background: var(--unlocked-color);
+}
+/* Unlocked Hover */
+.unlocked:hover {
+  
+}
+.unlocked:hover:before {
+  height: 10px;
+  left: 40%;
+  bottom: 124%;
+  transform: rotate(-0deg);
+}
+</style>
+<div class="notification2LOCK" id="notificationLOCK">
+  <div class="container">
+    <span id="lock" class="lock unlocked"></span>
+  </div>
+
+  <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Page Close Preventer: ON</p>
+</div>
+
+<script>
+  function NoteLOCK() {
+  const notificationBB = document.getElementById("notificationLOCK");
+
+
+notificationBB.style.visibility = "visible";
+
+setTimeout(() => {
+  
+
+  notificationBB.style.bottom = "20px"; // Slide up
+    setTimeout(() => {
+        document.getElementById("lock").classList.remove("unlocked")
+    }, 900);
+  setTimeout(() => {
+    notificationBB.style.bottom = "-100px"; // Slide back down after 3 seconds
+    setTimeout(() => {
+      notificationBB.style.visibility = "hidden"; // Hide after sliding down
+    }, 300);
+  }, 4000); // Wait for 3 seconds
+}, 800);
+  }
+</script>
+
+<div id="SettingsOut" style="visibility: hidden; transition: 0.5s; user-select: none; z-index: 92; width: 100%; height: 100%; position: fixed;">
+  <style>
+    .OptionSet {
+      width: 95%; 
+      left: 50%;
+      cursor: pointer;
+       transform: translate(-50%, -0%) scale(1.0);
+        position: relative; 
+        height: 50px fit-content; 
+        padding: 15px 0px; 
+        background-color: #1d1d1da5;
+         border-radius: 15px;
+      transition: 0.5s;
+    }
+
+    .OptionSet:hover {
+      transform: translate(-50%, -0%) scale(1.03);
+    }
+  </style>
+
+  <div  style="transition: 0.5s; top: 50%; overflow-y: scroll; overflow-x: hidden; border-radius: 15px; left: 50%; transform: translate(-50%, -50%); padding: 5px 5px; z-index: 50; position: fixed; width: 50%; height: 45%; background-color: #333; border: solid 5px gray;" id="SettingsV2">
+    <div style="width: 100%; height: 50px; position: relative; background-color: #1d1d1dc9; left: 50%; transform: translate(-50%, -0%); border-radius: 15px;">
+      <h4 style="transform: translate(-0%, -50%); color: white; font-size: larger; left: 15px; top: 50%; position: absolute;">Settings</h4>
+      <h4 onclick="toggleSetings1()" style="cursor: pointer; transform: translate(-0%, -50%); color: white; font-size: larger; right: 15px; top: 50%; position: absolute;">Close</h4>
+
+    </div>
+    <br>
+    <br>
+
+    <div style="" onclick="toggleOptionSet('PageClose')" class="OptionSet">
+      <p style="color: white; word-wrap: break-word; width: 55%;  top: 50%; left: 15px; position: relative; " >Prevent Page Close</p>
+      <p id="Op1-Stat" style="transition: 0.5s; word-wrap: break-word; color: white; top: 50%; right: 15px; position: absolute; transform: translate(-0%, -50%);" >Off</p>
+
+    </div>
+    <br>
+    <div style="" class="OptionSet">
+      <p style="word-wrap: break-word; width: 55%; color: white; top: 50%; left: 15px; position: relative; " >Hide Page (Will Disguise All Pages As Google) </p>
+      <p id="Op2-Stat" style="transition: 0.5s; word-wrap: break-word; color: white; top: 50%; right: 15px; position: absolute; transform: translate(-0%, -50%);" >(Coming Soon)</p>
+
+    </div>
+
+   
+
+    <!--PageScript1-->
+    <script id="CHECK">
+          function getCookie2(name) {
+        const cookieName = name + "=";
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1);
+            }
+            if (cookie.indexOf(cookieName) === 0) {
+                return cookie.substring(cookieName.length, cookie.length);
+            }
+        }
+        return '';
+    }
+ 
+    
+    let Setting14bu = getCookie2("PagePrevent");
+
+    function checkPageClose(event) {
+      
+        
+            event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+      
+       
+     
+    }
+    function checkPageClose2() {
+        if(Setting14bu==="true") {
+        
+            window.onbeforeunload = function(event) {
+                // return a string to prevent the page from closing
+                event.preventDefault();
+                return "Prevent Page Close Is Active, You Can Click Off Of This";
+            };
+            window.addEventListener("beforeunload", checkPageClose);
+
+        } 
+        if(Setting14bu==="false") {
+        
+        }
+    }
+    console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
+    checkPageClose2()
+
+    </script>
+    <!--PageScript1-->
+
+
+    <script>
+
+      function getCookie(name) {
+          const cookieName = name + "=";
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+              let cookie = cookies[i];
+              while (cookie.charAt(0) === ' ') {
+                  cookie = cookie.substring(1);
+              }
+              if (cookie.indexOf(cookieName) === 0) {
+                  return cookie.substring(cookieName.length, cookie.length);
+              }
+          }
+          return '';
+      }
+
+      // Usage
+   
+
+
+      function setCookie(name, value, years) {
+          const expirationDate = new Date();
+          expirationDate.setFullYear(expirationDate.getFullYear() + years);
+          const expires = "expires=" + expirationDate.toUTCString();
+          document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
+
+
+
+      var option1bx = document.getElementById('Op1-Stat')
+      var option2bx = document.getElementById('Op2-Stat')
+      let Setting14b = getCookie("PagePrevent");
+
+      function toggleOptionSet(name) {
+
+        if(name==="PageClose") {
+          if(Setting14b==='false' || Setting14b==="") {
+            Setting14b = getCookie("PagePrevent")
+            setCookie("PagePrevent", 'true', 10); // Set the cookie to expire in 10 years
+
+            //console.log('PagePrevent True')
+
+            //const cookieValue45 = getCookie("PagePrevent");
+            // console.log(cookieValue45); // Print the cookie value to the console
+          }
+          if(Setting14b==='true') {
+            Setting14b = getCookie("PagePrevent")
+
+            setCookie("PagePrevent", 'false', 10); // Set the cookie to expire in 10 years
+            //console.log('PagePrevent False')
+            //const cookieValue45 = getCookie("PagePrevent");
+
+            // console.log(Setting14b); // Print the cookie value to the console
+          }
+        }
+       // console.log('Code: 89B')
+       CheckSettngs1B()
+
+
+      }
+      function CheckSettngs1B() {
+        Setting14b = getCookie("PagePrevent")
+        if(Setting14b==="true") {
+          option1bx.style.opacity = 0
+          setTimeout(() => {
+            option1bx.innerHTML = "Active"
+            option1bx.style.opacity = 1
+          }, 500);
+          //NoteLOCK()
+          
+        } 
+        if(Setting14b==="false") {
+          option1bx.style.opacity = 0
+          setTimeout(() => {
+            option1bx.innerHTML = "Not Active"
+            option1bx.style.opacity = 1
+          }, 500);
+        }
+        console.log('CookiePAGE Value: ' + Setting14b)
+      }
+
+      CheckSettngs1B()
+
+   
+    </script>
+
+  </div>
+</div>
+<!--Note-->
+<script>
+  var isOpenSettings = false
+
+  function toggleSetings1() {
+    if(isOpenSettings===false) {
+      document.getElementById('SettingsOut').style.opacity = 0
+
+      document.getElementById('SettingsOut').style.visibility = 'visible'
+      document.getElementById('SettingsOut').style.opacity = 1
+      isOpenSettings = true
+
+    }
+    else if(isOpenSettings===true) {
+      document.getElementById('SettingsOut').style.opacity = 0
+      setTimeout(() => {
+        document.getElementById('SettingsOut').style.visibility = 'hidden'
+      }, 500);
+      isOpenSettings = false
+
+    }
+  }
+</script>
+
+<!--LANG-->
 <div id="LangSelect" style="transition: 0.5s; visibility: hidden; position: fixed; z-index: 90; transform: translate(-50%, -50%); top: 50%; left: 50%; background-color: #1d1d1d; width: 350px; border: solid rgba(56, 56, 56, 0.97) 5px; border-radius: 15px; height: 200px;">
 
  
@@ -2486,6 +2968,17 @@ console.log(curHr + '--' + today);
 
 </div>
 
+<div class="box"  id="Hacker Typer" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games/Hacker-Typer/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/Hacker.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Hacker Typer</div>
+      
+  </a>
+
+</div>
+
+
 
 
 
@@ -2526,7 +3019,8 @@ for (let i = 0; i < images.length; i++) {
       images[i].src = images[i].src;
      }, 3000); // Retry after 3 seconds (adjust the delay as needed)
   });
-  console.log('code: 9')
+  console.log('code: 9B')
+
 }
 
 

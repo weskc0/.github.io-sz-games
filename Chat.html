@@ -8,6 +8,54 @@
     navigator.serviceWorker.register('https://sz-games.github.io/service-worker.js');
   }
 </script>
+   <!--PageScript1-->
+   <script id="CHECK">
+    function getCookie2(name) {
+  const cookieName = name + "=";
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i];
+      while (cookie.charAt(0) === ' ') {
+          cookie = cookie.substring(1);
+      }
+      if (cookie.indexOf(cookieName) === 0) {
+          return cookie.substring(cookieName.length, cookie.length);
+      }
+  }
+  return '';
+}
+
+
+let Setting14bu = getCookie2("PagePrevent");
+
+function checkPageClose(event) {
+
+  
+      event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+
+ 
+
+}
+function checkPageClose2() {
+  if(Setting14bu==="true") {
+  
+      window.onbeforeunload = function(event) {
+          // return a string to prevent the page from closing
+          event.preventDefault();
+          return "Prevent Page Close Is Active, You Can Click Off Of This";
+      };
+      window.addEventListener("beforeunload", checkPageClose);
+
+  } 
+  if(Setting14bu==="false") {
+  
+  }
+}
+console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
+checkPageClose2()
+
+</script>
+<!--PageScript1-->
 
 <link rel="manifest" href="https://sz-games.github.io/manifest.json">
 <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sz-games/home/main/G.png">
@@ -422,8 +470,8 @@ p {
 
 <button style="display: none;" id="showNotification">Show Notification</button>
 <div id="notification" class="notification">
-  <div class="notification-content">
-    Cooldown
+  <div id="CONTENTNOTE1" class="notification-content">
+   <p2 id="CONTENTNOTE" style=" text-align: center;  font-size: 17px;">Cooldown</p2>
     <div class="timer-bar"></div>
   </div>
 </div>
@@ -433,9 +481,11 @@ p {
 const notification = document.getElementById('notification');
 const timerBar = notification.querySelector('.timer-bar');
 
-showNotificationButton.addEventListener('click', () => {
+
   notification.classList.add('active');
     // Reset the animation
+    document.getElementById('CONTENTNOTE').innerHTML = 'Loaded Chat | Using Firebase V9.0.2 | Server: US-central-1'
+
     timerBar.style.animation = 'none';
     timerBar.offsetHeight; // Trigger reflow to reset animation
     timerBar.style.animation = 'timer-animation 3s';
@@ -444,7 +494,7 @@ showNotificationButton.addEventListener('click', () => {
   setTimeout(() => {
     notification.classList.remove('active');
   }, 3000); // 5000 milliseconds (5 seconds)
-});
+
 
 </script>
   <form id="message-form" style="">
@@ -629,6 +679,7 @@ setInterval(() => {
     textBox.disabled = true;
     SendButton.disabled = true;
     notification.classList.add('active');
+      document.getElementById('CONTENTNOTE').innerHTML = 'Cooldown'
     // Reset the animation
     timerBar.style.animation = 'none';
     timerBar.offsetHeight; // Trigger reflow to reset animation
