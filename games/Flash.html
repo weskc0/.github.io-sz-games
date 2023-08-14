@@ -16,6 +16,56 @@
 
   gtag('config', 'G-C78TXR0XFK');
 </script>
+
+ <!--PageScript1-->
+ <script id="CHECK">
+  function getCookie2(name) {
+const cookieName = name + "=";
+const cookies = document.cookie.split(';');
+for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i];
+    while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+    }
+    if (cookie.indexOf(cookieName) === 0) {
+        return cookie.substring(cookieName.length, cookie.length);
+    }
+}
+return '';
+}
+
+
+let Setting14bu = getCookie2("PagePrevent");
+
+function checkPageClose(event) {
+
+
+    event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+
+
+
+}
+function checkPageClose2() {
+if(Setting14bu==="true") {
+
+    window.onbeforeunload = function(event) {
+        // return a string to prevent the page from closing
+        event.preventDefault();
+        return "Prevent Page Close Is Active, You Can Click Off Of This";
+    };
+    window.addEventListener("beforeunload", checkPageClose);
+
+} 
+if(Setting14bu==="false") {
+
+}
+}
+console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
+checkPageClose2()
+
+</script>
+<!--PageScript1-->
+
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('https://sz-games.github.io/service-worker.js');
@@ -102,7 +152,7 @@ color: white;
    
 </style>
 
-<div>
+<div id="hello">
    <embed class="em" id="game" width=" 100%;" height="550px" src="" ></embed>
 </div>
 
@@ -146,7 +196,7 @@ document.getElementById('game').height = hh;
         }
     }
 }
-var canvas = document.getElementById('game');
+var canvas = document.getElementById('hello');
 
 function makeFullScreen() {
 
@@ -154,7 +204,10 @@ function makeFullScreen() {
     requestFullScreen(canvas);
 }
 
+
 let hh = window.innerHeight;
+
+document.getElementById('game').height = hh;
 
 
 document.getElementById('game').height = hh;
