@@ -70,6 +70,23 @@ checkPageClose2()
   gtag('js', new Date());
 
   gtag('config', 'G-C78TXR0XFK');
+
+  // Replace 'GA_MEASUREMENT_ID' with your actual Google Analytics Measurement ID
+  gtag('config', 'G-C78TXR0XFK', {
+    'custom_map': {'dimension1': 'GameName'}
+  });
+
+// Extract the gameName from the query parameter
+const urlParams = new URLSearchParams(window.location.search);
+const gameName = urlParams.get('Name');
+
+// Set the custom dimension value
+gtag('set', {'dimension1': gameName});
+
+// Send a pageview hit with the modified page_location
+gtag('event', 'page_view', {'send_to': 'C78TXR0XFK', 'page_location': window.location.href});
+
+
 </script>
 
 <style>
