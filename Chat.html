@@ -507,9 +507,9 @@ const timerBar = notification.querySelector('.timer-bar');
    
     <div class="textInputWrapper" style="position: relative;">
       
-      <input id="message-input" placeholder="Type Here" type="text" class="textInput">
+      <input id="message-input" maxlength="200" placeholder="Type Here" type="text" class="textInput">
       <div style="width: 100%; height: 5px;"></div>
-      <input style="" value="Guest" id="name-box" placeholder="Name" type="text" class="textInput">
+      <input style="" value="Guest" id="name-box" maxlength="40" placeholder="Name" type="text" class="textInput">
       
   </div>
     </div>
@@ -723,7 +723,7 @@ setInterval(() => {
         alert('Forbidden')
       }
 
-    } else if(text.toLowerCase().includes('bitch') || text.toLowerCase().includes('n i g g e r') || text.toLowerCase().includes('b!tch') || text.toLowerCase().includes('nigger') || text.toLowerCase().includes('n!gger') || text.toLowerCase().includes('dick') || text.toLowerCase().includes('d!ck') || text.toLowerCase().includes('nigga')) {
+    } else if(text.toLowerCase().includes('b i t c h') || text.toLowerCase().includes('kys') || text.toLowerCase().includes('k y s') || text.toLowerCase().includes('bitch')  || text.toLowerCase().includes('monkey') || text.toLowerCase().includes('monke')  || text.toLowerCase().includes('nigg@') || text.toLowerCase().includes('n i g g e r') || text.toLowerCase().includes('b!tch') || text.toLowerCase().includes('nigger') || text.toLowerCase().includes('n!gger') || text.toLowerCase().includes('dick') || text.toLowerCase().includes('d!ck') || text.toLowerCase().includes('nigga')) {
         alert("Banned Word");
     } else {
       push(messagesRef, {hours, minutes, sec2, name, text});
