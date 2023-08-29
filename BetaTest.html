@@ -17,6 +17,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
 <title>Beta Test On Sz Games</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
 
@@ -401,7 +402,34 @@ input:focus {
  
   
 </div-->
+  <div id="GAMEC" style="z-index: 90; width: 100%; display: none; position: fixed;">
+  <iframe frameBorder="0" id="game" style="text-align: center; align-items: center; overflow: hidden;  width: 100%; " src="" allowfullscreen></iframe>
+  <div  style="z-index: 95; transition: 0.5s; cursor: pointer; position: fixed; border-radius: 15px; color: rgb(224, 224, 224); background-color: #1d1d1dc0; left: 0; bottom: 0px; margin: 10px;" id="Menu">
 
+  <span class="material-icons buttonForMenu" style="margin: 5px;" onclick="Close()" >
+    arrow_back
+    </span>
+
+    <span class="material-icons buttonForMenu" style="margin: 5px;" onclick="makeFullScreen()" >
+      fullscreen
+      </span>
+  </div>
+</div>
+  <script>
+    setInterval(() => {
+      
+
+    let hh = window.innerHeight;
+
+
+      document.getElementById('game').height = hh;
+      window.onresize = function(event) {
+        let hh = window.innerHeight;
+
+      document.getElementById('game').height = hh;
+      }
+    }, 500);
+  </script>
 
 <a href="./index.html">
 <button onclick=""  class="button"> Back Home</button>
@@ -415,12 +443,12 @@ input:focus {
 <input id="codeInput" placeholder="Code Here" style="padding: 10px; width: 85%; height: 45px; left: 50%; position: relative; transform: translate(-50%, -0%); border: none; border-radius: 15px; color: white; background-color: #1d1d1d;">
 <br>
 <br>
-<button style="padding: 10px; width: 55%; height: 40px; left: 50%; position: relative; transform: translate(-50%, -0%); cursor: pointer; font-size: 18px; border: none; border-radius: 15px; color: white; background-color: #1d1d1d;">Play</button>
+<button id="submitButton" style="padding: 10px; width: 55%; height: 40px; left: 50%; position: relative; transform: translate(-50%, -0%); cursor: pointer; font-size: 18px; border: none; border-radius: 15px; color: white; background-color: #1d1d1d;">Play</button>
 <script>
 
   const codeToUrlMap = {
-      "01b": "https://www.example.com/page1",
-      "op9": "https://www.example.com/page2",
+      "23B": "https://sz-games.github.io/Games4/cars-simulator",
+      "op9": "",
     };
 
     const codeInput = document.getElementById("codeInput");
@@ -430,12 +458,19 @@ input:focus {
       const enteredCode = codeInput.value.toUpperCase();
       if (enteredCode in codeToUrlMap) {
         const targetUrl = codeToUrlMap[enteredCode];
-        window.location.href = targetUrl; 
+        document.getElementById('GAMEC').style.display = 'block'
+
+        document.getElementById('game').src = targetUrl; 
       } else {
         alert("Invalid code");
       }
     });
 
+function Close() {
+  document.getElementById('GAMEC').style.display = 'none'
+  document.getElementById('game').src = ''; 
+
+}
 </script>
 </body>
 
