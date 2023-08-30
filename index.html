@@ -591,13 +591,12 @@ p {
 
   <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
 
-  <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
-     
-    menu
-    
-    </span>
 
-   
+    <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer;  font-size: 22px; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
+      
+      menu
+      
+      </span>
     <span onclick="ToggleLang()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
      
       translate
@@ -772,7 +771,7 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
   <div  style="display: none;  position: absolute;  animation: menuM 7s infinite; transition: 0.5s; right: 0px; border: solid gray 3px;  border-radius: 15px 0px 0px 15px; width: 300px; height: 100%; z-index: 95; background-color: #2f2f2f;" id="MMenuBig" >
     <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 15px; right: 0; color: white;  position: absolute;">  
      
-      menu
+      close
       
       </span>
       <span id="SETTINGSMENU1v" onclick="window.location = 'https://sz-games.github.io/settings.html' " class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 45px; right: 0; color: white;  position: absolute;">  
@@ -864,6 +863,14 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
       <a style="text-decoration: none;" href="./FNF.html">
         <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Friday Night Funkin</h1>
+      </a>
+    
+    </div> 
+
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+      <a style="text-decoration: none;" href="./reviews.html">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Reviews</h1>
       </a>
     
     </div> 
@@ -1237,6 +1244,49 @@ setTimeout(() => {
   }
 </script>
 
+<!--Start-->
+<div id="Tile1109" style="display: none; z-index: 80; width: 100%; height: 100%; position: fixed; background-color: #2f2f2f2c;">
+  
+   
+<div style="width: 50%; overflow-y: auto; overflow-x: none; height: 50%; border-radius: 15px; background-color: #1d1d1d; position: fixed; z-index: 81; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <span onclick="closeINTRO()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: 30px; top: 15px;  right: 15px; color: white;  position: absolute;">  
+     
+    close
+     
+     </span>
+  <h1 style="text-align: center; font-size: 28px; color: white; margin: 28px; word-wrap: break-word;">Welcome To Sz Games</h1>
+  <p style="text-align: center; font-size: 18px; color: white;">Check Out The Icons In The Top Right Corner</p>
+  <img style="left: 50%; position: relative; transform: translate(-50%, -0%);" src="https://github.com/sz-games/sz-games.github.io/blob/main/TOPNAVSHOW.png?raw=true"/>
+  <p style="text-align: center; font-size: 18px; color: white;">Here You Can Access The Chat And The Menu.</p>
+  <p style="text-align: center; font-size: 18px; color: white; margin: 15px;">The Menu Will Have More Pages That Arent Shown On The Home Page</p>
+  <p style="text-align: center; font-size: 18px; color: white;">You Will also Find The Settings Here Where You Can Enable Useful Features.</p>
+
+
+
+</div>
+</div>
+
+<script>
+  let TileSt = localStorage.getItem('1109ST')
+
+  function closeINTRO() {
+    localStorage.setItem('1109ST', 'true')
+
+    document.getElementById('Tile1109').style.display = 'none'
+    TileSt = localStorage.getItem('1109ST')
+  }
+  const isMobile2 = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (isMobile2) {
+  
+  if(TileSt) {
+    document.getElementById('Tile1109').style.display = 'none'
+  } else {
+    document.getElementById('Tile1109').style.display = 'block'
+  }
+}
+  
+</script>
 <!--LANG-->
 <div id="LangSelect" style="transition: 0.5s; visibility: hidden; position: fixed; z-index: 90; transform: translate(-50%, -50%); top: 50%; left: 50%; background-color: #1d1d1d; width: 350px; border: solid rgba(56, 56, 56, 0.97) 5px; border-radius: 15px; height: 200px;">
 
@@ -1599,7 +1649,7 @@ z-index: 1;
         <p style="font-size: 20px;">By Bobby</p>
       </div>
       <br></br>
-      <h1 id="ec" class="day" >----------</h1>
+      <!--h1 id="ec" class="day" >----------</h1-->
       <br></br>
 
 </div>
@@ -1829,13 +1879,13 @@ var curHr = today.getHours()
 
 if (curHr < 12) {
   console.log(curHr + '--' + today);
-document.getElementById('ec').innerHTML = 'Good Morning!'
+  //document.getElementById('ec').innerHTML = 'Good Morning!'
 } else if (curHr < 18) {
   console.log(curHr + '--' + today);
-  document.getElementById('ec').innerHTML = 'Good Afternoon!'
+  //document.getElementById('ec').innerHTML = 'Good Afternoon!'
 } else {
 console.log(curHr + '--' + today);
-  document.getElementById('ec').innerHTML = 'Good Evening!'
+ //document.getElementById('ec').innerHTML = 'Good Evening!'
 }
 
 </script>
@@ -1913,7 +1963,7 @@ console.log(curHr + '--' + today);
 
 @keyframes show {
   from {
-    transform: scale(1.3);
+    transform: scale(1.1);
     opacity: 0 !important;
   }
 
@@ -3481,6 +3531,86 @@ console.log(curHr + '--' + today);
     
     <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/091h.png" alt="game">
  <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Super Mario Bros</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="cars simulator" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games4/cars-simulator/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/098BU.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Cars Simulator</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="the worlds hardest game" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=/Games5/swf/TheWorldsHardestGame.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/5BL.webp" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">The Worlds Hardest Game</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="the worlds hardest game 2" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=/Games5/swf/Worlds Hardest Game 2.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/59BJ.jpeg" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">The Worlds Hardest Game 2</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="super smash flash" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=/Games5/swf/Super Smash Flash.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/YU90.webp" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Super Smash Flash</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="little alchemy 2" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://littlealchemy2.com/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/LACH2.jpeg" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Little Alchemy 2</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="angry birds" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games5/AngryBirds/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/0991L.webp" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Angry Birds: Slingshot Frenzy</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="hexgl" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games5/HexGL-master/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/HexGl.jpeg" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">HexGl</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="jetpack joyride" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games5/jetpack-joyride/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/jetpackjoyride.webp" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Jetpack Joyride</div>
       
   </a>
 
