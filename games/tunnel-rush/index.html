@@ -39,12 +39,14 @@
     </div>
 
 	  <script>
-		  setInterval(() => {
-			    var Ad = document.getElementById('adsCode')
-			    Ad.remove();
-		  }, 500);
-	</script>	 
-	  <script>
+  setInterval(() => {
+      var Ad = document.getElementById('adsCode')
+      Ad.remove();
+      var Ad2 = document.getElementById('preroll')
+      Ad2.remove();
+  }, 500);
+</script>	
+<script>
        if (typeof getAdinDomain !== 'undefined') {
            const bodyTag = document.getElementsByTagName('body')[0];
 
