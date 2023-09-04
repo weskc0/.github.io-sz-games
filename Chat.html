@@ -682,21 +682,13 @@ setInterval(() => {
       console.log('bypass')
     } else if(name.toLowerCase().includes('admin')){
       name = 'Fake ' + name;
+      TimeOut()
     }  else if(name.toLowerCase().includes('mod') || name.toLowerCase().includes('😎') || name.toLowerCase().includes('👑') || name.toLowerCase().includes('administrator') || name.toLowerCase().includes('moderator') || name.toLowerCase().includes('owner') || name.toLowerCase().includes('bobby') ){
       name = 'Fake ' + name;
+      TimeOut()
     } else {
-    isSendingMessage = true;
-    messageInput.disabled = true;
-    textBox.disabled = true;
-    SendButton.disabled = true;
-    notification.classList.add('active');
-      document.getElementById('CONTENTNOTE').innerHTML = 'Cooldown'
-    // Reset the animation
-    timerBar.style.animation = 'none';
-    timerBar.offsetHeight; // Trigger reflow to reset animation
-    timerBar.style.animation = 'timer-animation 3s';
 
-
+      TimeOut()
  
    // var timevar = 3;
     //var cooldownn = setInterval(() => {
@@ -707,18 +699,7 @@ setInterval(() => {
  
    // }, 1000);
   }
-    setTimeout(() => {
-    isSendingMessage = false;
-    messageInput.disabled = false;
-    textBox.disabled = false;
-    SendButton.disabled = false;
-    //timevar = 5;
-   // cooltxt.innerHTML = '';
-    //clearInterval(cooldownn);
-    }, 3000);
-    setTimeout(() => {
-    notification.classList.remove('active');
-  }, 3000); // 5000 milliseconds (5 seconds)
+   
     if(text.includes('sendAlert')) {
       if(name===("👑 | Bobby 😎")){
         push(messagesRef, {hours, minutes, sec2, name, text});
@@ -735,7 +716,31 @@ setInterval(() => {
     });
   
     
+    function TimeOut() {
+      isSendingMessage = true;
+      messageInput.disabled = true;
+      textBox.disabled = true;
+      SendButton.disabled = true;
+      notification.classList.add('active');
+        document.getElementById('CONTENTNOTE').innerHTML = 'Cooldown'
+      // Reset the animation
+      timerBar.style.animation = 'none';
+      timerBar.offsetHeight; // Trigger reflow to reset animation
+      timerBar.style.animation = 'timer-animation 3s';
 
+        setTimeout(() => {
+          isSendingMessage = false;
+          messageInput.disabled = false;
+          textBox.disabled = false;
+          SendButton.disabled = false;
+          //timevar = 5;
+        // cooltxt.innerHTML = '';
+          //clearInterval(cooldownn);
+          }, 3000);
+          setTimeout(() => {
+          notification.classList.remove('active');
+         }, 3000); // 5000 milliseconds (5 seconds)
+      }
 
   </script>
 
