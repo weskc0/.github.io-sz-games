@@ -680,6 +680,10 @@ setInterval(() => {
       SendButton.disabled = false;
       name = "👑 | Bobby 😎"
       console.log('bypass')
+    } else if(name===("023")){
+      TimeOut1();
+      name = "Evan 😎"
+      console.log('bypass2')
     } else if(name.toLowerCase().includes('admin')){
       name = 'Fake ' + name;
       TimeOut()
@@ -742,6 +746,31 @@ setInterval(() => {
          }, 3000); // 5000 milliseconds (5 seconds)
       }
 
+      function TimeOut1() {
+      isSendingMessage = true;
+      messageInput.disabled = true;
+      textBox.disabled = true;
+      SendButton.disabled = true;
+      notification.classList.add('active');
+        document.getElementById('CONTENTNOTE').innerHTML = 'Cooldown'
+      // Reset the animation
+      timerBar.style.animation = 'none';
+      timerBar.offsetHeight; // Trigger reflow to reset animation
+      timerBar.style.animation = 'timer-animation 1s';
+
+        setTimeout(() => {
+          isSendingMessage = false;
+          messageInput.disabled = false;
+          textBox.disabled = false;
+          SendButton.disabled = false;
+          //timevar = 5;
+        // cooltxt.innerHTML = '';
+          //clearInterval(cooldownn);
+          }, 3000);
+          setTimeout(() => {
+          notification.classList.remove('active');
+         }, 1000); // 5000 milliseconds (5 seconds)
+      }
   </script>
 
 </body>
