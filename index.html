@@ -2,10 +2,48 @@
 <html lang="en">
 <head>
 
+  <!--ADCODE-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
   crossorigin="anonymous"></script>
+  <style>
+    @keyframes ADCLOSE {
+      from{position: fixed; display: inline-block; bottom: 5px; background-color: gray; height: 70px  !important;  border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80}
+      to {position: fixed;  bottom: -30px; background-color: gray; height: 70px  !important; border-radius: 0px; width: 60%; opacity: 0; left: 50%; transform: translate(-50%); display: block; z-index: 80}
+    }
+  </style>
+  <ins class="adsbygoogle"
+  id="ad-container"
+  style="position: fixed; transition: 0.8s; display: inline-block; bottom: 5px; background-color: gray; height: 70px  !important; border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80"
+  data-ad-client="ca-pub-1654900800235927"
+  data-ad-slot="6959226874"
 
-  
+     >  <span onclick="adclose()"  class="material-icons notranslate"  style="background-color: #1d1d1dcf; padding: 2px; border-radius: 15px; z-index: 30; cursor: pointer;  font-size: 20px; float: right; right: 5px; top: 5px;  color: white;  position: absolute;">  
+      close
+  </span>
+  <script>
+    function adclose() {
+        document.getElementById('ad-container').style.animation = 'ADCLOSE 0.8s'
+        setTimeout(() => {
+          document.getElementById('ad-container').style.display = 'none'
+        }, 800);
+
+    }
+    const isMobile0 = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile0) {
+        document.getElementById('ad-container').style.display = 'none'
+    } else {
+      document.getElementById('ad-container').style.display = 'block'
+    }
+
+  </script>
+</ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -32,12 +70,33 @@
        OneSignal.push(function() {
          OneSignal.init({
            appId: "08b63425-6f02-4ecb-ad79-8bb871e63518",
+           autoResubscribe: true, // This ensures the prompt shows again if dismissed
+
            safari_web_id: "web.onesignal.auto.54d60a3d-c0d7-4ae1-b490-c29a9cfa7b70",
            notifyButton: {
-             enable: true,
+             enable: false,
            },
+           promptOptions: {
+              customlink: {
+                enabled: true, /* Required to use the Custom Link */
+                style: "button", /* Has value of 'button' or 'link' */
+                size: "medium", /* One of 'small', 'medium', or 'large' */
+                color: {
+                  button: '#2e2e2e', /* Color of the button background if style = "button" */
+                  text: 'white', /* Color of the prompt's text */
+                },
+                text: {
+                  subscribe: "Subscribe to push notifications", /* Prompt's text when not subscribed */
+                  unsubscribe: "Unsubscribe from push notifications", /* Prompt's text when subscribed */
+                  explanation: "Get updates about new games and known issues.", /* Optional text appearing before the prompt button */
+                },
+                unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
+              }
+            }
          });
        });
+            
+            
      </script>
 
 <!-- Google tag (gtag.js) -->
@@ -781,6 +840,16 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
         settings
         
         </span>
+        <span id="NOTIF" onclick="toggleSetings1()" class="material-icons notranslate"  style=" cursor: pointer; z-index: 96; font-size: x-large; top: 15px; margin-right: 75px; right: 0; color: white;  position: absolute;">  
+     
+          notifications
+          
+          </span>
+
+          <script>
+
+            
+          </script>
 
         <script>
           const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -1057,184 +1126,15 @@ setTimeout(() => {
 </script>
 
 <div id="SettingsOut" style="visibility: hidden; transition: 0.5s; user-select: none; z-index: 92; width: 100%; height: 100%; position: fixed;">
-  <style>
-    .OptionSet {
-      width: 95%; 
-      left: 50%;
-      cursor: pointer;
-       transform: translate(-50%, -0%) scale(1.0);
-        position: relative; 
-        height: 50px fit-content; 
-        padding: 15px 0px; 
-        background-color: #1d1d1da5;
-         border-radius: 15px;
-      transition: 0.5s;
-    }
-
-    .OptionSet:hover {
-      transform: translate(-50%, -0%) scale(1.03);
-    }
-  </style>
+  
 
   <div  style="transition: 0.5s; top: 50%; overflow-y: scroll; overflow-x: hidden; border-radius: 15px; left: 50%; transform: translate(-50%, -50%); padding: 5px 5px; z-index: 50; position: fixed; width: 50%; height: 45%; background-color: #333; border: solid 5px gray;" id="SettingsV2">
-    <div style="width: 100%; height: 50px; position: relative; background-color: #1d1d1dc9; left: 50%; transform: translate(-50%, -0%); border-radius: 15px;">
-      <h4 style="transform: translate(-0%, -50%); color: white; font-size: larger; left: 15px; top: 50%; position: absolute;">Settings</h4>
-      <h4 onclick="toggleSetings1()" style="cursor: pointer; transform: translate(-0%, -50%); color: white; font-size: larger; right: 15px; top: 50%; position: absolute;">Close</h4>
-
-    </div>
-    <br>
-    <br>
-
-    <div style="" onclick="toggleOptionSet('PageClose')" class="OptionSet">
-      <p style="color: white; word-wrap: break-word; width: 55%;  top: 50%; left: 15px; position: relative; " >Prevent Page Close</p>
-      <p id="Op1-Stat" style="transition: 0.5s; word-wrap: break-word; color: white; top: 50%; right: 15px; position: absolute; transform: translate(-0%, -50%);" >Off</p>
-
-    </div>
-    <br>
-    <div style="" class="OptionSet">
-      <p style="word-wrap: break-word; width: 55%; color: white; top: 50%; left: 15px; position: relative; " >Hide Page (Will Disguise All Pages As Google) </p>
-      <p id="Op2-Stat" style="transition: 0.5s; word-wrap: break-word; color: white; top: 50%; right: 15px; position: absolute; transform: translate(-0%, -50%);" >(Coming Soon)</p>
-
-    </div>
-
-   
-
-    <!--PageScript1-->
-    <script id="CHECK">
-          function getCookie2(name) {
-        const cookieName = name + "=";
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i];
-            while (cookie.charAt(0) === ' ') {
-                cookie = cookie.substring(1);
-            }
-            if (cookie.indexOf(cookieName) === 0) {
-                return cookie.substring(cookieName.length, cookie.length);
-            }
-        }
-        return '';
-    }
- 
     
-    let Setting14bu = getCookie2("PagePrevent");
+   <button onclick="toggleSetings1()" style="cursor: pointer; position: relative; width: 80%; bottom: 10px; color: white; height: 40px; border-radius: 0px 0px 15px 15px; transform: translate(-50%, -0%); left: 50%; background-color: #2f2f2f; border: solid 3px gray;">
+    Close
+   </button>
+    <div style="left: 50%; transform: translate(-50%, 0%); position: relative;" class='onesignal-customlink-container'></div>
 
-    function checkPageClose(event) {
-      
-        
-            event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
-      
-       
-     
-    }
-    function checkPageClose2() {
-        if(Setting14bu==="true") {
-        
-            window.onbeforeunload = function(event) {
-                // return a string to prevent the page from closing
-                event.preventDefault();
-                return "Prevent Page Close Is Active, You Can Click Off Of This";
-            };
-            window.addEventListener("beforeunload", checkPageClose);
-
-        } 
-        if(Setting14bu==="false") {
-        
-        }
-    }
-    console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
-    checkPageClose2()
-
-    </script>
-    <!--PageScript1-->
-
-
-    <script>
-
-      function getCookie(name) {
-          const cookieName = name + "=";
-          const cookies = document.cookie.split(';');
-          for (let i = 0; i < cookies.length; i++) {
-              let cookie = cookies[i];
-              while (cookie.charAt(0) === ' ') {
-                  cookie = cookie.substring(1);
-              }
-              if (cookie.indexOf(cookieName) === 0) {
-                  return cookie.substring(cookieName.length, cookie.length);
-              }
-          }
-          return '';
-      }
-
-      // Usage
-   
-
-
-      function setCookie(name, value, years) {
-          const expirationDate = new Date();
-          expirationDate.setFullYear(expirationDate.getFullYear() + years);
-          const expires = "expires=" + expirationDate.toUTCString();
-          document.cookie = name + "=" + value + ";" + expires + ";path=/";
-      }
-
-
-
-      var option1bx = document.getElementById('Op1-Stat')
-      var option2bx = document.getElementById('Op2-Stat')
-      let Setting14b = getCookie("PagePrevent");
-
-      function toggleOptionSet(name) {
-
-        if(name==="PageClose") {
-          if(Setting14b==='false' || Setting14b==="") {
-            Setting14b = getCookie("PagePrevent")
-            setCookie("PagePrevent", 'true', 10); // Set the cookie to expire in 10 years
-
-            //console.log('PagePrevent True')
-
-            //const cookieValue45 = getCookie("PagePrevent");
-            // console.log(cookieValue45); // Print the cookie value to the console
-          }
-          if(Setting14b==='true') {
-            Setting14b = getCookie("PagePrevent")
-
-            setCookie("PagePrevent", 'false', 10); // Set the cookie to expire in 10 years
-            //console.log('PagePrevent False')
-            //const cookieValue45 = getCookie("PagePrevent");
-
-            // console.log(Setting14b); // Print the cookie value to the console
-          }
-        }
-       // console.log('Code: 89B')
-       CheckSettngs1B()
-
-
-      }
-      function CheckSettngs1B() {
-        Setting14b = getCookie("PagePrevent")
-        if(Setting14b==="true") {
-          option1bx.style.opacity = 0
-          setTimeout(() => {
-            option1bx.innerHTML = "Active"
-            option1bx.style.opacity = 1
-          }, 500);
-          //NoteLOCK()
-          
-        } 
-        if(Setting14b==="false") {
-          option1bx.style.opacity = 0
-          setTimeout(() => {
-            option1bx.innerHTML = "Not Active"
-            option1bx.style.opacity = 1
-          }, 500);
-        }
-        console.log('CookiePAGE Value: ' + Setting14b)
-      }
-
-      CheckSettngs1B()
-
-   
-    </script>
 
   </div>
 </div>
@@ -1312,7 +1212,7 @@ if (isMobile2) {
 <div id="Tile11093" style="display: none; z-index: 70; width: 100%; height: 100%; position: fixed; background-color: #2f2f2f2c;">
   
    
-  <div style="width: 40%; overflow-y: auto; overflow-x: none; height: 40%; border-radius: 15px; background-color: #1d1d1d; position: fixed; z-index: 81; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <div style="width: 40%;  overflow-y: auto; overflow-x: none; height: 40%; border-radius: 15px; background-color: #1d1d1d; position: fixed; z-index: 81; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <span onclick="closeINTRO2()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: 30px; top: 15px;  right: 15px; color: white;  position: absolute;">  
        
       close
@@ -1348,7 +1248,7 @@ if (isMobile2) {
     if(TileSt3) {
       document.getElementById('Tile11093').style.display = 'none'
     } else {
-      document.getElementById('Tile11093').style.display = 'block'
+      document.getElementById('Tile11093').style.display = 'none'
     }
   }
     
@@ -4310,6 +4210,78 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
   </a>
 
 </div>
+
+<div class="box"  id="space cadet pinball" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games6/space-cadet-pinball/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/SPACECADET.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Space Cadet Pinball</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="the maze" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=/Games6/themazev1.1.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/MAZE3.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">The Maze</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="rolling sky" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games6/webgl-rollingsky/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/SKYRO.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Rolling Sky</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="time shooter 3" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games6/timeshoot3/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/SWATSH.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Time Shooter 3 S.W.A.T</div>
+      
+  </a>
+
+</div>
+
+
+<div class="box"  id="fancy pants adventure" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=/Games6/fancypantsadventures/fancypantsadventure.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/FANCYADV.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Fancy Pants Adventure</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="basket and ball" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games6/basketandball">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/BASKETAND.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Basket And Ball</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="parking fury 3" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games6/parking-fury-3">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/PARKINGFUR.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Parking And Fury 3</div>
+      
+  </a>
+
+</div>
+
 
 <script>
   
