@@ -2,46 +2,6 @@
 <html lang="en">
 <head>
 
-  <!--ADCODE-->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
-  crossorigin="anonymous"></script>
-  <style>
-    @keyframes ADCLOSE {
-      from{position: fixed; display: inline-block; bottom: 5px; background-color: gray; height: 70px  !important;  border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80}
-      to {position: fixed;  bottom: -30px; background-color: gray; height: 70px  !important; border-radius: 0px; width: 60%; opacity: 0; left: 50%; transform: translate(-50%); display: block; z-index: 80}
-    }
-  </style>
-  <ins class="adsbygoogle"
-  id="ad-container"
-  style="position: fixed; transition: 0.8s; display: inline-block; bottom: 5px; background-color: gray; height: 70px  !important; border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80"
-  data-ad-client="ca-pub-1654900800235927"
-  data-ad-slot="6959226874"
-
-     >  <span onclick="adclose()"  class="material-icons notranslate"  style="background-color: #1d1d1dcf; padding: 2px; border-radius: 15px; z-index: 30; cursor: pointer;  font-size: 20px; float: right; right: 5px; top: 5px;  color: white;  position: absolute;">  
-      close
-  </span>
-  <script>
-    function adclose() {
-        document.getElementById('ad-container').style.animation = 'ADCLOSE 0.8s'
-        setTimeout(() => {
-          document.getElementById('ad-container').style.display = 'none'
-        }, 800);
-
-    }
-    const isMobile0 = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile0) {
-        document.getElementById('ad-container').style.display = 'none'
-    } else {
-      document.getElementById('ad-container').style.display = 'block'
-    }
-
-  </script>
-</ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 
 <!-- Google Tag Manager -->
@@ -970,6 +930,15 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
     
     </div> 
 
+    <div class="MenuIt" style="height: 35px; top: 35px; width: 100%; position: relative;">
+
+      <a style="text-decoration: none;" onclick="toggleMENU107()">
+        <h1 style=" cursor: pointer;  width: 100%; font-size: medium; top: 50%; transform: translate(-0%, -50%); text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">IFRAME</h1>
+      </a>
+    
+    </div> 
+
+
 
     <div style="bottom: 0; position: absolute; left: 50%; transform: translate(-50%, -0%);">
       <a href="https://www.buymeacoffee.com/SzGames" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px; "  ></a>  
@@ -1133,7 +1102,7 @@ setTimeout(() => {
    <button onclick="toggleSetings1()" style="cursor: pointer; position: relative; width: 80%; bottom: 10px; color: white; height: 40px; border-radius: 0px 0px 15px 15px; transform: translate(-50%, -0%); left: 50%; background-color: #2f2f2f; border: solid 3px gray;">
     Close
    </button>
-    <div style="left: 50%; transform: translate(-50%, 0%); position: relative;" class='onesignal-customlink-container'></div>
+    <div style="left: 50%; transform: translate(-50%, 0%); position: relative; color: white;" class='onesignal-customlink-container'></div>
 
 
   </div>
@@ -1161,6 +1130,66 @@ setTimeout(() => {
     }
   }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="MENU107" style="visibility: hidden; transition: 0.5s; user-select: none; z-index: 92; width: 100%; height: 100%; position: fixed;">
+  
+
+  <div  style="transition: 0.5s; top: 50%; overflow-y: scroll; overflow-x: hidden; border-radius: 15px; left: 50%; transform: translate(-50%, -50%);  z-index: 50; position: fixed; width: 90%; height: 90%; background-color: #333; border: solid 5px gray;" id="MENU107SUB">
+    
+   <button onclick="toggleMENU107()" style="cursor: pointer; position: relative; width: 80%; bottom: 10px; color: white; height: 40px; border-radius: 0px 0px 15px 15px; transform: translate(-50%, -0%); left: 50%; background-color: #2f2f2f; border: solid 3px gray;">
+    Close
+   </button>
+    <iframe id="URLIFRAME" src="./index.html" style="width: 100%; border: none;"></iframe>
+    
+  </div>
+</div>
+<!--Note-->
+<script>
+  var isMENU = false
+
+  function toggleMENU107() {
+    if(isMENU===false) {
+      document.getElementById('MENU107').style.opacity = 0
+
+      document.getElementById('MENU107').style.visibility = 'visible'
+      document.getElementById('MENU107').style.opacity = 1
+      isMENU = true
+
+    }
+    else if(isMENU===true) {
+      document.getElementById('MENU107').style.opacity = 0
+      setTimeout(() => {
+        document.getElementById('MENU107').style.visibility = 'hidden'
+      }, 500);
+      isMENU = false
+
+    }
+    var ITEM890 = document.getElementById('MENU107SUB')
+  }
+  document.getElementById('URLIFRAME').style.height = window.innerHeight - 200 + 'px'
+
+</script>
+
+
+
+
+
+
 
 <!--Start-->
 <div id="Tile1109" style="display: none; z-index: 80; width: 100%; height: 100%; position: fixed; background-color: #2f2f2f2c;">
@@ -1616,6 +1645,46 @@ z-index: 1;
         <p style="font-size: 20px;">By Bobby</p>
       </div>
       <br></br>
+       <!--ADCODE-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
+  crossorigin="anonymous"></script>
+  <style>
+    @keyframes ADCLOSE {
+      from{position: relative; display: inline-block;  background-color: gray; height: 70px  !important;  border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80}
+      to {position: relative;  bottom: -0px; background-color: gray; height: 70px  !important; border-radius: 50px; width: 60%; opacity: 0; left: 50%; transform: translate(-50%); display: block; z-index: 80}
+    }
+  </style>
+  <ins class="adsbygoogle"
+  id="ad-container"
+  style="position: relative; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important; border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80"
+  data-ad-client="ca-pub-1654900800235927"
+  data-ad-slot="6959226874"
+
+     >  <span onclick="adclose()"  class="material-icons notranslate"  style="background-color: #1d1d1dcf; padding: 2px; border-radius: 15px; z-index: 30; cursor: pointer;  font-size: 20px; float: right; right: 5px; top: 5px;  color: white;  position: absolute;">  
+      close
+  </span>
+  <script>
+    function adclose() {
+        document.getElementById('ad-container').style.animation = 'ADCLOSE 0.8s'
+        setTimeout(() => {
+          document.getElementById('ad-container').style.display = 'none'
+        }, 800);
+
+    }
+    const isMobile0 = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile0) {
+        document.getElementById('ad-container').style.display = 'none'
+    } else {
+      document.getElementById('ad-container').style.display = 'block'
+    }
+
+  </script>
+</ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
       <!--h1 id="ec" class="day" >----------</h1-->
       <br></br>
 
@@ -1956,6 +2025,9 @@ console.log(curHr + '--' + today);
 }
 
 </style>
+
+
+ 
 
 <button id="TEST3"
 style="width: 80%; height: 40px; font-size: 15px; color: white; background-color: #2f2f2f; border-radius: 15px; cursor: pointer; border: 2px solid grey; left: 50%; transform: translate(-50%, -0%); position: relative;"
@@ -4293,7 +4365,11 @@ document.getElementById('TEST3').addEventListener('click', function() {
     behavior: 'smooth'
   });
 });
+
+
 </script>
+
+
 
 <section class="sticky">
   <!--div class="bubbles">
