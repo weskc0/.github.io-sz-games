@@ -1,0 +1,9 @@
+{
+    "SONG1": {
+        "COVER": "./assets/covers/starboy.png",
+        "TITLE": "Starboy",
+        "BY": "The Weekend",
+        "path": "./assets/music/starboy.mp3"
+    }
+ 
+}
