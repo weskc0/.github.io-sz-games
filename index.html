@@ -82,6 +82,8 @@
 <title>Sz Games</title>
 <meta name="revisit-after" content="1 days" />
 
+<meta name="apple-touch-startup-image" content="/G2.png">	
+
 
 <meta property="og:image" content="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/G2.png" />
 
@@ -771,11 +773,11 @@ window.addEventListener("scroll", function() { // Add a scroll event listener
 
 
 .SlSlide {
-  animation: SLMenu 0.8s !important;
+  animation: SLMenu 0.5s !important;
 }
 
 .SlSlideIn {
-  animation: SLMenu2 0.8s !important;
+  animation: SLMenu2 0.5s !important;
 }
 
 </style>
@@ -1372,7 +1374,7 @@ if (isMobile2) {
            
 
             ToggledMenu3 = true
-          }, 800);
+          }, 500);
 
         } else if(ToggledMenu3===true) {
          
@@ -1386,7 +1388,7 @@ if (isMobile2) {
             document.getElementById('MMenuBig').classList.remove('SlSlide')
             document.getElementById('MMenuBig').style.display = 'none'
             document.getElementById('SideMenuBigScreen').style.display = 'none'
-          }, 800);
+          }, 500);
         }
       }
     </script>
@@ -4677,28 +4679,21 @@ document.getElementById('TEST3').addEventListener('click', function() {
     <div class="bubble"></div>
   </div-->
 
+ 
+<script>
 
-  <script>
-
-// Get the container element that holds all the images
 const imageContainer = document.getElementById("games");
 
-// Get all the image elements inside the container
 const images = imageContainer.getElementsByTagName("img");
 
-// Loop through all the images and attach the error event handler
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener("error", function() {
-    // Code to handle the image loading error for each image
     console.log(`Image ${i+1} failed to load!`);
 
-    // Try to reload the image by setting the src attribute again
-    //images[i].src = images[i].src; // This attempts to reload the image
-
-    // You can also add a delay before retrying to avoid excessive reload attempts
+  
      setTimeout(function() {
       images[i].src = images[i].src;
-     }, 3000); // Retry after 3 seconds (adjust the delay as needed)
+     }, 3000); 
   });
   console.log('code: 9B')
 
@@ -4708,7 +4703,6 @@ for (let i = 0; i < images.length; i++) {
   const container = document.getElementById('games');
 const boxes = document.querySelectorAll('.box');
 
-// Check if an element is in the viewport
 function isElementInViewport(element) {
   const rect = element.getBoundingClientRect();
   return (
@@ -4720,7 +4714,6 @@ function isElementInViewport(element) {
 }
 
 
-// Function to handle scroll event
 function handleScroll() {
   const hiddenDivs = document.querySelectorAll('.box');
   const lazyImages = document.querySelectorAll('.ImageForGame');
@@ -4790,12 +4783,10 @@ function searchHandleLoad() {
 }
 
 
-// Attach scroll event listener
 window.addEventListener('scroll', handleScroll);
 
 document.addEventListener('DOMContentLoaded', handleScroll);
 
-// Trigger initial check on page load
 handleScroll();
 
 
@@ -4816,7 +4807,6 @@ handleScroll();
           element[i].style.display = "";
           searchHandleLoad();
         } else {
-          // Check if the element should be excluded from hiding
           var shouldExclude = element[i].classList.contains("textover");
           if (!shouldExclude) {
             element[i].style.display = "none";
@@ -4838,7 +4828,7 @@ function loadGame() {
     
   }
 }
-  
+
   </script>
   
   <!--div class="bubbles" style="  filter: drop-shadow(0 0 10px white);" >
