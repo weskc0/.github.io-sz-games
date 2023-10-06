@@ -2065,13 +2065,14 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 >Scroll To Latest Games</button>
 <br>
 <br>
-<div class="inputbox">
+<div  class="inputbox">
 
     <input onkeyup="Search()"  id="SearchBox" required="required" type="text">
   
   <label for="SearchBox" style="color: white;">Search</label>
   <i></i>
 </div>
+
 
 
 <style>
@@ -2084,6 +2085,13 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
   .showAlert {
     animation: ShowWifiAlert 10.5s;
   }
+
+  .ipAR {
+    transition: 0.5s;
+  }
+  .ipAR:hover {
+    transform: scale(1.2) !important;
+  }
 </style>
 
 
@@ -2094,7 +2102,14 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 <br>
 
+<div class="ipAR" style="display: none;  z-index: 75; cursor: pointer; position: fixed; bottom: 25px; right: 20px; width: 40px; height: 40px; border-radius: 50%; background-color: #1d1d1d;" id="SCROLLUP">
 
+  <span  class="material-icons notranslate"  style=" cursor: pointer;  left: 50%; font-size: larger; top: 50%; transform: translate(-50%, -50%);  color: white;  position: absolute;">  
+     
+    arrow_upward
+     
+     </span>
+</div>
 
 <div id="games">
 
@@ -2850,10 +2865,38 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
   </a>
 </div> 
 
-<div class="box" id="Bloons Tower Defense 2" style="position: relative; float: left;">
-  <a href="https://sz-games.github.io/games/game.html?game=https://mr-funkinguy.github.io/GameStuff/gfiles/btd2/index.html">
+<div class="box" id="bloons Tower Defense" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/bloonstd.swf">
+    <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/btd.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense</div>
+  </a>
+</div> 
+
+<div class="box" id="bloons Tower Defense 2" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://mr-funkinguy.github.io/GameStuff/gfiles/btd2/index.html">
     <img class="ImageForGame"  data-src="https://mr-funkinguy.github.io/GameStuff/img/btd2.jpg" alt="game">
     <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 2</div>
+  </a>
+</div> 
+
+<div class="box" id="bloons Tower Defense 3" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/btd3.swf">
+    <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/btd3.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 3</div>
+  </a>
+</div> 
+
+<div class="box" id="bloons Tower Defense 4" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/bloonstd4.swf">
+    <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/btd4.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 4</div>
+  </a>
+</div> 
+
+<div class="box" id="bloons Tower Defense 5" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/btd5.swf">
+    <img class="ImageForGame"  data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/btd3.png" alt="game">
+    <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;   color: rgba(255, 255, 255, 0.827) !important;">Bloons Tower Defense 5</div>
   </a>
 </div> 
 
@@ -4802,7 +4845,7 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 </div>
 
-<div class="box"  id="basket bros" style="position: relative; float: left;">
+<!--div class="box"  id="basket bros" style="position: relative; float: left;">
   <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games7/basketbros-io">
     
     <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/BASKETBRO.png" alt="game">
@@ -4810,7 +4853,7 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
       
   </a>
 
-</div>
+</div-->
 
 
 <div class="box"  id="cubefield" style="position: relative; float: left;">
@@ -4997,10 +5040,99 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 </div>
 
+<div class="box"  id="gopher kart" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games7/gopher-kart">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/gopherkart.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Gopher Kart</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="mario combat" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/Mario_Combat.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/MARIOK.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Mario Combat</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="color combat" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/color_combat.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/COLORCOM.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Color Combat</div>
+      
+  </a>
+
+</div>
 
 
+
+<div class="box"  id="microsoft flight simulator" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games7/msflight/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/MS4.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">MS Flight Sim 1-4</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="nightwalk" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games7/nightwalk/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/nightwalk.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Nightwalk</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="pong" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/Flash.html?game=https://sz-games.github.io/Games7/pong.swf">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/pong.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Pong</div>
+      
+  </a>
+
+</div>
+
+
+
+<div class="box"  id="dont touch anything" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games7/touch/">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/dontouch.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Dont Touch Anything</div>
+      
+  </a>
+
+</div>
 
 <script>
+
+const userAgent = navigator.userAgent;
+console.log("Running On:", userAgent);
+
+navigator.storage.estimate().then(estimate => {
+  console.log("Available Storage (in bytes):", estimate.quota);
+  console.log("Used Storage (in bytes):", estimate.usage);
+});
+const connectionType = navigator.connection.effectiveType;
+console.log("Connection Type:", connectionType);
+const cookiesEnabled = navigator.cookieEnabled;
+console.log("Cookies Enabled:", cookiesEnabled);
+const windowoWidth = window.innerWidth;
+const windowoHeight = window.innerHeight;
+console.log("Window Size:", windowoWidth, "x", windowoHeight);
+const pixelRatio = window.devicePixelRatio;
+console.log("Device Pixel Ratio:", pixelRatio);
+
   
 document.getElementById('TEST3').addEventListener('click', function() {
   searchHandleLoad();
@@ -5010,7 +5142,47 @@ document.getElementById('TEST3').addEventListener('click', function() {
     behavior: 'smooth'
   });
 });
+document.getElementById('SCROLLUP').addEventListener('click', function() {
+  searchHandleLoad();
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
 
+
+
+  var Isscrolledf = false;
+window.addEventListener("scroll", function() {
+  if (window.pageYOffset > 350) { 
+    if(Isscrolledf===false) {
+      document.getElementById('SCROLLUP').style.display = 'block'
+      document.getElementById('SCROLLUP').style.opacity = 1
+
+      document.getElementById('SCROLLUP').style.transform = 'scale(1.0)'
+    Isscrolledf = true
+    //console.log("its false")
+    } else {
+      Isscrolledf = true
+    }
+  } else  if (window.pageYOffset < 350) {
+    if(Isscrolledf===true) {
+      //console.log("its true")
+      document.getElementById('SCROLLUP').style.transform = 'scale(0.3)'
+      document.getElementById('SCROLLUP').style.opacity = 0
+      setTimeout(() => {
+
+        document.getElementById('SCROLLUP').style.display = 'none'
+      }, 500);
+      Isscrolledf=false
+    } else {
+      Isscrolledf=false
+    
+    }
+  }
+
+});
 
 </script>
 
