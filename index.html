@@ -5116,23 +5116,6 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 <script>
 
-const userAgent = navigator.userAgent;
-console.log("Running On:", userAgent);
-
-navigator.storage.estimate().then(estimate => {
-  console.log("Available Storage (in bytes):", estimate.quota);
-  console.log("Used Storage (in bytes):", estimate.usage);
-});
-const connectionType = navigator.connection.effectiveType;
-console.log("Connection Type:", connectionType);
-const cookiesEnabled = navigator.cookieEnabled;
-console.log("Cookies Enabled:", cookiesEnabled);
-const windowoWidth = window.innerWidth;
-const windowoHeight = window.innerHeight;
-console.log("Window Size:", windowoWidth, "x", windowoHeight);
-const pixelRatio = window.devicePixelRatio;
-console.log("Device Pixel Ratio:", pixelRatio);
-
   
 document.getElementById('TEST3').addEventListener('click', function() {
   searchHandleLoad();
@@ -5143,7 +5126,6 @@ document.getElementById('TEST3').addEventListener('click', function() {
   });
 });
 document.getElementById('SCROLLUP').addEventListener('click', function() {
-  searchHandleLoad();
   window.scroll({
     top: 0,
     left: 0,
