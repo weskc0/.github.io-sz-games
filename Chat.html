@@ -674,7 +674,7 @@ setInterval(() => {
 
       
       var name = nameBox.value;
-    if(name===("00010")){
+    if(name===("010")){
       messageInput.disabled = false;
       textBox.disabled = false;
       SendButton.disabled = false;
@@ -687,7 +687,7 @@ setInterval(() => {
     } else if(name.toLowerCase().includes('admin')){
       name = 'Fake ' + name;
       TimeOut()
-    }  else if(name.toLowerCase().includes('mod') || name.toLowerCase().includes('😎') || name.toLowerCase().includes('👑') || name.toLowerCase().includes('administrator') || name.toLowerCase().includes('moderator') || name.toLowerCase().includes('owner') || name.toLowerCase().includes('bobby') ){
+    }  else if(name.toLowerCase().includes('mod') || name.toLowerCase().includes('.com') || name.toLowerCase().includes('http://') || name.toLowerCase().includes('https://') || name.toLowerCase().includes('😎') || name.toLowerCase().includes('👑') || name.toLowerCase().includes('administrator') || name.toLowerCase().includes('moderator') || name.toLowerCase().includes('owner') || name.toLowerCase().includes('bobby') ){
       name = 'Fake ' + name;
       TimeOut()
     } else {
@@ -711,7 +711,7 @@ setInterval(() => {
         alert('Forbidden')
       }
 
-    } else if(text.toLowerCase().includes('b i t c h') || text.toLowerCase().includes('kys') || text.toLowerCase().includes('k y s') || text.toLowerCase().includes('bitch')  || text.toLowerCase().includes('monkey') || text.toLowerCase().includes('monke')  || text.toLowerCase().includes('nigg@') || text.toLowerCase().includes('n i g g e r') || text.toLowerCase().includes('b!tch') || text.toLowerCase().includes('nigger') || text.toLowerCase().includes('n!gger') || text.toLowerCase().includes('dick') || text.toLowerCase().includes('d!ck') || text.toLowerCase().includes('nigga')) {
+    } else if(text.toLowerCase().includes('b i t c h') || text.toLowerCase().includes('.com') || text.toLowerCase().includes('http://') || text.toLowerCase().includes('https://') || text.toLowerCase().includes('kys') || text.toLowerCase().includes('k y s') || text.toLowerCase().includes('bitch')  || text.toLowerCase().includes('monkey') || text.toLowerCase().includes('monke')  || text.toLowerCase().includes('nigg@') || text.toLowerCase().includes('n i g g e r') || text.toLowerCase().includes('b!tch') || text.toLowerCase().includes('nigger') || text.toLowerCase().includes('n!gger') || text.toLowerCase().includes('dick') || text.toLowerCase().includes('d!ck') || text.toLowerCase().includes('nigga')) {
         alert("Banned Word");
     } else {
       push(messagesRef, {hours, minutes, sec2, name, text});
