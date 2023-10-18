@@ -296,7 +296,40 @@ p {
     <h5  id="message-logs-txt" style="color: #fefefe; overflow-y: auto; height: 95%;  position: relative; right: -3%;">Loading messages...</h5>
    
   </div-->
-
+       <!--ADCODE-->
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
+       crossorigin="anonymous"></script>
+       <style>
+         @keyframes ADCLOSE {
+           from{ display: inline-block;  background-color: gray; height: 70px  !important;  border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 80}
+           to {  background-color: gray; height: 70px  !important; border-radius: 50px; width: 60%; opacity: 0; left: 50%; transform: translate(-50%); display: block; z-index: 80}
+         }
+       </style>
+       <ins class="adsbygoogle"
+       id="ad-container"
+       style="position: absolute; transition: 0.8s; display: inline-block;  background-color: gray; height: 70px  !important; border-radius: 15px; width: 60%; left: 50%; transform: translate(-50%); display: block; z-index: 20"
+       data-ad-client="ca-pub-1654900800235927"
+       data-ad-slot="6959226874"
+     
+          >  <span onclick="adclose()"  class="material-icons notranslate"  style="background-color: #1d1d1dcf; padding: 2px; border-radius: 15px; z-index: 30; cursor: pointer;  font-size: 20px; float: right; right: 5px; top: 5px;  color: white;  position: absolute;">  
+           close
+       </span>
+       <script>
+         function adclose() {
+             document.getElementById('ad-container').style.animation = 'ADCLOSE 0.8s'
+             setTimeout(() => {
+               document.getElementById('ad-container').style.display = 'none'
+             }, 800);
+     
+         }
+        
+     
+       </script>
+     </ins>
+       <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+     
   <p style="" id="typing-message"></p>
 
   <div style="position: absolute; height: 100%; text-align: center; overflow-y: auto; right: 0; top: 0; border-radius: 15px; width: 70%; background-color: #252525ef;" id="messages"></div>
