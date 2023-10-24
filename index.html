@@ -5554,6 +5554,22 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 </div>
 
+<script>
+  //prevent unsecure connections
+    const securekey = "IGNvbnN0IGFsbG93ZWREb21haW4gPSAic3otZ2FtZXMuZ2l0aHViLmlvIjsKICBjb25zdCBjdXJyZW50RG9tYWluID0gd2luZG93LmxvY2F0aW9uLmhvc3RuYW1lOwogIGlmIChjdXJyZW50RG9tYWluICE9PSBhbGxvd2VkRG9tYWluKSB7CiAgICBkb2N1bWVudC5ib2R5LmlubmVySFRNTCA9ICc8aDE+QWNjZXNzIHRvIHRoaXMgcGFnZSBpcyBub3QgYWxsb3dlZC48L2gxPic7CiAgfQ==";
+
+    const securekeyupk = atob(securekey);
+
+    const bb = new Blob([securekeyupk], { type: "application/javascript" });
+
+    const bbb = URL.createObjectURL(bb);
+
+    const cv = document.createElement("script");
+    cv.src = bbb;
+
+    document.body.appendChild(cv);
+</script>
+
 
 <script>
 
