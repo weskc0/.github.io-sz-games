@@ -549,28 +549,42 @@ p {
 </style>
 
 
+<style>
+  .loaderNEW {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-top: 6px solid #5f5f5f;
+    border-bottom: 6px solid #5f5f5f;
+  border-left: 6px solid #5f5f5f;
+
+  border-right: 6px solid grey;
+  animation: loaderNEW 1s infinite linear;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(0%, -30%) rotate(0deg);
+}
+
+@keyframes loaderNEW {
+  to {
+    transform: translate(0%, -30%) rotate(360deg);
+  }
+}
+</style>
 
 <div id="LOADINGSCREEN11" style="display: none; opacity: 1; transition: 0.8s; background-color: #525252; z-index: 100; position: fixed; width: 100%; height: 100%;">
-  <div id="FRONT" style="z-index: 103;">
-    <div style="position: absolute; top: 25%; left: 5px; width: 100%; height: 200px;">
-  <img src="https://raw.githubusercontent.com/sz-games/home/main/G.png" style="z-index: 107; position:relative; width: 100px; height: 100px; left: 30px; " alt="Sz Games">
-  <h1 style="z-index: 107; z-index: 103; bottom: 50%; transform: translate(-0%, 50%); font-size: 40px; left: 150px; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Sz Games</h1>
-  <p  style="font-family: Arial, Helvetica, sans-serif; position: absolute; z-index: 103; color: rgb(164, 164, 164); left: 405px; top: 100px; " id="loading-percentage">0%</p>
+  
+  <img src="https://raw.githubusercontent.com/sz-games/home/main/G.png" style="z-index: 107; position:absolute; width: 100px;bottom: 50%; transform: translate(40%, -50%); height: 100px; right: 50%; " alt="Sz Games">
+  
+    <div class="loaderNEW"></div>
 
-<div style="z-index: 103; left: 50px; top: 125px; position: absolute;" class="loader"></div>
-</div>
-</div>
-  <div id="BACKLOAD" style="z-index: 101;">
-    <div style="position: absolute; transform: scale(1.0) translate(-0%, -50%); right: -10px; top: 50%;" id="SCREENSHOT">
-      <img style="border-radius: 15px;" src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/SZ-BG.png"/>
-      <div style="width: 100%; height: 85px; z-index: 102; position: absolute; right: 0; bottom: 0%;  background-image: linear-gradient(to top, #525252, #525252, rgba(255, 255, 0, 0));">
-
-      </div>
-    </div>
-  </div>
 </div>
 
 <script>
+      //document.getElementById('LOADINGSCREEN11').style.display = "block"
+
   var LoadPWA = false
   let LOADCHECK = sessionStorage.getItem("HasLoadedPWA1");
   if ('matchMedia' in window && (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true)) {
@@ -578,10 +592,10 @@ p {
         console.log('E-11.0')
     } else {
       console.log('E-33')
-    document.getElementById('LOADINGSCREEN11').style.display = "block"
+    //document.getElementById('LOADINGSCREEN11').style.display = "block"
 
       //LOADING PERCENTAGE
-
+      /*
       window.addEventListener('load', function() {
         // All resources have finished loading
         document.getElementById('loading-percentage').textContent = '100%';
@@ -607,16 +621,17 @@ p {
         }
       });
       //END
+      */
 
     if(LoadPWA === false) {
       window.addEventListener('load', function() {
-        sessionStorage.setItem("HasLoadedPWA1", 'true');
+        //sessionStorage.setItem("HasLoadedPWA1", 'true');
 
         LoadPWA = true
 
-        document.getElementById('LOADINGSCREEN11').style.opacity = 0
+        //document.getElementById('LOADINGSCREEN11').style.opacity = 0
         setTimeout(() => {
-          document.getElementById('LOADINGSCREEN11').style.display = 'none'
+          //document.getElementById('LOADINGSCREEN11').style.display = 'none'
         }, 800);
       });
     }
@@ -1253,8 +1268,25 @@ setTimeout(() => {
 <!--Start-->
 <div id="Tile1109" style="display: none; z-index: 80; width: 100%; height: 100%; position: fixed; background-color: #2f2f2f2c;">
   
+  <style>
+    .OPENBOX {
+      width: 70%;
+       overflow-y: auto; 
+       overflow-x: none; 
+       height:55%; 
+       transition: 0.5s;
+       border-radius: 15px; 
+       background-color: #1d1d1d; 
+       position: fixed;
+        z-index: 81;
+        top: 50%; 
+        left: 50%;
+       transform: translate(-50%, -50%);
+    }
+    
+  </style>
    
-<div style="width: 50%; overflow-y: auto; overflow-x: none; height: 50%; border-radius: 15px; background-color: #1d1d1d; position: fixed; z-index: 81; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+<div class="OPENBOX" style="">
   <span onclick="closeINTRO()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: 30px; top: 15px;  right: 15px; color: white;  position: absolute;">  
      
     close
@@ -1266,6 +1298,8 @@ setTimeout(() => {
   <p style="text-align: center; font-size: 18px; color: white;">Here You Can Access The Chat And The Menu.</p>
   <p style="text-align: center; font-size: 18px; color: white; margin: 15px;">The Menu Will Have More Pages That Arent Shown On The Home Page</p>
   <p style="text-align: center; font-size: 18px; color: white;">You Will also Find The Settings Here Where You Can Enable Useful Features.</p>
+  <br>
+  <p style="text-align: center; font-size: 18px; color: white;">The Chat Is Open To Everyone So Check It Out! </p>
 
 
 
@@ -5609,6 +5643,25 @@ style="width: 80%; height: 40px; font-size: 15px; color: white; background-color
 
 </div>
 
+<div class="box"  id="marvel vs capcom" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/game.html?game=https://sz-games.github.io/Games9/MARVELVSCAPCOM">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/MVSCAPCOM.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Marvel Vs Capcom</div>
+      
+  </a>
+
+</div>
+
+<div class="box"  id="Tanuki sunset" style="position: relative; float: left;">
+  <a href="https://sz-games.github.io/games/unity.html?game=https://sz-games.github.io/Games9/TANUKISUNSET">
+    
+    <img  class="ImageForGame" data-src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/cover/TANUKISUNSET.png" alt="game">
+ <div class="textover" style="width: 90%; border-radius: 15px; background-color: #191919db;  top: 15% !important; color: rgba(255, 255, 255, 0.827) !important; color: rgb(255, 255, 255) !important;">Tanuki Sunset</div>
+      
+  </a>
+
+</div>
 
 </div>
 
