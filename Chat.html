@@ -252,22 +252,76 @@ position: absolute;
 .textInputWrapper:focus-within .textInput::placeholder {
   opacity: 0;
 }
-p {
+.messsge {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.234), rgba(0, 0, 0, 0.233));
-  background-clip: text;
+  z-index: 9;
+  display: block;
   padding: 7px 3px;
   color: #fefefe;
   opacity: 0;
   width: 95%;
+  height: fit-content;
+
   left: 50%;
   position: relative;
   transform: translate(-50%);
   transition: opacity 0.2s ease-in-out;
   border-radius: 40px;
   word-wrap: break-word;
+  margin: 15px;
+}
+.innermsg {
+  z-index: 10;
+  text-align: center;
+font-size: 15px;  color: white;
+}
+
+.memberTAG {
+  background-color: rgba(128, 128, 128, 0.419);
+  width: fit-content;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  top: -13px;
+  padding: 2px 10px 2px 10px;
+  border-radius: 10px;
+  position: absolute;
 }
 
 
+.modTAG {
+  background-color: rgba(218, 210, 48, 0.419);
+  width: fit-content;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  top: -13px;
+  padding: 2px 10px 2px 10px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.modOW {
+  background-color: rgba(48, 218, 215, 0.419);
+  width: fit-content;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  top: -13px;
+  padding: 2px 10px 2px 10px;
+  border-radius: 10px;
+  position: absolute;
+}
+.nameTXT2 {
+  font-size: 17px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -90%);
+  width: 50%;
+  left: 50%;
+}
+
+.profilemsg {
+  position: relative;
+  height: 23px;
+}
 
     </style>
 </head>
@@ -493,7 +547,7 @@ const timerBar = notification.querySelector('.timer-bar');
 
   notification.classList.add('active');
     // Reset the animation
-    document.getElementById('CONTENTNOTE').innerHTML = 'Loaded Chat |  Firebase V9.0.2 | Server: US-central-1'
+    document.getElementById('CONTENTNOTE').innerHTML = 'Loading Chat |  Firebase V9.0.2 | Server: US-central-1'
 
     timerBar.style.animation = 'none';
     timerBar.offsetHeight; // Trigger reflow to reset animation
@@ -640,16 +694,50 @@ setInterval(() => {
             messageEl.textContent = `${message.hours}:${message.minutes} | ${message.name}: Used Command: Alert`;
             messageEl.style.opacity = 0;
             messagesEl.appendChild(messageEl);
-            setTimeout(() => {
+            //setTimeout(() => {
               messageEl.style.opacity = 1;
-            }, 100); // adjust the delay as needed to control the speed of the fade-in effect
+           // }, 100); // adjust the delay as needed to control the speed of the fade-in effect
           } else {
-        
-      messageEl.textContent = `${message.hours}:${message.minutes} | ${message.name}: ${message.text}`;
-      messageEl.style.opacity = 0;
-      messagesEl.appendChild(messageEl);
+      var newDIV2 = document.createElement('div');
+
+      var ProfileStuff = document.createElement('div')
+      ProfileStuff.classList.add('profilemsg')
+
+      var tagMEM = document.createElement('div')
+      tagMEM.classList.add('memberTAG')
+      tagMEM.innerHTML = 'Member'
+
+     
+
+      if(message.name === '👑 | Bobby 😎') {
+        var tagOW = document.createElement('div')
+      tagOW.classList.add('modOW')
+      tagOW.innerHTML = 'Owner'
+      ProfileStuff.appendChild(tagOW)
+
+      } else if(message.name === 'Evan 😎') {
+        var tagMOD = document.createElement('div')
+      tagMOD.classList.add('modTAG')
+      tagMOD.innerHTML = 'Mod'
+      ProfileStuff.appendChild(tagMOD)
+
+      } else {
+        ProfileStuff.appendChild(tagMEM)
+      }
+      var nameTEXT = document.createElement('h3')
+      nameTEXT.classList.add('nameTXT2')
+      nameTEXT.innerHTML = message.name
+      ProfileStuff.appendChild(nameTEXT)
+
+      newDIV2.appendChild(ProfileStuff)
+
+      newDIV2.classList.add('messsge')
+      messageEl.textContent = `${message.hours}:${message.minutes} | ${message.text}`;
+      messageEl.classList.add('innermsg')
+      newDIV2.appendChild(messageEl)
+      document.getElementById('messages').appendChild(newDIV2);
       setTimeout(() => {
-        messageEl.style.opacity = 1;
+        newDIV2.style.opacity = 1;
       }, 100); // adjust the delay as needed to control the speed of the fade-in effect
     }
     });
@@ -674,7 +762,7 @@ setInterval(() => {
 
       
       var name = nameBox.value;
-    if(name===("0986")){
+    if(name===("0119")){
       messageInput.disabled = false;
       textBox.disabled = false;
       SendButton.disabled = false;
@@ -711,7 +799,7 @@ setInterval(() => {
         alert('Forbidden')
       }
 
-    } else if(text.toLowerCase().includes('b i t c h') || text.toLowerCase().includes('.com') || text.toLowerCase().includes('http://') || text.toLowerCase().includes('https://') || text.toLowerCase().includes('kys') || text.toLowerCase().includes('k y s') || text.toLowerCase().includes('bitch')  || text.toLowerCase().includes('monkey') || text.toLowerCase().includes('monke')  || text.toLowerCase().includes('nigg@') || text.toLowerCase().includes('n i g g e r') || text.toLowerCase().includes('b!tch') || text.toLowerCase().includes('nigger') || text.toLowerCase().includes('n!gger') || text.toLowerCase().includes('dick') || text.toLowerCase().includes('d!ck') || text.toLowerCase().includes('nigga')) {
+    } else if(text.toLowerCase().includes('b i t c h') || text.toLowerCase().includes('rape') || text.toLowerCase().includes('pussy') || text.toLowerCase().includes('.com') || text.toLowerCase().includes('http://') || text.toLowerCase().includes('https://') || text.toLowerCase().includes('kys') || text.toLowerCase().includes('k y s') || text.toLowerCase().includes('bitch')  || text.toLowerCase().includes('monkey') || text.toLowerCase().includes('monke')  || text.toLowerCase().includes('nigg@') || text.toLowerCase().includes('n i g g e r') || text.toLowerCase().includes('b!tch') || text.toLowerCase().includes('nigger') || text.toLowerCase().includes('n!gger') || text.toLowerCase().includes('dick') || text.toLowerCase().includes('d!ck') || text.toLowerCase().includes('nigga')) {
         alert("Banned Word");
     } else {
       push(messagesRef, {hours, minutes, sec2, name, text});
