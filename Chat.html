@@ -619,7 +619,6 @@ async function send(key1) {
   key3.type = 'module';
   key3.src = key2;
 
-  // Use dynamic import to wait for the script to be fully loaded and executed
   await import(key2);
 
   document.head.appendChild(key3);
