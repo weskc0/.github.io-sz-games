@@ -128,7 +128,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
 		}
 	}
 })();
-var start = true
+var start = false
 if(start===true) {
 startConfetti();
 }
