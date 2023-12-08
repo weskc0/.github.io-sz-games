@@ -132,3 +132,143 @@ var start = false
 if(start===true) {
 startConfetti();
 }
+
+
+var maxSnowflakeCount = 200; // Set max snowflake count
+var snowflakeSpeed = 2; // Set the snowflake fall speed
+var startSnowfall; // Call to start snowfall animation
+var stopSnowfall; // Call to stop adding snowflakes
+var toggleSnowfall; // Call to start or stop the snowfall animation depending on whether it's already running
+var removeSnowfall; // Call to stop the snowfall animation and remove all snowflakes immediately
+
+(function() {
+  startSnowfall = startSnowfallInner;
+  stopSnowfall = stopSnowfallInner;
+  toggleSnowfall = toggleSnowfallInner;
+  removeSnowfall = removeSnowfallInner;
+
+  var colors = ["#FFFFFF"]; // Snowflakes will be white
+
+  var streamingSnowfall = false;
+  var animationTimer = null;
+  var snowflakes = [];
+
+  function resetSnowflake(snowflake, width, height) {
+	snowflake.color = colors[0]; // White snowflake color
+	snowflake.x = Math.random() * width;
+	snowflake.y = Math.random() * height - height;
+	snowflake.diameter = Math.random() * 5 + 2; // Adjust size of snowflakes
+	return snowflake;
+  }
+
+  function startSnowfallInner() {
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+
+	window.requestAnimFrame = (function() {
+	  return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function (callback) {
+		  return window.setTimeout(callback, 16.6666667);
+		};
+	})();
+
+	var canvas = document.getElementById("snow-canvas");
+
+	if (canvas === null) {
+	  canvas = document.createElement("canvas");
+	  canvas.setAttribute("id", "confetti-canvas");
+	  canvas.setAttribute("style", " display:block;z-index:-1;pointer-events:none");
+	  document.getElementById('overlay').appendChild(canvas);
+	  canvas.width = width;
+	  canvas.height = height;
+
+	  window.addEventListener("resize", function() {
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+	  }, true);
+	}
+
+	var context = canvas.getContext("2d");
+
+	while (snowflakes.length < maxSnowflakeCount)
+	  snowflakes.push(resetSnowflake({}, width, height));
+
+	streamingSnowfall = true;
+
+	if (animationTimer === null) {
+	  (function runAnimation() {
+		context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+		if (snowflakes.length === 0)
+		  animationTimer = null;
+		else {
+		  updateSnowflakes();
+		  drawSnowflakes(context);
+		  animationTimer = requestAnimFrame(runAnimation);
+		}
+	  })();
+	}
+  }
+
+  function stopSnowfallInner() {
+	streamingSnowfall = false;
+  }
+
+  function removeSnowfallInner() {
+	stopSnowfall();
+	snowflakes = [];
+  }
+
+  function toggleSnowfallInner() {
+	if (streamingSnowfall)
+	  stopSnowfallInner();
+	else
+	  startSnowfallInner();
+  }
+
+  function drawSnowflakes(context) {
+	var snowflake;
+	for (var i = 0; i < snowflakes.length; i++) {
+	  snowflake = snowflakes[i];
+	  context.beginPath();
+	  context.arc(snowflake.x, snowflake.y, snowflake.diameter, 0, Math.PI * 2, false);
+	  context.fillStyle = snowflake.color;
+	  context.fill();
+	}
+  }
+
+  function updateSnowflakes() {
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+	var snowflake;
+
+	for (var i = 0; i < snowflakes.length; i++) {
+	  snowflake = snowflakes[i];
+
+	  if (!streamingSnowfall && snowflake.y < -15)
+		snowflake.y = height + 100;
+	  else {
+		snowflake.y += snowflakeSpeed;
+	  }
+
+	  if (snowflake.x > width || snowflake.x < 0 || snowflake.y > height) {
+		if (streamingSnowfall && snowflakes.length <= maxSnowflakeCount)
+		  resetSnowflake(snowflake, width, height);
+		else {
+		  snowflakes.splice(i, 1);
+		  i--;
+		}
+	  }
+	}
+  }
+})();
+
+var start2 = true;
+
+if (start2 === true) {
+  startSnowfall();
+}
