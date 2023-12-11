@@ -648,6 +648,14 @@ p {
 
 <!--LOADER -->
 
+<div id="openercountdown" style="display: none; position: fixed; z-index: 5; top: 20%; right: 10px; width: 50px; height: 50px; border-radius: 15px; background-color: rgba(26, 26, 26, 0.762);">
+  <span class="material-icons notranslate"  style=" cursor: pointer;  color: white;">  
+     
+    arrow_circle_left
+    
+    </span>
+</div>
+
 <div style=" display: none;" class="topnav">
  <p>Medals:</p>
  <p id="afkk" >Afk</p>
@@ -658,6 +666,71 @@ p {
 
   <h1 style="   font-size: medium; top: 50%; transform: translate(-0%, -50%); left: 50px; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute;">Sz Games</h1>
 
+  <div style="left: 50%; position: absolute; top: 50%;  transform: translate(-50%, -50%);" id="timecontainercount">
+    <div style="background-color: #5656563c; border-radius: 15px; width: fit-content; padding: 0px 10px 0px 10px; height: 30px;">
+      <p id="countdowntxt" style="position: relative; top: 50%; transform: translate(-0%, -50%); color: white; text-align: center;">00:00</p>
+
+
+      <script>
+        // Set the target date and time
+        const targetDate = new Date('December 15, 2023 00:00:00 PST');
+    
+        function updateCountdown() {
+            const currentDate = new Date();
+            const timeDifference = targetDate - currentDate;
+    
+            if (timeDifference > 0) {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                //document.getElementById('countdowntxt2').innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes And ${seconds} Seconds`;
+    
+                // Adjust the message based on the remaining time
+                let message = '';
+                let fixmsg = `${days} Days, ${hours} Hours ${message}`
+
+                if (days === 0 && hours === 0 && minutes === 0) {
+
+                  message = 'Just seconds left!';
+                  fixmsg = `${seconds} Seconds ${message}`
+
+                } else if (days === 0 && hours === 0) {
+
+                    message = 'Less than a hour left!';
+                    fixmsg = `${minutes} Minutes ${message}`
+                  } else if (days === 0) {
+                    message = 'A Few Hours Left!';
+                    fixmsg = `${hours} Hours ${message}`
+                  } else if (days === 1) {
+                    message = 'More Day!';
+                    fixmsg = `${days} Days ${message}`
+                 } else if (days === 2) {
+                  message = 'Almost There...';
+                  fixmsg = `${days} Days ${message}`
+                } else {
+
+                    message = 'Until Friday';
+                    fixmsg = `${days} Days ${message}`
+                    
+                }
+
+                document.getElementById('countdowntxt').innerHTML = fixmsg;
+
+            } else {
+                document.getElementById('countdowntxt').innerHTML = '';
+            }
+        }
+    
+        setInterval(updateCountdown, 1000);
+    
+        updateCountdown();
+    </script>
+
+    </div>
+
+  </div>
 
     <span onclick="ToggleMenuBig()" class="material-icons notranslate"  style=" cursor: pointer;  font-size: 22px; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
       
