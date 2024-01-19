@@ -1417,22 +1417,22 @@ if (isMobile2) {
 
 
 <!--Start-->
-<div id="Tile11093" style="display: none; z-index: 70; width: 100%; height: 100%; position: fixed; background-color: #2f2f2f2c;">
+<div id="Tile110935" style="display: none; z-index: 70; width: 100%; height: 100%; position: fixed; background-color: #2f2f2f2c;">
   
    
-  <div style="width: 40%;  overflow-y: auto; overflow-x: none; height: 40%; border-radius: 15px; background-color: #1d1d1d; position: fixed; z-index: 81; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+  <div style="width: 40%; z-index: 72;  overflow-y: auto; overflow-x: none; height: 40%; border-radius: 15px; background-color: #1d1d1d; position: fixed; z-index: 81; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <span onclick="closeINTRO2()" class="material-icons notranslate"  style=" cursor: pointer;   font-size: 30px; top: 15px;  right: 15px; color: white;  position: absolute;">  
        
       close
        
        </span>
-    <h1 style="position: relative; text-align: center; font-size: 28px; color: white; margin: 28px; word-wrap: break-word;">Update</h1>
+    <h1 style="position: relative; text-align: center; font-size: 28px; color: white; margin: 28px; word-wrap: break-word;">Notice:</h1>
     <br>
-    <p style="text-align: center; font-size: 18px; color: white; margin-bottom: 15px;">Fixed The Following Games:</p>
-    <p style="text-align: center; font-size: 18px; color: white;">Henry Stickmin Series</p>
-    <p style="text-align: center; font-size: 18px; color: white; margin: 10px;">And Other Flash Games</p>
+    <p style="text-align: center; font-size: 18px; color: white; margin-bottom: 15px;">More Games Are Coming To Sz Games</p>
+    <p style="text-align: center; font-size: 18px; color: white;">Sorry For No New Games</p>
+    <p style="text-align: center; font-size: 18px; color: white; margin: 10px;"></p>
 
-    <p style="text-align: center; font-size: 18px; color: white;">Were Fixed And Are Now Working</p>
+    <p style="text-align: center; font-size: 18px; color: white;"></p>
   
   
   
@@ -1440,13 +1440,13 @@ if (isMobile2) {
   </div>
   
   <script>
-    let TileSt3 = localStorage.getItem('1109ST333')
+    let TileSt3 = localStorage.getItem('1109ST3335')
   
     function closeINTRO2() {
-      localStorage.setItem('1109ST333', 'true')
+      localStorage.setItem('1109ST3335', 'true')
   
-      document.getElementById('Tile11093').style.display = 'none'
-      TileSt3 = localStorage.getItem('1109ST333')
+      document.getElementById('Tile110935').style.display = 'none'
+      TileSt3 = localStorage.getItem('1109ST3335')
     }
     const isMobile23 = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   
@@ -1454,9 +1454,9 @@ if (isMobile2) {
     
   } else {  
     if(TileSt3) {
-      document.getElementById('Tile11093').style.display = 'none'
+      document.getElementById('Tile110935').style.display = 'none'
     } else {
-      document.getElementById('Tile11093').style.display = 'none'
+      document.getElementById('Tile110935').style.display = 'block'
     }
   }
     
@@ -5965,6 +5965,16 @@ function isElementInViewport(element) {
   );
 }
 
+function isElementNotInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.bottom < 0 ||
+    rect.top > (window.innerHeight + 400 || document.documentElement.clientHeight) ||
+    rect.right < 0 ||
+    rect.left > (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
 
 function handleScroll() {
   const hiddenDivs = document.querySelectorAll('.box');
@@ -5982,14 +5992,19 @@ function handleScroll() {
         
          // console.log('Loaded Game')
         };
-      }
+      } 
     });
     
     hiddenDivs.forEach(div => {
+     
       if (isElementInViewport(div)) {
         div.classList.add('show');
         //console.log('Loaded ' + div.id)
+      } 
+      else if (isElementNotInViewport(div)) {
+        //div.classList.remove('show')
       }
+     
     });
   }
 }
