@@ -575,9 +575,38 @@ p {
     transform: translate(0%, -30%) rotate(360deg);
   }
 }
+@keyframes openerror {
+  from{transform: translate(-50%, -50%) scale(0.5); opacity: 0;}
+  to{transform: translate(-50%, -50%) scale(1); opacity: 1;}
+
+}
+
 </style>
 
-<div id="overlay" style="pointer-events: none; position: fixed; width: 100%; height: 100%;">
+
+
+<div id="CHATDISABLED" style="transition: 0.5s;  opacity: 0; display: none; left: 50%; position: fixed; z-index: 90; top: 50%; transform: translate(-50%, -50%); width: 25%; height: 40%; border-radius: 15px; background-color: rgb(32, 32, 32);">
+  <h1 style="margin: 20px; color: white;">Error</h1>
+  <h3 style="color: white; width: 95%; left: 50%; top: 50%; transform: translate(-50%, -150%); position: absolute;">The Webmaster Of This Instance Of Sz Games Has Disabled The Chat Feature</h3>
+<p style="color: white; position: absolute; bottom: 80px; left: 10px;">Code: NEB_CHA4-DIS</p>
+<p style="color: white; bottom: 10px; left: 10px; position: absolute;">Clearing Logs...</p>
+</div>
+<script>
+  function chaterror() {
+    var containererrmsg = document.getElementById('CHATDISABLED')
+    containererrmsg.style.display = "block"
+    containererrmsg.style.animation = "openerror 0.5s"
+    containererrmsg.style.opacity = 1
+    setTimeout(() => {
+      containererrmsg.style.opacity = 0
+      setTimeout(() => {
+        containererrmsg.style.display = 'none'
+      }, 490);
+    }, 7000);
+  }
+</script>
+
+<div id="overlay" style="pointer-events: none; position: fixed; display: none; width: 100%; height: 100%;">
 
 </div>
 
@@ -762,12 +791,12 @@ p {
         }
 
       </style>
-          <a href="./Chat.html" aria-label="Go To Chat">
+          <!--a href="./Chat.html" aria-label="Go To Chat"-->
 
-            <span  class="material-icons notranslate"  style=" cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative;">  
+            <span onclick="chaterror()" class="material-icons notranslate"  style=" cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: rgb(54, 54, 54);  position: relative;">  
                 chat
             </span>
-          </a>
+          <!--/a-->
       <a href="https://discord.gg/DzKRSntb87" aria-label="Go To Discord Server Invite Page">
         <i class='fab fa-discord Discord'  style='cursor: pointer;  font-size: larger; top: 50%; transform: translate(-0%, -50%); margin-right: 15px; float: right; color: white;  position: relative; '></i>
       </a>
