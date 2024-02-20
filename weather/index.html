@@ -66,6 +66,18 @@
             background: linear-gradient(to bottom, rgba(3, 197, 246, 0.731), rgba(55, 123, 140, 0.731), #494949ad);
             border-radius: 15px;
         }
+        .forecast-item-snow {
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 150px;
+            min-width: 150px;
+            min-height: 165px;
+            position: relative;
+            height: 165px;
+            float: left;
+            background: linear-gradient(to bottom, rgba(224, 224, 224, 0.731), rgba(182, 182, 182, 0.731), #494949ad);
+            border-radius: 15px;
+        }
         .forecast-description {
             text-align: center;
             color: white;
@@ -363,6 +375,8 @@ $(document).ready(function() {
                                 document.getElementById('rainanim').style.display = 'block'
                         } else if (currentForecast2.shortForecast.includes('Sunny')) {
                                 forecastContainerClasss2 = 'sunnyBG';
+                        } else if (currentForecast2.shortForecast.includes('Snow')) {
+                                forecastContainerClasss2 = 'snowBG';
                         }
 
                         document.getElementById('pageMAIN').classList.add(forecastContainerClasss2)
@@ -405,6 +419,10 @@ $(document).ready(function() {
     }
     .sunnyBG {
         background: linear-gradient(to bottom, rgb(249, 221, 4), rgb(26, 26, 26), rgb(26, 26, 26));
+
+    }
+    .snowBG {
+        background: linear-gradient(to bottom, rgb(177, 177, 177), rgb(26, 26, 26), rgb(26, 26, 26));
 
     }
 </style>
@@ -532,8 +550,11 @@ $(document).ready(function() {
                                     document.getElementById('rainanim').style.display = 'block'
                             } else if (currentForecast.shortForecast.includes('Sunny')) {
                                     forecastContainerClasss = 'sunnyBG';
+                            } else if (currentForecast.shortForecast.includes('Snow')) {
+                                    forecastContainerClasss = 'snowBG';
                             }
                         
+
 
                             console.log(currentForecast)
                             document.getElementById('pageVIEW').classList.add(forecastContainerClasss)
@@ -550,6 +571,8 @@ $(document).ready(function() {
                                     forecastContainerClass = 'forecast-item-rain';
                                 } else if (period.shortForecast.includes('Sunny')) {
                                     forecastContainerClass = 'forecast-item-sunny';
+                                } else if (period.shortForecast.includes('Snow')) {
+                                    forecastContainerClass = 'forecast-item-snow';
                                 }
                                 console.log(period)
                                 $("#forecast").append(`
