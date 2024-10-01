@@ -2,99 +2,66 @@
 <html lang="en">
 <head>
 
-
-<!-- Google Tag Manager -->
-<script>
-window.onload = function() {
-
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P93VS8N5');
-}
-  </script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
 
+  <!--Preload-->
+  <link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" as="script">
 
-     <!--link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
+  <!-- Preconnect & DNS Prefetch -->
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
+  <!-- Ads Script-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927" crossorigin="anonymous"></script>
 
-     <!--Icons-->
-     <script src="https://kit.fontawesome.com/26f4207121.js" crossorigin="anonymous"></script>
-     <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
-     
-     <!--ONESIGNAL PUSH-->
-     <script>
-      window.onload = function() {
+  <!-- Preload fonts-->
+  <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </noscript>
+  
+  <!-- FontAwesome -->
+  <script async src="https://kit.fontawesome.com/26f4207121.js" crossorigin="anonymous"></script>
+ 
+  <!-- Preconnect & DNS Prefetch -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//kit.fontawesome.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://kit.fontawesome.com">
+ 
 
-          const scriptEly = document.createElement('script');
-
-          scriptEly.src = 'https://cdn.onesignal.com/sdks/OneSignalSDK.js';
-
-        
-          scriptEly.addEventListener('load', () => {
-            window.OneSignal = window.OneSignal || [];
-          OneSignal.push(function() {
-            OneSignal.init({
-              appId: "08b63425-6f02-4ecb-ad79-8bb871e63518",
-              autoResubscribe: true, // This ensures the prompt shows again if dismissed
-
-              safari_web_id: "web.onesignal.auto.54d60a3d-c0d7-4ae1-b490-c29a9cfa7b70",
-              notifyButton: {
-                enable: false,
-              },
-              promptOptions: {
-                  customlink: {
-                    enabled: true, /* Required to use the Custom Link */
-                    style: "button", /* Has value of 'button' or 'link' */
-                    size: "medium", /* One of 'small', 'medium', or 'large' */
-                    color: {
-                      button: '#2e2e2e', /* Color of the button background if style = "button" */
-                      text: 'white', /* Color of the prompt's text */
-                    },
-                    text: {
-                      subscribe: "Subscribe to push notifications", /* Prompt's text when not subscribed */
-                      unsubscribe: "Unsubscribe from push notifications", /* Prompt's text when subscribed */
-                      explanation: "Get updates about new games and known issues.", /* Optional text appearing before the prompt button */
-                    },
-                    unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
-                  }
-                }
-            });
-          });
-                
-          });
-
-          document.head.appendChild(scriptEly);
-
-      }
     
+  
 
-     </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    gtag('config', 'G-C78TXR0XFK');
+  </script>
 
-  gtag('config', 'G-C78TXR0XFK');
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
-</script>
+  <script>
+    window.addEventListener('load', function() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+      }
+    });
+  </script>
+
 
 <link rel="manifest" href="manifest.json">
+
 <link rel="icon" href="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/G2.png" type="image/png">
 
 <meta name="title" content="Sz Games">
 <meta name="author" content="Sz Games">
+
 <title>Sz Games</title>
+
 <meta name="revisit-after" content="1 days" />
 
 <link rel="apple-touch-startup-image" href="https://sz-games.github.io/launch.png">
@@ -113,15 +80,14 @@ window.onload = function() {
 <meta name="description" property="twitter:description" content="The Best Place To Play over 100+ Games in school or at home."> 
 
 <meta name="language" content="English">
-<script src="./GobalSettings.js"></script>
+<script async src="./GobalSettings.js"></script>
 
 <meta
 name="keywords"
 content="sz games, sz games unblocked, games, unblocked games, school, games, games to play, games on the web, html5 games, sz, sz-games, play games online,  online games"
 /> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1654900800235927"
-crossorigin="anonymous"></script>
+
 <script type="application/ld+json">
   {
       "@context": "http://schema.org",
@@ -138,7 +104,7 @@ crossorigin="anonymous"></script>
 
 
 </head>
-
+  
 <style>
 ::-webkit-scrollbar-track-piece {
  
