@@ -17,13 +17,14 @@
 - **250+ Games**
 - **Retro Games**
 - **Emulators**
+- **10+ Roblox Servers**
 
 - **Tab Cloaking**
 - **Prevent Page Close**
 - **About:Blank Embeder**
 - **Panic Button**
-- **Proxies (Comming Soon)**
-- **10+ Roblox Servers**
+- **Proxies (Coming Soon)**
+
 - **Doesnt Have A Thousand Ads On Every Page**
 
 <h1 align="Center">Instructions To Host Your Own</h1>
