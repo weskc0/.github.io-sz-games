@@ -23,7 +23,7 @@
 - **Prevent Page Close**
 - **About:Blank Embeder**
 - **Panic Button**
-- **Proxies (Coming Soon)**
+- **Proxies (Testing)**
 
 - **Doesnt Have A Thousand Ads On Every Page**
 
